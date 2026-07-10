@@ -4,8 +4,8 @@
              Cobalt #1F3BEA · Deep Cobalt #1226A8 · Night #0D0C0A
    Type    : Cabinet Grotesk (display) · Satoshi (body) · Space Mono (utility)
    ============================================================ */
-@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=satoshi@400,500,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+/* fonts are loaded via <link> tags in app/layout.tsx — @import here would
+   serialize them behind this stylesheet and delay first paint on mobile */
 
 :root{
   --porcelain:#F4F2EC;
@@ -52,7 +52,8 @@ ul{list-style:none}
 .wrap{max-width:1440px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
 
 /* ---------- film grain ---------- */
-.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:2000;opacity:.05;
+/* 20% overscan covers the ±3% jitter — a full 200% layer wastes GPU memory on phones */
+.grain{position:fixed;inset:-10%;width:120%;height:120%;pointer-events:none;z-index:2000;opacity:.05;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:grain 8s steps(10) infinite}
 @keyframes grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-2%)}80%{transform:translate(3%,3%)}}
