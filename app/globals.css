@@ -425,6 +425,7 @@ footer{background:var(--night);color:var(--paper-on-night);padding:clamp(56px,7v
 .cgrid{display:grid;grid-template-columns:.9fr 1.35fr;gap:clamp(40px,6vw,100px);align-items:start}
 @media (max-width:900px){.cgrid{grid-template-columns:1fr}}
 .cinfo{display:grid;gap:38px;position:sticky;top:120px}
+@media (max-width:900px){.cinfo{position:static;top:auto}}
 .iblk h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-40);font-weight:400;margin-bottom:10px}
 .iblk a,.iblk p{font-size:18px;font-weight:500}
 .iblk a:hover{color:var(--cobalt)}
