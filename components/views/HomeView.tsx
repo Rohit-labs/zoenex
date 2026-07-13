@@ -14,7 +14,8 @@ const SERVICES = [
     title: "AI Automation",
     body: "Custom AI agents and workflow systems that take repetitive work off your team — lead handling, support, reporting, internal operations.",
     tags: ["AI agents", "Chatbots", "CRM workflows", "API integrations", "RAG systems"],
-    aria: "Enquire about AI Automation",
+    href: "/services/ai-automation",
+    aria: "Explore AI Automation",
     sig: (
       <div className="svc-sig sig-aut" aria-hidden="true">
         <span className="n on" />
@@ -30,7 +31,8 @@ const SERVICES = [
     title: "Websites & Product",
     body: "Fast, conversion-focused marketing sites and web apps — designed end to end, built on modern stacks, measured against real business goals.",
     tags: ["Marketing sites", "Web apps", "E-commerce", "Design systems", "SEO & performance"],
-    aria: "Enquire about Websites and Product",
+    href: "/services/websites",
+    aria: "Explore Websites and Product",
     sig: (
       <div className="svc-sig sig-web" aria-hidden="true">
         <div className="bar">
@@ -47,7 +49,8 @@ const SERVICES = [
     title: "Motion Design",
     body: "Brand films, product explainers, UI motion and social-first video that give your product the launch it deserves — and keep it moving after.",
     tags: ["Brand films", "Explainers", "UI motion", "3D & WebGL", "Social video"],
-    aria: "Enquire about Motion Design",
+    href: "/services/motion-design",
+    aria: "Explore Motion Design",
     sig: (
       <div className="svc-sig sig-mtn" aria-hidden="true">
         <i />
@@ -187,7 +190,9 @@ export default function HomeView() {
                 {s.code}
               </span>
               <div>
-                <h3>{s.title}</h3>
+                <h3>
+                  <Link href={s.href}>{s.title}</Link>
+                </h3>
                 <p className="svc-body">{s.body}</p>
                 <ul className="svc-tags">
                   {s.tags.map((t) => (
@@ -196,7 +201,7 @@ export default function HomeView() {
                 </ul>
               </div>
               {s.sig}
-              <Link className="svc-go" href="/contact" aria-label={s.aria} data-cursor>
+              <Link className="svc-go" href={s.href} aria-label={s.aria} data-cursor>
                 <ArrowUpRight size={17} />
               </Link>
             </article>

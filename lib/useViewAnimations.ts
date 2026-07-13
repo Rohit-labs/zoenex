@@ -126,9 +126,10 @@ function runViewMotion(root: HTMLElement, opts: Options, afterLoader: boolean) {
     const tl = gsap.timeline({ scrollTrigger: { trigger: row, start: "top 82%", once: true } });
     tl.from(h, { yPercent: 60, autoAlpha: 0, duration: 0.8, ease: "power4.out" })
       .from(code, { x: -14, autoAlpha: 0, duration: 0.5 }, "-=.55")
-      .from(body, { y: 16, autoAlpha: 0, duration: 0.6 }, "-=.45")
-      .from(tags, { y: 12, autoAlpha: 0, duration: 0.5, stagger: 0.05 }, "-=.4")
-      .from([sig, go], { autoAlpha: 0, scale: 0.8, duration: 0.5, stagger: 0.08, ease: "back.out(1.7)" }, "-=.5");
+      .from(body, { y: 16, autoAlpha: 0, duration: 0.6 }, "-=.45");
+    if (tags.length) tl.from(tags, { y: 12, autoAlpha: 0, duration: 0.5, stagger: 0.05 }, "-=.4");
+    const extras = [sig, go].filter(Boolean);
+    if (extras.length) tl.from(extras, { autoAlpha: 0, scale: 0.8, duration: 0.5, stagger: 0.08, ease: "back.out(1.7)" }, "-=.5");
   });
 
   /* process: spine fills on scroll, steps slide in and light their node */

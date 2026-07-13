@@ -34,13 +34,13 @@ export default function Footer() {
             <h4>Services</h4>
             <ul>
               <li>
-                <Link href="/contact">AI Automation</Link>
+                <Link href="/services/ai-automation">AI Automation</Link>
               </li>
               <li>
-                <Link href="/contact">Websites &amp; Product</Link>
+                <Link href="/services/websites">Websites &amp; Product</Link>
               </li>
               <li>
-                <Link href="/contact">Motion Design</Link>
+                <Link href="/services/motion-design">Motion Design</Link>
               </li>
             </ul>
           </div>
