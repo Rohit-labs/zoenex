@@ -162,20 +162,9 @@ export default function ContactView() {
                 />
                 <span className={`ferr${errors.email ? " show" : ""}`}>Please enter a valid email address.</span>
               </div>
-              <div className="field">
+              <div className="field full">
                 <label htmlFor="company">Company</label>
                 <input type="text" id="company" name="company" autoComplete="organization" />
-              </div>
-              <div className="field">
-                <label htmlFor="budget">Budget range</label>
-                <select id="budget" name="budget" defaultValue="">
-                  <option value="">Select a range</option>
-                  <option>Under ₹2L / $2.5k</option>
-                  <option>₹2L–₹8L / $2.5k–$10k</option>
-                  <option>₹8L–₹20L / $10k–$25k</option>
-                  <option>₹20L+ / $25k+</option>
-                  <option>Not sure yet</option>
-                </select>
               </div>
               <div className="field full">
                 <span
