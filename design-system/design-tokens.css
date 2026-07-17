@@ -1,0 +1,215 @@
+/* ============================================================
+   ZOENEX STUDIOS — DESIGN TOKENS
+   Three-layer architecture: primitive → semantic → component
+   Extracted from app/globals.css, lib/gsap.ts, lib/useViewAnimations.ts
+   ------------------------------------------------------------
+   Layer 1 (primitive):  raw values, never used directly in UI code
+   Layer 2 (semantic):   purpose-named aliases; the .on-night context
+                         re-maps them for dark bands
+   Layer 3 (component):  per-component hooks, mapped from semantics
+   ============================================================ */
+
+:root {
+  /* ==========================================================
+     LAYER 1 — PRIMITIVES
+     ========================================================== */
+
+  /* ---- color · neutrals (warm) ---- */
+  --zx-porcelain:        #F4F2EC;  /* page background            */
+  --zx-bone:             #E9E6DC;  /* raised warm surface        */
+  --zx-paper:            #F1EFE8;  /* light text on dark         */
+  --zx-white:            #FFFFFF;  /* pure white (cards, btn text) */
+  --zx-ink:              #141311;  /* near-black warm ink        */
+  --zx-night:            #0D0C0A;  /* dark band background       */
+  --zx-night-2:          #0A0908;  /* dark card base             */
+  --zx-night-3:          #161513;  /* dark inset surface (film frame) */
+
+  /* ---- color · brand blues ---- */
+  --zx-cobalt:           #1F3BEA;  /* THE brand accent           */
+  --zx-cobalt-deep:      #1226A8;  /* pressed / gradient stop    */
+  --zx-cobalt-bright:    #3B57FF;  /* gradient highlight         */
+  --zx-periwinkle:       #8EA0FF;  /* accent readable on night   */
+  --zx-periwinkle-light: #B9C3FF;  /* hover accent on night      */
+
+  /* ---- color · feedback ---- */
+  --zx-green:            #5DE0A0;  /* live / success pulse       */
+  --zx-red-border:       #DD3333;  /* invalid field border       */
+  --zx-red-text:         #CC2222;  /* inline error text          */
+
+  /* ---- color · alpha ramps ---- */
+  --zx-ink-a62:          rgba(20, 19, 17, 0.62);   /* secondary text   */
+  --zx-ink-a40:          rgba(20, 19, 17, 0.40);   /* tertiary text    */
+  --zx-ink-a13:          rgba(20, 19, 17, 0.13);   /* hairline borders */
+  --zx-paper-a55:        rgba(241, 239, 232, 0.55);/* secondary on night */
+  --zx-paper-a16:        rgba(241, 239, 232, 0.16);/* hairline on night  */
+  --zx-cobalt-a15:       rgba(31, 59, 234, 0.15);  /* focus ring       */
+  --zx-cobalt-a12:       rgba(31, 59, 234, 0.12);  /* node halo        */
+
+  /* ---- typography · families ---- */
+  --zx-font-display: 'Cabinet Grotesk', 'Arial Black', sans-serif;
+  --zx-font-body:    'Satoshi', 'Helvetica Neue', sans-serif;
+  --zx-font-mono:    'Space Mono', monospace;
+
+  /* ---- typography · weights ---- */
+  --zx-weight-regular: 400;
+  --zx-weight-medium:  500;
+  --zx-weight-bold:    700;
+  --zx-weight-heavy:   800;   /* all display headings */
+
+  /* ---- typography · fluid scale ---- */
+  --zx-text-mega:    clamp(52px, 9.6vw, 150px); /* hero headline        */
+  --zx-text-xl:      clamp(38px, 6vw, 88px);    /* section headline     */
+  --zx-text-lg:      clamp(26px, 3.6vw, 48px);  /* sub-section headline */
+  --zx-text-md:      clamp(24px, 3vw, 40px);    /* card / step headline */
+  --zx-text-lede:    clamp(17px, 1.45vw, 20px); /* intro paragraph      */
+  --zx-text-body:    17px;                      /* base body            */
+  --zx-text-small:   15px;                      /* secondary body       */
+  --zx-text-caption: 13px;                      /* fine print           */
+  --zx-text-mono-lg: 12px;                      /* eyebrow / codes      */
+  --zx-text-mono-md: 11.5px;                    /* mono tags            */
+  --zx-text-mono-sm: 10.5px;                    /* card categories      */
+
+  /* ---- typography · rhythm ---- */
+  --zx-leading-display: 0.98;   /* headings                     */
+  --zx-leading-body:    1.62;   /* body copy                    */
+  --zx-tracking-tight:  -0.015em; /* headings                   */
+  --zx-tracking-wide:   0.12em;   /* mono tags                  */
+  --zx-tracking-wider:  0.16em;   /* eyebrows, card numbers     */
+
+  /* ---- space ---- */
+  --zx-gutter:       clamp(20px, 4.5vw, 64px);   /* page gutter         */
+  --zx-section-pad:  clamp(90px, 12vw, 170px);   /* section rhythm      */
+  --zx-head-gap:     clamp(52px, 6vw, 90px);     /* heading → content   */
+  --zx-container:    1440px;                     /* max content width   */
+  --zx-nav-height:   78px;
+
+  /* ---- radius ---- */
+  --zx-radius-xs:    2px;    /* logo dot, spine                 */
+  --zx-radius-sm:    6px;    /* mini frames                     */
+  --zx-radius-md:    10px;   /* inputs, toggles, inner frames   */
+  --zx-radius-lg:    14px;   /* work cards, terminal, webframe  */
+  --zx-radius-xl:    18px;   /* showcase cards, form card       */
+  --zx-radius-pill:  100px;  /* buttons, tags, filters, pills   */
+  --zx-radius-round: 50%;    /* dots, circular actions          */
+
+  /* ---- elevation ---- */
+  --zx-shadow-card:      0 34px 70px -28px rgba(20, 19, 17, 0.35);
+  --zx-shadow-card-dark: 0 40px 80px -34px rgba(0, 0, 0, 0.80);
+  --zx-shadow-panel:     0 40px 80px -44px rgba(20, 19, 17, 0.35);
+  --zx-shadow-terminal:  0 34px 70px -40px rgba(13, 12, 10, 0.55);
+  --zx-shadow-focus:     0 0 0 3px var(--zx-cobalt-a15);
+
+  /* ---- motion · easing ---- */
+  --zx-ease:          cubic-bezier(0.22, 0.75, 0.25, 1); /* signature CSS ease */
+  /* GSAP equivalents: default power3.out · headlines power4.out ·
+     counters power2.out · playful pops back.out(1.7) */
+
+  /* ---- motion · durations ---- */
+  --zx-dur-micro:   0.2s;   /* opacity, small color shifts      */
+  --zx-dur-hover:   0.35s;  /* hover states, underline sweeps   */
+  --zx-dur-element: 0.55s;  /* card lifts, arrow rotations      */
+  --zx-dur-reveal:  0.95s;  /* scroll reveals (GSAP)            */
+  --zx-dur-hero:    1.15s;  /* hero line reveal (GSAP)          */
+  --zx-dur-count:   1.8s;   /* number counters (GSAP)           */
+
+  /* ---- motion · choreography ---- */
+  --zx-stagger:      0.08s;  /* list/batch stagger (GSAP 0.08–0.09) */
+  --zx-reveal-rise:  40px;   /* translate-in distance (36–44px)     */
+
+  /* ==========================================================
+     LAYER 2 — SEMANTIC (light context, the default)
+     ========================================================== */
+  --color-bg:              var(--zx-porcelain);
+  --color-bg-raised:       var(--zx-bone);
+  --color-bg-card:         var(--zx-white);
+  --color-text:            var(--zx-ink);
+  --color-text-secondary:  var(--zx-ink-a62);
+  --color-text-tertiary:   var(--zx-ink-a40);
+  --color-border:          var(--zx-ink-a13);
+  --color-accent:          var(--zx-cobalt);
+  --color-accent-strong:   var(--zx-cobalt-deep);
+  --color-accent-soft:     var(--zx-periwinkle);
+  --color-on-accent:       var(--zx-white);
+  --color-success:         var(--zx-green);
+  --color-error:           var(--zx-red-text);
+  --color-error-border:    var(--zx-red-border);
+  --color-selection-bg:    var(--zx-cobalt);
+  --color-selection-text:  var(--zx-porcelain);
+
+  --font-display:          var(--zx-font-display);
+  --font-body:             var(--zx-font-body);
+  --font-mono:             var(--zx-font-mono);
+
+  --motion-ease:           var(--zx-ease);
+  --motion-hover:          var(--zx-dur-hover);
+}
+
+/* ---- dark band context: sections opt in with .on-night ---- */
+.on-night {
+  --color-bg:              var(--zx-night);
+  --color-bg-raised:       var(--zx-night-3);
+  --color-bg-card:         var(--zx-night-2);
+  --color-text:            var(--zx-paper);
+  --color-text-secondary:  var(--zx-paper-a55);
+  --color-text-tertiary:   var(--zx-paper-a55);
+  --color-border:          var(--zx-paper-a16);
+  --color-accent:          var(--zx-cobalt);      /* cobalt stays cobalt   */
+  --color-accent-soft:     var(--zx-periwinkle);  /* readable accent text  */
+}
+
+/* ==========================================================
+   LAYER 3 — COMPONENT
+   ========================================================== */
+:root {
+  /* button */
+  --button-radius:         var(--zx-radius-pill);
+  --button-pad:            17px 32px;
+  --button-pad-compact:    12px 24px;   /* nav variant */
+  --button-font-size:      15.5px;
+  --button-weight:         var(--zx-weight-bold);
+  --button-fill-bg:        var(--color-accent);
+  --button-fill-text:      var(--color-on-accent);
+  --button-line-border:    var(--color-text);
+  --button-hover-veil:     var(--zx-ink);  /* scaleY fill from bottom */
+
+  /* eyebrow */
+  --eyebrow-font:          var(--font-mono);
+  --eyebrow-size:          var(--zx-text-mono-lg);
+  --eyebrow-tracking:      var(--zx-tracking-wider);
+  --eyebrow-color:         var(--color-accent);
+  --eyebrow-dash-width:    26px;
+
+  /* nav */
+  --nav-height:            var(--zx-nav-height);
+  --nav-scrim-light:       rgba(244, 242, 236, 0.82);
+  --nav-scrim-dark:        rgba(13, 12, 10, 0.80);
+  --nav-blur:              14px;
+
+  /* tag / pill */
+  --tag-font:              var(--font-mono);
+  --tag-size:              var(--zx-text-mono-sm);
+  --tag-pad:               7px 13px;
+  --tag-radius:            var(--zx-radius-pill);
+  --tag-border:            var(--color-border);
+
+  /* card */
+  --card-radius:           var(--zx-radius-lg);
+  --card-radius-feature:   var(--zx-radius-xl);
+  --card-border:           var(--color-border);
+  --card-lift:             -8px;                  /* hover translateY */
+  --card-shadow:           var(--zx-shadow-card);
+
+  /* input */
+  --input-bg:              var(--zx-porcelain);
+  --input-border:          var(--color-border);
+  --input-radius:          var(--zx-radius-md);
+  --input-pad:             15px 16px;
+  --input-focus-border:    var(--color-accent);
+  --input-focus-ring:      var(--zx-shadow-focus);
+
+  /* ticker */
+  --ticker-duration:       40s;
+
+  /* grain overlay */
+  --grain-opacity:         0.05;
+}

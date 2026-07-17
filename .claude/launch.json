@@ -7,6 +7,24 @@
       "runtimeArgs": ["run", "dev"],
       "port": 3000,
       "autoPort": true
+    },
+    {
+      "name": "styleguide",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "design-system", "-l", "4173"],
+      "port": 4173
+    },
+    {
+      "name": "scratchpad",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "--yes",
+        "serve",
+        "C:/Users/Rohit/AppData/Local/Temp/claude/C--Users-Rohit--gemini-antigravity-scratch-zoenex-portfolio/4f904401-4fc7-40a0-94a9-1c8a34f1dc50/scratchpad",
+        "-l",
+        "4174"
+      ],
+      "port": 4174
     }
   ]
 }
