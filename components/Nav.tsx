@@ -40,8 +40,14 @@ export default function Nav() {
     <header className={`nav${scrolled ? " scrolled" : ""}${onDark ? " on-dark" : ""}`} ref={ref}>
       <div className="wrap nav-inner">
         <Link className="logo" href="/">
-          <i />
-          ZOENEX
+          <span className="logo-mark" aria-hidden="true">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/zoenex-mark.png" alt="" draggable={false} />
+          </span>
+          <span className="logo-word">
+            ZOENEX
+            <em>STUDIOS</em>
+          </span>
         </Link>
         <button
           className="nav-toggle"

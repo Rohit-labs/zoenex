@@ -6,13 +6,16 @@ export default function Footer() {
     <footer>
       <div className="wrap">
         <div className="foot-mark" aria-hidden="true">
-          Zoenex®
+          Zoenex
         </div>
         <div className="foot-grid">
           <div>
             <Link className="logo" href="/" style={{ color: "var(--paper-on-night)" }}>
               <i />
-              ZOENEX
+              <span className="logo-word">
+                ZOENEX
+                <em>STUDIOS</em>
+              </span>
             </Link>
             <p className="foot-blurb">AI automation, web and motion studio. Mumbai based, working worldwide.</p>
           </div>

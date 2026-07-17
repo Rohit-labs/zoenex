@@ -22,6 +22,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className="loading">
+        {/* the loader's hero image must be ready before first paint */}
+        <link rel="preload" as="image" href="/zoenex-logo.jpg" fetchPriority="high" />
         {/* fonts load via hoisted links (parallel with CSS) instead of @import (serialized after it) */}
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
