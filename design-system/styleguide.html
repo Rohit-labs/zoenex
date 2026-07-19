@@ -42,7 +42,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:var(--zx-weight-heavy);line
 .sec-head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,64px)}
 .note{font-size:14px;color:var(--color-text-secondary);max-width:64ch;margin-top:10px}
 code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-raised);padding:2px 7px;border-radius:5px}
-.on-night code{background:rgba(241,239,232,.08)}
+.on-night code{background:rgba(24,23,21,.08)}
 
 /* hero */
 .hero{padding:clamp(110px,16vw,170px) 0 clamp(50px,7vw,80px)}
@@ -58,7 +58,7 @@ code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-rais
 .sw dt{font-family:var(--font-display);font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.01em}
 .sw dd{font-family:var(--font-mono);font-size:11px;color:var(--color-text-tertiary);letter-spacing:.04em}
 .sw dd.role{font-family:var(--font-body);font-size:12.5px;color:var(--color-text-secondary);letter-spacing:0;margin-top:4px}
-.checker{background-image:linear-gradient(45deg,rgba(20,19,17,.06) 25%,transparent 25%,transparent 75%,rgba(20,19,17,.06) 75%),linear-gradient(45deg,rgba(20,19,17,.06) 25%,transparent 25%,transparent 75%,rgba(20,19,17,.06) 75%);background-size:16px 16px;background-position:0 0,8px 8px}
+.checker{background-image:linear-gradient(45deg,rgba(37,35,35,.06) 25%,transparent 25%,transparent 75%,rgba(37,35,35,.06) 75%),linear-gradient(45deg,rgba(37,35,35,.06) 25%,transparent 25%,transparent 75%,rgba(37,35,35,.06) 75%);background-size:16px 16px;background-position:0 0,8px 8px}
 
 /* context panels */
 .ctx{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
@@ -137,7 +137,7 @@ code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-rais
 .comp .label h3{font-size:20px;text-transform:uppercase}
 .comp .label p{font-size:13.5px;color:var(--color-text-secondary)}
 .comp .stage{display:flex;gap:18px;flex-wrap:wrap;align-items:center;align-content:center}
-.stage-night{background:var(--zx-night);border-radius:var(--zx-radius-xl);padding:clamp(22px,3vw,36px);color:var(--zx-paper)}
+.stage-night{background:var(--zx-night);border-radius:var(--zx-radius-xl);padding:clamp(22px,3vw,36px);color:var(--zx-bone)}
 
 /* button (site-accurate) */
 .btn{display:inline-flex;align-items:center;gap:12px;padding:var(--button-pad);border-radius:var(--button-radius);font-weight:var(--button-weight);font-size:var(--button-font-size);
@@ -150,7 +150,7 @@ code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-rais
 .btn-fill:hover{color:var(--zx-porcelain)}
 .btn-line{border-color:var(--button-line-border);color:var(--color-text)}
 .btn-line:hover{color:var(--zx-porcelain)}
-.stage-night .btn-line{border-color:var(--zx-paper);color:var(--zx-paper)}
+.stage-night .btn-line{border-color:var(--zx-bone);color:var(--zx-bone)}
 .stage-night .btn-line::before{background:var(--zx-porcelain)}
 .stage-night .btn-line:hover{color:var(--zx-ink)}
 
@@ -161,7 +161,7 @@ code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-rais
 .pills input{position:absolute;opacity:0;pointer-events:none}
 .pills label{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--color-border);border-radius:var(--zx-radius-pill);padding:11px 19px;color:var(--color-text-secondary);cursor:pointer;transition:all .2s;user-select:none}
 .pills label:hover{border-color:var(--color-text);color:var(--color-text)}
-.pills input:checked+label{background:var(--color-accent);border-color:var(--color-accent);color:#fff}
+.pills input:checked+label{background:var(--color-accent);border-color:var(--color-accent);color:var(--zx-bone)}
 .pills input:focus-visible+label{outline:2px solid var(--color-accent);outline-offset:3px}
 
 /* inputs */
@@ -174,28 +174,28 @@ code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-rais
 .ferr{font-size:12.5px;color:var(--zx-red-text)}
 
 /* showcase card */
-.scard{position:relative;border-radius:var(--card-radius-feature);overflow:hidden;aspect-ratio:16/11;display:block;isolation:isolate;background:var(--zx-night-2);width:min(440px,100%);
+.scard{position:relative;border-radius:var(--card-radius-feature);overflow:hidden;aspect-ratio:16/11;display:block;isolation:isolate;background:var(--zx-night);width:min(440px,100%);
   transition:transform .55s var(--motion-ease),box-shadow .55s var(--motion-ease)}
 .scard .art{position:absolute;inset:0;transition:transform 1s var(--motion-ease),filter .6s var(--motion-ease);filter:saturate(.72) brightness(.82);
-  background:radial-gradient(120% 130% at 50% 120%,#4A63FF 0%,var(--zx-cobalt) 45%,#0E1C86 100%)}
-.scard .art::after{content:'';position:absolute;left:50%;top:58%;width:66%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 42% 38%,#1B1A3A,#0A0908 70%);box-shadow:0 0 100px rgba(74,99,255,.5),0 0 0 1px rgba(244,242,236,.3),inset 0 0 40px rgba(0,0,0,.6)}
-.scard::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,9,8,0) 30%,rgba(10,9,8,.55) 72%,rgba(10,9,8,.9) 100%)}
-.scard-frame{position:absolute;inset:14px;z-index:2;border:1px solid rgba(241,239,232,.22);border-radius:10px;pointer-events:none;transition:border-color .45s,inset .5s var(--motion-ease)}
-.scard-num{position:absolute;top:26px;left:28px;z-index:3;font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;color:var(--zx-paper);opacity:.85}
+  background:radial-gradient(120% 130% at 50% 120%,#243EE8 0%,var(--zx-cobalt) 45%,#243EE8 100%)}
+.scard .art::after{content:'';position:absolute;left:50%;top:58%;width:66%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 42% 38%,#1b1a3a,var(--zx-night) 70%);box-shadow:0 0 100px rgba(36,62,232,.5),0 0 0 1px rgba(231,228,219,.3),inset 0 0 40px rgba(24,23,21,.6)}
+.scard::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(24,23,21,0) 30%,rgba(24,23,21,.55) 72%,rgba(24,23,21,.9) 100%)}
+.scard-frame{position:absolute;inset:14px;z-index:2;border:1px solid rgba(24,23,21,.22);border-radius:10px;pointer-events:none;transition:border-color .45s,inset .5s var(--motion-ease)}
+.scard-num{position:absolute;top:26px;left:28px;z-index:3;font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;color:var(--zx-bone);opacity:.85}
 .scard-meta{position:absolute;left:28px;right:28px;bottom:26px;z-index:3}
-.scard-cat{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--zx-paper);opacity:.68;display:block;margin-bottom:10px;transition:color .4s,opacity .4s}
-.scard-meta h3{font-size:clamp(21px,2.1vw,32px);text-transform:uppercase;color:var(--zx-paper);line-height:1}
-.scard-go{position:absolute;top:22px;right:22px;z-index:3;width:46px;height:46px;border-radius:50%;border:1px solid rgba(241,239,232,.28);display:grid;place-items:center;color:var(--zx-paper);background:rgba(241,239,232,.06);backdrop-filter:blur(6px);transition:transform .55s var(--motion-ease),background .45s,border-color .45s}
+.scard-cat{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--zx-bone);opacity:.68;display:block;margin-bottom:10px;transition:color .4s,opacity .4s}
+.scard-meta h3{font-size:clamp(21px,2.1vw,32px);text-transform:uppercase;color:var(--zx-bone);line-height:1}
+.scard-go{position:absolute;top:22px;right:22px;z-index:3;width:46px;height:46px;border-radius:50%;border:1px solid rgba(24,23,21,.28);display:grid;place-items:center;color:var(--zx-bone);background:rgba(24,23,21,.06);backdrop-filter:blur(6px);transition:transform .55s var(--motion-ease),background .45s,border-color .45s}
 .scard:hover{transform:translateY(-4px);box-shadow:var(--zx-shadow-card-dark)}
 .scard:hover .art{transform:scale(1.05);filter:saturate(1.05) brightness(1)}
-.scard:hover .scard-frame{inset:10px;border-color:rgba(142,160,255,.55)}
-.scard:hover .scard-cat{opacity:1;color:var(--zx-periwinkle-light)}
-.scard:hover .scard-go{transform:rotate(45deg);background:var(--zx-cobalt);border-color:var(--zx-cobalt);color:#fff}
+.scard:hover .scard-frame{inset:10px;border-color:rgba(36,62,232,.55)}
+.scard:hover .scard-cat{opacity:1;color:var(--zx-cobalt)}
+.scard:hover .scard-go{transform:rotate(45deg);background:var(--zx-cobalt);border-color:var(--zx-cobalt);color:var(--zx-bone)}
 
 /* work card */
 .wcard{border-radius:var(--card-radius);overflow:hidden;border:1px solid var(--card-border);background:var(--color-bg-card);display:block;width:min(400px,100%);transition:transform .45s var(--motion-ease),box-shadow .45s}
 .wcard:hover{transform:translateY(var(--card-lift));box-shadow:var(--card-shadow)}
-.wthumb{aspect-ratio:16/10;position:relative;overflow:hidden;background:linear-gradient(135deg,#F4F2EC,#DFE3FF)}
+.wthumb{aspect-ratio:16/10;position:relative;overflow:hidden;background:linear-gradient(135deg,#F3F0EB,#DFE3FF)}
 .wthumb::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,var(--zx-cobalt) 0 12%,transparent 12% 20%);transform:skewX(-12deg) scale(1.3);opacity:.9;transition:transform .7s var(--motion-ease)}
 .wcard:hover .wthumb::after{transform:skewX(-12deg) scale(1.38)}
 .wmeta{padding:22px 24px 26px;display:grid;gap:9px}
@@ -212,7 +212,7 @@ code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-rais
 .metric span{display:block;margin-top:12px;font-size:14.5px;color:var(--color-text-secondary)}
 
 /* terminal */
-.term{background:var(--zx-night);color:var(--zx-paper);border-radius:var(--zx-radius-lg);border:1px solid var(--zx-paper-a16);overflow:hidden;width:min(520px,100%);font-family:var(--font-mono);font-size:13px;box-shadow:var(--zx-shadow-terminal)}
+.term{background:var(--zx-night);color:var(--zx-bone);border-radius:var(--zx-radius-lg);border:1px solid var(--zx-paper-a16);overflow:hidden;width:min(520px,100%);font-family:var(--font-mono);font-size:13px;box-shadow:var(--zx-shadow-terminal)}
 .term-bar{display:flex;align-items:center;gap:6px;padding:12px 16px;border-bottom:1px solid var(--zx-paper-a16)}
 .term-bar i{width:9px;height:9px;border-radius:50%;background:var(--zx-paper-a16)}
 .term-bar i:first-child{background:var(--zx-cobalt)}
@@ -220,7 +220,7 @@ code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-rais
 .term-body{padding:18px 20px 22px;display:grid;gap:9px}
 .term-body .ln{color:var(--zx-paper-a55)}
 .term-body .ln b{color:var(--zx-paper);font-weight:400}
-.term-body .ln em{color:var(--zx-periwinkle);font-style:normal}
+.term-body .ln em{color:var(--zx-cobalt);font-style:normal}
 .term-body .cur::after{content:'▌';color:var(--zx-cobalt);animation:termblink 1s steps(1) infinite;margin-left:2px}
 @keyframes termblink{50%{opacity:0}}
 
@@ -244,7 +244,7 @@ code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-rais
 
 /* live badge */
 .cta-badge{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--zx-paper);border:1px solid var(--zx-paper-a16);border-radius:var(--zx-radius-pill);padding:9px 16px;background:rgba(241,239,232,.04)}
+  color:var(--zx-bone);border:1px solid var(--zx-paper-a16);border-radius:var(--zx-radius-pill);padding:9px 16px;background:rgba(24,23,21,.04)}
 .cta-badge i{width:7px;height:7px;border-radius:50%;background:var(--zx-green);animation:ctaping 2.2s infinite}
 @keyframes ctaping{0%{box-shadow:0 0 0 0 rgba(93,224,160,.45)}70%,100%{box-shadow:0 0 0 8px rgba(93,224,160,0)}}
 
@@ -266,7 +266,7 @@ code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-rais
   <h1 class="h-mega" style="margin-top:22px">Zoenex<br><span class="accent">System</span></h1>
   <p class="lede" style="margin-top:26px">The complete design language of Zoenex Studios — warm porcelain neutrals, one cobalt accent, editorial display type and choreographed motion. Every value on this page is drawn from <code>design-tokens.css</code>.</p>
   <div class="meta">
-    <span class="mono-tag">Porcelain · Ink · Cobalt</span>
+    <span class="mono-tag">Porcelain · Bone · Cobalt</span>
     <span class="mono-tag">Cabinet Grotesk · Satoshi · Space Mono</span>
     <span class="mono-tag">cubic-bezier(.22,.75,.25,1)</span>
   </div>
@@ -278,51 +278,46 @@ code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-rais
     <div class="sec-head">
       <span class="eyebrow">01 — Color</span>
       <h2 class="h-xl">Palette</h2>
-      <p class="lede">Warm neutrals carry the page; cobalt is the single saturated hue and always signals interaction or emphasis. Green and red exist only for live status and form errors.</p>
+      <p class="lede">Warm neutrals carry the page; cobalt is the single saturated hue and always signals interaction or emphasis. Green and red exist only for live status and form errors. The whole system is exactly five colors.</p>
     </div>
 
     <div class="swatches">
-      <div class="sw"><div class="chip" style="background:#F4F2EC"></div><dl><dt>Porcelain</dt><dd>#F4F2EC · --zx-porcelain</dd><dd class="role">Page background</dd></dl></div>
-      <div class="sw"><div class="chip" style="background:#E9E6DC"></div><dl><dt>Bone</dt><dd>#E9E6DC · --zx-bone</dd><dd class="role">Raised warm surface</dd></dl></div>
-      <div class="sw"><div class="chip" style="background:#F1EFE8"></div><dl><dt>Paper</dt><dd>#F1EFE8 · --zx-paper</dd><dd class="role">Text on dark</dd></dl></div>
-      <div class="sw"><div class="chip" style="background:#141311"></div><dl><dt>Ink</dt><dd>#141311 · --zx-ink</dd><dd class="role">Primary text</dd></dl></div>
-      <div class="sw"><div class="chip" style="background:#0D0C0A"></div><dl><dt>Night</dt><dd>#0D0C0A · --zx-night</dd><dd class="role">Dark band background</dd></dl></div>
-      <div class="sw"><div class="chip" style="background:#0A0908"></div><dl><dt>Night 2</dt><dd>#0A0908 · --zx-night-2</dd><dd class="role">Dark card base</dd></dl></div>
-      <div class="sw"><div class="chip" style="background:#1F3BEA"></div><dl><dt>Cobalt</dt><dd>#1F3BEA · --zx-cobalt</dd><dd class="role">The brand accent</dd></dl></div>
-      <div class="sw"><div class="chip" style="background:#1226A8"></div><dl><dt>Cobalt Deep</dt><dd>#1226A8 · --zx-cobalt-deep</dd><dd class="role">Pressed / gradient stop</dd></dl></div>
-      <div class="sw"><div class="chip" style="background:#8EA0FF"></div><dl><dt>Periwinkle</dt><dd>#8EA0FF · --zx-periwinkle</dd><dd class="role">Accent on night surfaces</dd></dl></div>
-      <div class="sw"><div class="chip" style="background:#B9C3FF"></div><dl><dt>Periwinkle Light</dt><dd>#B9C3FF · --zx-periwinkle-light</dd><dd class="role">Hover accent on night</dd></dl></div>
+      <div class="sw"><div class="chip" style="background:#F3F0EB"></div><dl><dt>Porcelain</dt><dd>#F3F0EB · --zx-porcelain</dd><dd class="role">Page background (1st)</dd></dl></div>
+      <div class="sw"><div class="chip" style="background:#E7E4DB"></div><dl><dt>Bone</dt><dd>#E7E4DB · --zx-bone</dd><dd class="role">Card surface (2nd)</dd></dl></div>
+      <div class="sw"><div class="chip" style="background:#243EE8"></div><dl><dt>Cobalt</dt><dd>#243EE8 · --zx-cobalt</dd><dd class="role">Accent (3rd) — highlights + hover</dd></dl></div>
+      <div class="sw"><div class="chip" style="background:#252323"></div><dl><dt>Ink</dt><dd>#252323 · --zx-ink</dd><dd class="role">Body text (4th)</dd></dl></div>
+      <div class="sw"><div class="chip" style="background:#181715"></div><dl><dt>Night</dt><dd>#181715 · --zx-night</dd><dd class="role">Headings + dark band (5th)</dd></dl></div>
       <div class="sw"><div class="chip" style="background:#5DE0A0"></div><dl><dt>Green</dt><dd>#5DE0A0 · --zx-green</dd><dd class="role">Live / availability pulse</dd></dl></div>
       <div class="sw"><div class="chip" style="background:#DD3333"></div><dl><dt>Red</dt><dd>#DD3333 / #CC2222</dd><dd class="role">Form errors only</dd></dl></div>
     </div>
 
     <h3 class="h-lg" style="margin-top:56px">Alpha ramps</h3>
-    <p class="note">Opacity steps of ink and paper are the system's gray scale — they dim without going cool.</p>
+    <p class="note">Opacity steps of ink and night are the system's gray scale — they dim without going cool.</p>
     <div class="swatches" style="margin-top:24px">
-      <div class="sw"><div class="chip checker"><div style="position:absolute;inset:0;background:rgba(20,19,17,.62)"></div></div><dl><dt>Ink / 62</dt><dd>rgba(20,19,17,.62)</dd><dd class="role">Secondary text</dd></dl></div>
-      <div class="sw"><div class="chip checker"><div style="position:absolute;inset:0;background:rgba(20,19,17,.40)"></div></div><dl><dt>Ink / 40</dt><dd>rgba(20,19,17,.40)</dd><dd class="role">Tertiary · mono metadata</dd></dl></div>
-      <div class="sw"><div class="chip checker"><div style="position:absolute;inset:0;background:rgba(20,19,17,.13)"></div></div><dl><dt>Ink / 13</dt><dd>rgba(20,19,17,.13)</dd><dd class="role">Hairline borders</dd></dl></div>
-      <div class="sw"><div class="chip" style="background:#0D0C0A"><div style="position:absolute;inset:0;background:rgba(241,239,232,.55)"></div></div><dl><dt>Paper / 55</dt><dd>rgba(241,239,232,.55)</dd><dd class="role">Secondary on night</dd></dl></div>
-      <div class="sw"><div class="chip" style="background:#0D0C0A"><div style="position:absolute;inset:0;background:rgba(241,239,232,.16)"></div></div><dl><dt>Paper / 16</dt><dd>rgba(241,239,232,.16)</dd><dd class="role">Hairlines on night</dd></dl></div>
-      <div class="sw"><div class="chip checker"><div style="position:absolute;inset:0;background:rgba(31,59,234,.15)"></div></div><dl><dt>Cobalt / 15</dt><dd>rgba(31,59,234,.15)</dd><dd class="role">Focus ring</dd></dl></div>
+      <div class="sw"><div class="chip checker"><div style="position:absolute;inset:0;background:rgba(37,35,35,.62)"></div></div><dl><dt>Ink / 62</dt><dd>rgba(37,35,35,.62)</dd><dd class="role">Secondary text</dd></dl></div>
+      <div class="sw"><div class="chip checker"><div style="position:absolute;inset:0;background:rgba(37,35,35,.40)"></div></div><dl><dt>Ink / 40</dt><dd>rgba(37,35,35,.40)</dd><dd class="role">Tertiary · mono metadata</dd></dl></div>
+      <div class="sw"><div class="chip checker"><div style="position:absolute;inset:0;background:rgba(37,35,35,.13)"></div></div><dl><dt>Ink / 13</dt><dd>rgba(37,35,35,.13)</dd><dd class="role">Hairline borders</dd></dl></div>
+      <div class="sw"><div class="chip" style="background:#181715"><div style="position:absolute;inset:0;background:rgba(24,23,21,.55)"></div></div><dl><dt>Night / 55</dt><dd>rgba(24,23,21,.55)</dd><dd class="role">Secondary on dark band</dd></dl></div>
+      <div class="sw"><div class="chip" style="background:#181715"><div style="position:absolute;inset:0;background:rgba(24,23,21,.16)"></div></div><dl><dt>Night / 16</dt><dd>rgba(24,23,21,.16)</dd><dd class="role">Hairlines on dark band</dd></dl></div>
+      <div class="sw"><div class="chip checker"><div style="position:absolute;inset:0;background:rgba(36,62,232,.15)"></div></div><dl><dt>Cobalt / 15</dt><dd>rgba(36,62,232,.15)</dd><dd class="role">Focus ring</dd></dl></div>
     </div>
 
     <h3 class="h-lg" style="margin-top:56px">Two contexts, one system</h3>
-    <p class="note">There is no dark mode — sections opt into the night palette with <code>.on-night</code> and semantic tokens remap. Cobalt stays cobalt; text-level accents switch to periwinkle for contrast.</p>
+    <p class="note">There is no dark mode — sections opt into the night palette with <code>.on-night</code> and semantic tokens remap. Cobalt stays cobalt; body text becomes bone for contrast on the dark band.</p>
     <div class="ctx">
       <div class="ctx-panel" style="background:var(--zx-porcelain)">
         <span class="eyebrow">Light — default</span>
-        <div class="rowline"><span>Primary text</span><span class="tri">ink</span></div>
+        <div class="rowline"><span>Body text</span><span class="tri">ink</span></div>
         <div class="rowline"><span class="sub">Secondary text</span><span class="tri">ink/62</span></div>
         <div class="rowline"><span style="color:var(--zx-ink-a40)">Tertiary text</span><span class="tri">ink/40</span></div>
         <div class="rowline"><span class="accent" style="font-weight:700">Accent</span><span class="tri">cobalt</span></div>
       </div>
-      <div class="ctx-panel" style="background:var(--zx-night);color:var(--zx-paper);--color-border:var(--zx-paper-a16)">
-        <span class="eyebrow" style="--eyebrow-color:var(--zx-paper)">On-night band</span>
-        <div class="rowline"><span>Primary text</span><span class="tri" style="color:var(--zx-paper-a55)">paper</span></div>
-        <div class="rowline"><span style="color:var(--zx-paper-a55)">Secondary text</span><span class="tri" style="color:var(--zx-paper-a55)">paper/55</span></div>
-        <div class="rowline"><span style="color:var(--zx-periwinkle);font-weight:700">Readable accent</span><span class="tri" style="color:var(--zx-paper-a55)">periwinkle</span></div>
-        <div class="rowline"><span style="color:#fff"><span style="background:var(--zx-cobalt);padding:2px 10px;border-radius:100px;font-size:13.5px;font-weight:700">Cobalt fill</span></span><span class="tri" style="color:var(--zx-paper-a55)">cobalt + white</span></div>
+      <div class="ctx-panel" style="background:var(--zx-night);color:var(--zx-bone);--color-border:var(--zx-paper-a16)">
+        <span class="eyebrow" style="--eyebrow-color:var(--zx-bone)">On-night band</span>
+        <div class="rowline"><span>Headings</span><span class="tri" style="color:var(--zx-paper-a55)">night on bone</span></div>
+        <div class="rowline"><span style="color:var(--zx-paper-a55)">Secondary text</span><span class="tri" style="color:var(--zx-paper-a55)">night/55</span></div>
+        <div class="rowline"><span style="color:var(--zx-cobalt);font-weight:700">Accent</span><span class="tri" style="color:var(--zx-paper-a55)">cobalt on bone</span></div>
+        <div class="rowline"><span style="color:#181715"><span style="background:var(--zx-cobalt);padding:2px 10px;border-radius:100px;font-size:13.5px;font-weight:700">Cobalt fill</span></span><span class="tri" style="color:var(--zx-paper-a55)">cobalt + bone</span></div>
       </div>
     </div>
   </div>
@@ -395,10 +390,10 @@ code{font-family:var(--font-mono);font-size:.82em;background:var(--color-bg-rais
       <div class="rad" style="border-radius:50%;width:90px">round</div>
     </div>
     <div class="shadows">
-      <div class="shadow-card" style="box-shadow:var(--zx-shadow-card)"><b>Card</b><span>0 34px 70px -28px rgba(20,19,17,.35)</span><p class="note">Work-card hover</p></div>
-      <div class="shadow-card" style="box-shadow:var(--zx-shadow-panel)"><b>Panel</b><span>0 40px 80px -44px rgba(20,19,17,.35)</span><p class="note">Browser mock, resting</p></div>
-      <div class="shadow-card" style="box-shadow:var(--zx-shadow-terminal)"><b>Terminal</b><span>0 34px 70px -40px rgba(13,12,10,.55)</span><p class="note">Console mock, resting</p></div>
-      <div class="shadow-card" style="box-shadow:var(--zx-shadow-focus)"><b>Focus ring</b><span>0 0 0 3px rgba(31,59,234,.15)</span><p class="note">Focused inputs</p></div>
+      <div class="shadow-card" style="box-shadow:var(--zx-shadow-card)"><b>Card</b><span>0 34px 70px -28px rgba(37,35,35,.35)</span><p class="note">Work-card hover</p></div>
+      <div class="shadow-card" style="box-shadow:var(--zx-shadow-panel)"><b>Panel</b><span>0 40px 80px -44px rgba(37,35,35,.35)</span><p class="note">Browser mock, resting</p></div>
+      <div class="shadow-card" style="box-shadow:var(--zx-shadow-terminal)"><b>Terminal</b><span>0 34px 70px -40px rgba(24,23,21,.55)</span><p class="note">Console mock, resting</p></div>
+      <div class="shadow-card" style="box-shadow:var(--zx-shadow-focus)"><b>Focus ring</b><span>0 0 0 3px rgba(36,62,232,.15)</span><p class="note">Focused inputs</p></div>
     </div>
   </div>
 </section>

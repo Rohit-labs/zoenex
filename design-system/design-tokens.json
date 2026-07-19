@@ -8,35 +8,29 @@
   },
   "primitive": {
     "color": {
-      "porcelain": { "value": "#F4F2EC", "description": "Page background — warm off-white" },
-      "bone": { "value": "#E9E6DC", "description": "Raised warm surface (ticker, browser chrome)" },
-      "paper": { "value": "#F1EFE8", "description": "Light text on dark backgrounds" },
-      "white": { "value": "#FFFFFF", "description": "Pure white — card faces, text on cobalt" },
-      "ink": { "value": "#141311", "description": "Primary warm near-black" },
-      "night": { "value": "#0D0C0A", "description": "Dark band background" },
-      "night-2": { "value": "#0A0908", "description": "Dark card base" },
-      "night-3": { "value": "#161513", "description": "Dark inset surface (film frames)" },
-      "cobalt": { "value": "#1F3BEA", "description": "The brand accent — used for every interactive signal" },
-      "cobalt-deep": { "value": "#1226A8", "description": "Pressed state / gradient stop" },
-      "cobalt-bright": { "value": "#3B57FF", "description": "Gradient highlight in generative art" },
-      "periwinkle": { "value": "#8EA0FF", "description": "Accent that stays readable on night surfaces" },
-      "periwinkle-light": { "value": "#B9C3FF", "description": "Hover accent on night surfaces" },
+      "porcelain": { "value": "#F3F0EB", "description": "Page background (1st color)" },
+      "bone": { "value": "#E7E4DB", "description": "Card surface (2nd color)" },
+      "paper": { "value": "#E7E4DB", "description": "Light text on dark — same as bone" },
+      "ink": { "value": "#252323", "description": "Body text (4th color)" },
+      "night": { "value": "#181715", "description": "Headings + dark band background (5th color)" },
+      "cobalt": { "value": "#243EE8", "description": "The brand accent — 3rd color, used for highlights + hover" },
+      "cobalt-soft": { "value": "#E7E4DB", "description": "On-cobalt text — uses bone for contrast" },
       "green": { "value": "#5DE0A0", "description": "Live/availability pulse" },
       "red-border": { "value": "#DD3333", "description": "Invalid field border" },
       "red-text": { "value": "#CC2222", "description": "Inline error copy" },
       "alpha": {
-        "ink-62": { "value": "rgba(20,19,17,0.62)", "description": "Secondary text on light" },
-        "ink-40": { "value": "rgba(20,19,17,0.40)", "description": "Tertiary text on light" },
-        "ink-13": { "value": "rgba(20,19,17,0.13)", "description": "Hairline borders on light" },
-        "paper-55": { "value": "rgba(241,239,232,0.55)", "description": "Secondary text on night" },
-        "paper-16": { "value": "rgba(241,239,232,0.16)", "description": "Hairline borders on night" },
-        "cobalt-15": { "value": "rgba(31,59,234,0.15)", "description": "Focus ring" },
-        "cobalt-12": { "value": "rgba(31,59,234,0.12)", "description": "Timeline node halo" }
+        "ink-62": { "value": "rgba(37,35,35,0.62)", "description": "Secondary text on light" },
+        "ink-40": { "value": "rgba(37,35,35,0.40)", "description": "Tertiary text on light" },
+        "ink-13": { "value": "rgba(37,35,35,0.13)", "description": "Hairline borders on light" },
+        "paper-55": { "value": "rgba(24,23,21,0.55)", "description": "Secondary text on night" },
+        "paper-16": { "value": "rgba(24,23,21,0.16)", "description": "Hairline borders on night" },
+        "cobalt-15": { "value": "rgba(36,62,232,0.15)", "description": "Focus ring" },
+        "cobalt-12": { "value": "rgba(36,62,232,0.12)", "description": "Timeline node halo" }
       },
       "webgl": {
-        "hero-wireframe": { "value": "0x2440ff", "description": "Three.js hero sphere wireframe" },
-        "hero-sky": { "value": "0x7D8DFF", "description": "Three.js secondary light" },
-        "hero-particles": { "value": "0x8A97D6", "description": "Three.js particle field" }
+        "hero-wireframe": { "value": "0x243ee8", "description": "Three.js hero sphere wireframe" },
+        "hero-sky": { "value": "0x243ee8", "description": "Three.js secondary light" },
+        "hero-particles": { "value": "0x252323", "description": "Three.js particle field" }
       }
     },
     "typography": {
@@ -81,11 +75,11 @@
       "pill": "100px", "round": "50%"
     },
     "elevation": {
-      "card": { "value": "0 34px 70px -28px rgba(20,19,17,0.35)", "usage": "Light work card hover" },
-      "card-dark": { "value": "0 40px 80px -34px rgba(0,0,0,0.80)", "usage": "Showcase card hover on night" },
-      "panel": { "value": "0 40px 80px -44px rgba(20,19,17,0.35)", "usage": "Browser-frame mock" },
-      "terminal": { "value": "0 34px 70px -40px rgba(13,12,10,0.55)", "usage": "Console mock" },
-      "focus-ring": { "value": "0 0 0 3px rgba(31,59,234,0.15)", "usage": "Focused inputs" },
+      "card": { "value": "0 34px 70px -28px rgba(37,35,35,0.35)", "usage": "Light work card hover" },
+      "card-dark": { "value": "0 40px 80px -34px rgba(24,23,21,0.80)", "usage": "Showcase card hover on night" },
+      "panel": { "value": "0 40px 80px -44px rgba(37,35,35,0.35)", "usage": "Browser-frame mock" },
+      "terminal": { "value": "0 34px 70px -40px rgba(24,23,21,0.55)", "usage": "Console mock" },
+      "focus-ring": { "value": "0 0 0 3px rgba(36,62,232,0.15)", "usage": "Focused inputs" },
       "note": "Shadows appear only on hover/elevation moments — resting UI is flat with hairline borders"
     },
     "motion": {
@@ -118,15 +112,15 @@
     "light": {
       "color-bg": "{primitive.color.porcelain}",
       "color-bg-raised": "{primitive.color.bone}",
-      "color-bg-card": "{primitive.color.white}",
+      "color-bg-card": "{primitive.color.bone}",
       "color-text": "{primitive.color.ink}",
       "color-text-secondary": "{primitive.color.alpha.ink-62}",
       "color-text-tertiary": "{primitive.color.alpha.ink-40}",
       "color-border": "{primitive.color.alpha.ink-13}",
       "color-accent": "{primitive.color.cobalt}",
-      "color-accent-strong": "{primitive.color.cobalt-deep}",
-      "color-accent-soft": "{primitive.color.periwinkle}",
-      "color-on-accent": "{primitive.color.white}",
+      "color-accent-strong": "{primitive.color.cobalt}",
+      "color-accent-soft": "{primitive.color.cobalt}",
+      "color-on-accent": "{primitive.color.bone}",
       "color-success": "{primitive.color.green}",
       "color-error": "{primitive.color.red-text}",
       "color-selection-bg": "{primitive.color.cobalt}",
@@ -134,13 +128,13 @@
     },
     "on-night": {
       "color-bg": "{primitive.color.night}",
-      "color-bg-raised": "{primitive.color.night-3}",
-      "color-bg-card": "{primitive.color.night-2}",
-      "color-text": "{primitive.color.paper}",
+      "color-bg-raised": "{primitive.color.night}",
+      "color-bg-card": "{primitive.color.night}",
+      "color-text": "{primitive.color.bone}",
       "color-text-secondary": "{primitive.color.alpha.paper-55}",
       "color-border": "{primitive.color.alpha.paper-16}",
       "color-accent": "{primitive.color.cobalt}",
-      "color-accent-soft": "{primitive.color.periwinkle}"
+      "color-accent-soft": "{primitive.color.cobalt}"
     }
   },
   "component": {
@@ -174,12 +168,12 @@
       "selected": "cobalt fill, white text (pills / filters)"
     },
     "card-work": {
-      "radius": "14px", "bg": "white", "border": "hairline",
+      "radius": "14px", "bg": "bone", "border": "hairline",
       "hover": "translateY -8px + card shadow; art scales 1.05 over 0.7s",
       "reveal": "clip-path inset bottom → 0 over 1.1s power3.out"
     },
     "card-showcase": {
-      "radius": "18px", "bg": "night-2", "aspect": "16/11",
+      "radius": "18px", "bg": "night", "aspect": "16/11",
       "frame": "1px inset hairline at 14px, tightens to 10px on hover",
       "art-resting": "saturate 0.72 brightness 0.82 — blooms to full color on hover",
       "hover": "translateY -4px, dark shadow, arrow chip rotates 45° and fills cobalt"

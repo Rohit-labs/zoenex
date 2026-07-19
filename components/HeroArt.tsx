@@ -52,9 +52,9 @@ export default function HeroArt() {
       const DPR = Math.min(window.devicePixelRatio || 1, coarse ? 1.5 : 2);
 
       // palette
-      const COBALT = 0x1f3bea,
-        INK = 0x141311,
-        SKY = 0x7d8dff;
+      const COBALT = 0x243ee8,
+        INK = 0x252323,
+        SKY = 0x243ee8;
 
       function size() {
         const r = mount!.getBoundingClientRect();
@@ -85,8 +85,8 @@ export default function HeroArt() {
           const g = c.getContext("2d")!;
           const grd = g.createRadialGradient(64, 64, 0, 64, 64, 64);
           grd.addColorStop(0, "rgba(255,255,255,1)");
-          grd.addColorStop(0.25, "rgba(160,180,255,0.85)");
-          grd.addColorStop(1, "rgba(120,140,255,0)");
+          grd.addColorStop(0.25, "rgba(36,62,232,0.85)");
+          grd.addColorStop(1, "rgba(36,62,232,0)");
           g.fillStyle = grd;
           g.fillRect(0, 0, 128, 128);
           return new THREE.CanvasTexture(c);
@@ -120,7 +120,7 @@ export default function HeroArt() {
             const halo = new THREE.Sprite(
               new THREE.SpriteMaterial({
                 map: glowTex,
-                color: 0x2440ff,
+                color: 0x243ee8,
                 transparent: true,
                 opacity: 0.55,
                 blending: THREE.AdditiveBlending,
@@ -175,7 +175,7 @@ export default function HeroArt() {
 
         // --- travelling pulses: bright core + additive glow sprite ---
         const pulseGeo = new THREE.SphereGeometry(0.11, 10, 10);
-        const pulseMat = new THREE.MeshBasicMaterial({ color: 0xf4f2ec });
+        const pulseMat = new THREE.MeshBasicMaterial({ color: 0xf3f0eb });
         for (let pI = 0; pI < 12; pI++) {
           const mesh = new THREE.Mesh(pulseGeo, pulseMat);
           const glow = new THREE.Sprite(
@@ -207,7 +207,7 @@ export default function HeroArt() {
         pGeo.setAttribute("position", new THREE.Float32BufferAttribute(pPos, 3));
         const particles = new THREE.Points(
           pGeo,
-          new THREE.PointsMaterial({ color: 0x8a97d6, size: 0.06, transparent: true, opacity: 0.5, sizeAttenuation: true })
+          new THREE.PointsMaterial({ color: 0x252323, size: 0.06, transparent: true, opacity: 0.5, sizeAttenuation: true })
         );
         group.add(particles);
 

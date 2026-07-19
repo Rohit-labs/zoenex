@@ -16,7 +16,7 @@ Extracted from the production site (`app/globals.css`, `lib/gsap.ts`, `lib/useVi
 ## 1. Design principles
 
 1. **Editorial, not app-like.** The site reads like a printed portfolio: huge uppercase display type, hairline rules, generous whitespace, mono-spaced marginalia. Resting UI is flat — shadows exist only as hover rewards.
-2. **One accent, used with intent.** Cobalt `#1F3BEA` is the only saturated color. It marks exactly one thing: *interactivity or emphasis*. If something glows cobalt, you can hover it, click it, or you're meant to read it first.
+2. **One accent, used with intent.** Cobalt `#243EE8` is the only saturated color. It marks exactly one thing: *interactivity or emphasis*. If something glows cobalt, you can hover it, click it, or you're meant to read it first.
 3. **Warm neutrals, never gray.** Every neutral carries a warm cast (porcelain, bone, ink, night). Pure `#000`/`#888` grays are off-palette.
 4. **Motion is choreography, not decoration.** Elements enter with a rise-and-fade on a shared ease; hovers respond within ~350 ms; scroll drives parallax and progress. Everything honors `prefers-reduced-motion`.
 5. **Texture over flatness.** A 5 % film-grain overlay, ghost outlined type, corner brackets and radial grids give depth without gradients-everywhere.
@@ -27,51 +27,48 @@ Extracted from the production site (`app/globals.css`, `lib/gsap.ts`, `lib/useVi
 
 ### 2.1 Primitives
 
+The system is exactly **five colors** plus status. Each color has a fixed role.
+
 | Token | Value | Role |
 |---|---|---|
-| Porcelain | `#F4F2EC` | Page background |
-| Bone | `#E9E6DC` | Raised warm surface (ticker band, browser chrome) |
-| Paper | `#F1EFE8` | Text on dark surfaces |
-| White | `#FFFFFF` | Card faces, text on cobalt |
-| Ink | `#141311` | Primary text, warm near-black |
-| Night | `#0D0C0A` | Dark band background |
-| Night-2 | `#0A0908` | Dark card base |
-| Night-3 | `#161513` | Dark inset surface (film frames) |
-| **Cobalt** | `#1F3BEA` | **The** brand accent |
-| Cobalt Deep | `#1226A8` | Pressed states, gradient stops |
-| Cobalt Bright | `#3B57FF` | Gradient highlights (generative art) |
-| Periwinkle | `#8EA0FF` | Accent that stays readable on night |
-| Periwinkle Light | `#B9C3FF` | Hover accent on night |
-| Green | `#5DE0A0` | Live/availability pulse |
-| Red | `#DD3333` border / `#CC2222` text | Form errors only |
+| **Porcelain** | `#F3F0EB` | Page background (1st) |
+| **Bone** | `#E7E4DB` | Card surface — every card face, form card, webframe, film frame inside cards (2nd) |
+| **Cobalt** | `#243EE8` | The brand accent — highlights, hover states, focus, fill buttons (3rd) |
+| **Ink** | `#252323` | Body text (4th) |
+| **Night** | `#181715` | Headings + dark band background (5th) |
+| Green | `#5DE0A0` | Live/availability pulse (status only) |
+| Red | `#DD3333` border / `#CC2222` text | Form errors only (status only) |
+
+Paper, white, periwinkle, ink-shades and the various night/night-2/night-3 are gone — folded into the five. The `.on-night` context remaps text → bone and bg → night, cobalt stays cobalt everywhere.
 
 ### 2.2 Alpha ramps
 
-Opacity steps are the system's "gray scale" — they keep the warm hue while stepping back:
+Opacity steps are the system's "gray scale" — they keep the warm hue while stepping back. The paper ramp is now derived from night, not from a separate paper primitive:
 
 | Token | Value | Role |
 |---|---|---|
-| ink/62 | `rgba(20,19,17,.62)` | Secondary text on light |
-| ink/40 | `rgba(20,19,17,.40)` | Tertiary text, mono metadata |
-| ink/13 | `rgba(20,19,17,.13)` | Hairline borders on light |
-| paper/55 | `rgba(241,239,232,.55)` | Secondary text on night |
-| paper/16 | `rgba(241,239,232,.16)` | Hairline borders on night |
-| cobalt/15 | `rgba(31,59,234,.15)` | Focus ring |
-| cobalt/12 | `rgba(31,59,234,.12)` | Timeline node halo |
+| ink/62 | `rgba(37,35,35,.62)` | Secondary text on light |
+| ink/40 | `rgba(37,35,35,.40)` | Tertiary text, mono metadata |
+| ink/13 | `rgba(37,35,35,.13)` | Hairline borders on light |
+| night/55 | `rgba(24,23,21,.55)` | Secondary text on dark band |
+| night/16 | `rgba(24,23,21,.16)` | Hairline borders on dark band |
+| cobalt/15 | `rgba(36,62,232,.15)` | Focus ring |
+| cobalt/12 | `rgba(36,62,232,.12)` | Timeline node halo |
 
 ### 2.3 Contexts
 
 There is no user-facing dark mode. Instead, **sections opt into the dark palette** with the `.on-night` class (selected-work band, big CTA, footer, motion-page hero). Semantic tokens remap inside it:
 
-- `text` → Paper, `secondary` → paper/55, `border` → paper/16
-- Cobalt stays cobalt; where cobalt text would fail contrast on night, use Periwinkle (`#8EA0FF`) instead — e.g. terminal highlights, pipeline codes, scene labels.
+- `bg` → Night, `text` → Bone, `secondary` → night/55, `border` → night/16
+- Cobalt stays cobalt everywhere. There is no periwinkle — bone is the readable on-dark color.
 - `::selection` is cobalt with porcelain text everywhere.
 
 ### 2.4 Rules
 
 - Never introduce a second saturated hue. Green is reserved for the live-status dot; red for form errors.
-- Text on cobalt is always pure white.
+- Text on cobalt is always bone. Never pure white.
 - On light surfaces cobalt is used at full strength for text ≥ 12 px (mono) — it passes AA against porcelain.
+- Cards, form surfaces, browser mocks, film frames — all use bone. White is not in the palette.
 
 ---
 
@@ -145,11 +142,11 @@ Resting UI is **flat + hairline border**. Shadows are hover/feature rewards only
 
 | Shadow | Value | Where |
 |---|---|---|
-| Card | `0 34px 70px -28px rgba(20,19,17,.35)` | Work card hover |
-| Card dark | `0 40px 80px -34px rgba(0,0,0,.8)` | Showcase card hover |
-| Panel | `0 40px 80px -44px rgba(20,19,17,.35)` | Browser mock (resting) |
-| Terminal | `0 34px 70px -40px rgba(13,12,10,.55)` | Console mock (resting) |
-| Focus ring | `0 0 0 3px rgba(31,59,234,.15)` | Focused inputs |
+| Card | `0 34px 70px -28px rgba(37,35,35,.35)` | Work card hover |
+| Card dark | `0 40px 80px -34px rgba(24,23,21,.8)` | Showcase card hover |
+| Panel | `0 40px 80px -44px rgba(37,35,35,.35)` | Browser mock (resting) |
+| Terminal | `0 34px 70px -40px rgba(24,23,21,.55)` | Console mock (resting) |
+| Focus ring | `0 0 0 3px rgba(36,62,232,.15)` | Focused inputs |
 
 All shadows: large offset-y, huge blur, strong negative spread — a soft "float" rather than a material edge.
 
@@ -268,7 +265,7 @@ Ghost wordmark (outlined, hover re-strokes cobalt) → 4-column link grid (mono 
 - **Scroll progress**: 2px cobalt hairline fixed at the top.
 - **Cursor spotlight**: dark sections get a 420px cobalt radial that follows the pointer (opacity 0 → 1 on hover).
 - **Generative art** (`.art-*`): six CSS-only compositions (orbit, halftone, bars, eclipse, contour, grid3d) built from cobalt/night/porcelain gradients, repeating patterns and masks — used as project thumbnails so no photography is needed.
-- **Hero WebGL**: three.js wireframe sphere (`0x2440ff`), glow sprites (periwinkle ramp), particles `0x8A97D6`; static ring fallback until first paint, for reduced motion and no-WebGL.
+- **Hero WebGL**: three.js wireframe sphere (`0x243ee8`), glow sprites (cobalt ramp), particles `0x252323`; static ring fallback until first paint, for reduced motion and no-WebGL.
 
 ---
 

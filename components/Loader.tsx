@@ -22,14 +22,14 @@ const SHARDS: {
   opacity: number;
   rotate: number;
 }[] = [
-  { left: "12%", top: "18%", size: 84, z: -260, clip: "polygon(50% 0,100% 100%,0 100%)", color: "#1F3BEA", opacity: 0.09, rotate: -14 },
-  { left: "83%", top: "14%", size: 56, z: -140, clip: "polygon(0 0,100% 30%,22% 100%)", color: "#141311", opacity: 0.08, rotate: 18 },
-  { left: "7%", top: "68%", size: 44, z: -80, clip: "polygon(50% 0,100% 50%,50% 100%,0 50%)", color: "#1226A8", opacity: 0.12, rotate: 8 },
-  { left: "88%", top: "66%", size: 96, z: -320, clip: "polygon(50% 0,100% 100%,0 100%)", color: "#1F3BEA", opacity: 0.07, rotate: 32 },
-  { left: "22%", top: "86%", size: 34, z: 60, clip: "polygon(0 0,100% 30%,22% 100%)", color: "#1F3BEA", opacity: 0.14, rotate: -26 },
-  { left: "72%", top: "88%", size: 48, z: -40, clip: "polygon(50% 0,100% 50%,50% 100%,0 50%)", color: "#141311", opacity: 0.06, rotate: 12 },
-  { left: "30%", top: "8%", size: 30, z: 100, clip: "polygon(50% 0,100% 50%,50% 100%,0 50%)", color: "#1226A8", opacity: 0.13, rotate: 40 },
-  { left: "66%", top: "5%", size: 40, z: -180, clip: "polygon(50% 0,100% 100%,0 100%)", color: "#141311", opacity: 0.07, rotate: -8 },
+  { left: "12%", top: "18%", size: 84, z: -260, clip: "polygon(50% 0,100% 100%,0 100%)", color: "#243EE8", opacity: 0.09, rotate: -14 },
+  { left: "83%", top: "14%", size: 56, z: -140, clip: "polygon(0 0,100% 30%,22% 100%)", color: "#252323", opacity: 0.08, rotate: 18 },
+  { left: "7%", top: "68%", size: 44, z: -80, clip: "polygon(50% 0,100% 50%,50% 100%,0 50%)", color: "#243EE8", opacity: 0.12, rotate: 8 },
+  { left: "88%", top: "66%", size: 96, z: -320, clip: "polygon(50% 0,100% 100%,0 100%)", color: "#243EE8", opacity: 0.07, rotate: 32 },
+  { left: "22%", top: "86%", size: 34, z: 60, clip: "polygon(0 0,100% 30%,22% 100%)", color: "#243EE8", opacity: 0.14, rotate: -26 },
+  { left: "72%", top: "88%", size: 48, z: -40, clip: "polygon(50% 0,100% 50%,50% 100%,0 50%)", color: "#252323", opacity: 0.06, rotate: 12 },
+  { left: "30%", top: "8%", size: 30, z: 100, clip: "polygon(50% 0,100% 50%,50% 100%,0 50%)", color: "#243EE8", opacity: 0.13, rotate: 40 },
+  { left: "66%", top: "5%", size: 40, z: -180, clip: "polygon(50% 0,100% 100%,0 100%)", color: "#252323", opacity: 0.07, rotate: -8 },
 ];
 
 export default function Loader() {

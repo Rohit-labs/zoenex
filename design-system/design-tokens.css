@@ -15,21 +15,15 @@
      ========================================================== */
 
   /* ---- color · neutrals (warm) ---- */
-  --zx-porcelain:        #F4F2EC;  /* page background            */
-  --zx-bone:             #E9E6DC;  /* raised warm surface        */
-  --zx-paper:            #F1EFE8;  /* light text on dark         */
-  --zx-white:            #FFFFFF;  /* pure white (cards, btn text) */
-  --zx-ink:              #141311;  /* near-black warm ink        */
-  --zx-night:            #0D0C0A;  /* dark band background       */
-  --zx-night-2:          #0A0908;  /* dark card base             */
-  --zx-night-3:          #161513;  /* dark inset surface (film frame) */
+  --zx-porcelain:        #F3F0EB;  /* page background            */
+  --zx-bone:             #E7E4DB;  /* card surface (the "card" role) */
+  --zx-paper:            #E7E4DB;  /* light text on dark         */
+  --zx-ink:              #252323;  /* body text                  */
+  --zx-night:            #181715;  /* headings / dark band bg    */
 
   /* ---- color · brand blues ---- */
-  --zx-cobalt:           #1F3BEA;  /* THE brand accent           */
-  --zx-cobalt-deep:      #1226A8;  /* pressed / gradient stop    */
-  --zx-cobalt-bright:    #3B57FF;  /* gradient highlight         */
-  --zx-periwinkle:       #8EA0FF;  /* accent readable on night   */
-  --zx-periwinkle-light: #B9C3FF;  /* hover accent on night      */
+  --zx-cobalt:           #243EE8;  /* THE brand accent (3rd)     */
+  --zx-cobalt-soft:      #E7E4DB;  /* on-cobalt text (uses bone) */
 
   /* ---- color · feedback ---- */
   --zx-green:            #5DE0A0;  /* live / success pulse       */
@@ -37,13 +31,13 @@
   --zx-red-text:         #CC2222;  /* inline error text          */
 
   /* ---- color · alpha ramps ---- */
-  --zx-ink-a62:          rgba(20, 19, 17, 0.62);   /* secondary text   */
-  --zx-ink-a40:          rgba(20, 19, 17, 0.40);   /* tertiary text    */
-  --zx-ink-a13:          rgba(20, 19, 17, 0.13);   /* hairline borders */
-  --zx-paper-a55:        rgba(241, 239, 232, 0.55);/* secondary on night */
-  --zx-paper-a16:        rgba(241, 239, 232, 0.16);/* hairline on night  */
-  --zx-cobalt-a15:       rgba(31, 59, 234, 0.15);  /* focus ring       */
-  --zx-cobalt-a12:       rgba(31, 59, 234, 0.12);  /* node halo        */
+  --zx-ink-a62:          rgba(37, 35, 35, 0.62);   /* secondary text   */
+  --zx-ink-a40:          rgba(37, 35, 35, 0.40);   /* tertiary text    */
+  --zx-ink-a13:          rgba(37, 35, 35, 0.13);   /* hairline borders */
+  --zx-paper-a55:        rgba(24, 23, 21, 0.55);   /* secondary on night */
+  --zx-paper-a16:        rgba(24, 23, 21, 0.16);   /* hairline on night  */
+  --zx-cobalt-a15:       rgba(36, 62, 232, 0.15);  /* focus ring       */
+  --zx-cobalt-a12:       rgba(36, 62, 232, 0.12);  /* node halo        */
 
   /* ---- typography · families ---- */
   --zx-font-display: 'Cabinet Grotesk', 'Arial Black', sans-serif;
@@ -93,10 +87,10 @@
   --zx-radius-round: 50%;    /* dots, circular actions          */
 
   /* ---- elevation ---- */
-  --zx-shadow-card:      0 34px 70px -28px rgba(20, 19, 17, 0.35);
-  --zx-shadow-card-dark: 0 40px 80px -34px rgba(0, 0, 0, 0.80);
-  --zx-shadow-panel:     0 40px 80px -44px rgba(20, 19, 17, 0.35);
-  --zx-shadow-terminal:  0 34px 70px -40px rgba(13, 12, 10, 0.55);
+  --zx-shadow-card:      0 34px 70px -28px rgba(37, 35, 35, 0.35);
+  --zx-shadow-card-dark: 0 40px 80px -34px rgba(24, 23, 21, 0.80);
+  --zx-shadow-panel:     0 40px 80px -44px rgba(37, 35, 35, 0.35);
+  --zx-shadow-terminal:  0 34px 70px -40px rgba(24, 23, 21, 0.55);
   --zx-shadow-focus:     0 0 0 3px var(--zx-cobalt-a15);
 
   /* ---- motion · easing ---- */
@@ -121,15 +115,15 @@
      ========================================================== */
   --color-bg:              var(--zx-porcelain);
   --color-bg-raised:       var(--zx-bone);
-  --color-bg-card:         var(--zx-white);
+  --color-bg-card:         var(--zx-bone);
   --color-text:            var(--zx-ink);
   --color-text-secondary:  var(--zx-ink-a62);
   --color-text-tertiary:   var(--zx-ink-a40);
   --color-border:          var(--zx-ink-a13);
   --color-accent:          var(--zx-cobalt);
-  --color-accent-strong:   var(--zx-cobalt-deep);
-  --color-accent-soft:     var(--zx-periwinkle);
-  --color-on-accent:       var(--zx-white);
+  --color-accent-strong:   var(--zx-cobalt);
+  --color-accent-soft:     var(--zx-cobalt);
+  --color-on-accent:       var(--zx-bone);
   --color-success:         var(--zx-green);
   --color-error:           var(--zx-red-text);
   --color-error-border:    var(--zx-red-border);
@@ -147,14 +141,14 @@
 /* ---- dark band context: sections opt in with .on-night ---- */
 .on-night {
   --color-bg:              var(--zx-night);
-  --color-bg-raised:       var(--zx-night-3);
-  --color-bg-card:         var(--zx-night-2);
-  --color-text:            var(--zx-paper);
+  --color-bg-raised:       var(--zx-night);
+  --color-bg-card:         var(--zx-night);
+  --color-text:            var(--zx-bone);
   --color-text-secondary:  var(--zx-paper-a55);
   --color-text-tertiary:   var(--zx-paper-a55);
   --color-border:          var(--zx-paper-a16);
   --color-accent:          var(--zx-cobalt);      /* cobalt stays cobalt   */
-  --color-accent-soft:     var(--zx-periwinkle);  /* readable accent text  */
+  --color-accent-soft:     var(--zx-cobalt);      /* readable accent text  */
 }
 
 /* ==========================================================
@@ -181,8 +175,8 @@
 
   /* nav */
   --nav-height:            var(--zx-nav-height);
-  --nav-scrim-light:       rgba(244, 242, 236, 0.82);
-  --nav-scrim-dark:        rgba(13, 12, 10, 0.80);
+  --nav-scrim-light:       rgba(243, 240, 235, 0.82);
+  --nav-scrim-dark:        rgba(24, 23, 21, 0.80);
   --nav-blur:              14px;
 
   /* tag / pill */
