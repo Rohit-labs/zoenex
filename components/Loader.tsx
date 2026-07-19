@@ -167,7 +167,7 @@ export default function Loader() {
             />
           ))}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="loader-logo" src="/zoenex-logo.jpg" alt="" width={1024} height={1024} fetchPriority="high" draggable={false} />
+          <img className="loader-logo" src="/zoenex-logo.png" alt="" width={1024} height={1024} fetchPriority="high" draggable={false} />
           <span className="loader-shadow" />
         </div>
       </div>
