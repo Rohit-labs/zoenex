@@ -102,17 +102,7 @@ function runViewMotion(root: HTMLElement, opts: Options, afterLoader: boolean) {
     });
   });
 
-  /* hero art: gentle scroll drift + fade as you leave the hero */
-  const art = root.querySelector(".hero-art");
-  const hero = root.querySelector(".hero");
-  if (art && hero) {
-    gsap.to(art, {
-      yPercent: 14,
-      autoAlpha: 0.15,
-      ease: "none",
-      scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: 0.6 },
-    });
-  }
+  // Keep hero art stationary; no scroll-linked drift/fade.
 
   /* choreographed entrance for each capability row */
   root.querySelectorAll(".svc").forEach((row) => {

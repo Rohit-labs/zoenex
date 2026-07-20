@@ -67,7 +67,7 @@ export default function HeroArt() {
         scene = new THREE.Scene();
 
         camera = new THREE.PerspectiveCamera(42, W / H, 0.1, 100);
-        camera.position.set(0, 0, 15);
+        camera.position.set(0, 0, 22);
 
         renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
         renderer.setPixelRatio(DPR);
@@ -94,7 +94,7 @@ export default function HeroArt() {
 
         // --- generate nodes on a rough sphere (fibonacci) ---
         const N = 36,
-          R = 5.4,
+          R = 3.6,
           nodes: THREE.Vector3[] = [];
         for (let i = 0; i < N; i++) {
           const y = 1 - (i / (N - 1)) * 2,
@@ -198,7 +198,7 @@ export default function HeroArt() {
         const pcount = 140,
           pPos: number[] = [];
         for (let d2 = 0; d2 < pcount; d2++) {
-          const rr = R * (1.1 + Math.random() * 1.6),
+          const rr = R * (1.05 + Math.random() * 0.7),
             th = Math.random() * 6.28,
             ph = Math.acos(2 * Math.random() - 1);
           pPos.push(rr * Math.sin(ph) * Math.cos(th), rr * Math.sin(ph) * Math.sin(th), rr * Math.cos(ph));
@@ -213,7 +213,7 @@ export default function HeroArt() {
 
         // faint outer wireframe shell for depth
         const shell = new THREE.Mesh(
-          new THREE.IcosahedronGeometry(R * 1.3, 1),
+          new THREE.IcosahedronGeometry(R * 1.12, 1),
           new THREE.MeshBasicMaterial({ color: INK, wireframe: true, transparent: true, opacity: 0.06 })
         );
         group.add(shell);
