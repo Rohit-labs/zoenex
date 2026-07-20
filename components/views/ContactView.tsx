@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { useViewAnimations } from "@/lib/useViewAnimations";
@@ -38,10 +38,21 @@ const NO_ERRORS: Errors = { name: false, email: false, message: false, services:
 export default function ContactView() {
   const ref = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const nameRef = useRef<HTMLInputElement>(null);
   const successRef = useRef<HTMLDivElement>(null);
   const [errors, setErrors] = useState<Errors>(NO_ERRORS);
   const [sent, setSent] = useState(false);
   useViewAnimations(ref);
+
+  /* move focus into the first field so the form is keyboard-ready on mount;
+     skip if the user already started tabbing or prefers reduced motion */
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    if (document.activeElement && document.activeElement !== document.body) return;
+    const id = window.setTimeout(() => nameRef.current?.focus({ preventScroll: true }), 350);
+    return () => window.clearTimeout(id);
+  }, []);
 
   useGSAP(
     () => {
@@ -82,7 +93,7 @@ export default function ContactView() {
       <section className="page-hero">
         <div className="wrap">
           <span className="eyebrow rv">Contact</span>
-          <h1 className="h-mega rv" style={{ marginTop: "22px" }}>
+          <h1 className="h-mega rv">
             Tell us what
             <br />
             should move<em className="accent">.</em>
@@ -114,19 +125,11 @@ export default function ContactView() {
             </div>
             <div className="iblk">
               <h4>Elsewhere</h4>
-              <p>
-                <a href="#" rel="noopener">
-                  LinkedIn
-                </a>{" "}
-                ·{" "}
-                <a href="#" rel="noopener">
-                  Instagram
-                </a>{" "}
-                ·{" "}
-                <a href="#" rel="noopener">
-                  X
-                </a>
-              </p>
+              <div className="social-chips" aria-label="Social links — coming soon">
+                <i>LinkedIn</i>
+                <i>Instagram</i>
+                <i>X / Twitter</i>
+              </div>
             </div>
           </aside>
 
@@ -137,6 +140,7 @@ export default function ContactView() {
                   Name <em>*</em>
                 </label>
                 <input
+                  ref={nameRef}
                   type="text"
                   id="name"
                   name="name"
@@ -166,19 +170,10 @@ export default function ContactView() {
                 <label htmlFor="company">Company</label>
                 <input type="text" id="company" name="company" autoComplete="organization" />
               </div>
-              <div className="field full">
-                <span
-                  className="field label"
-                  style={{
-                    fontSize: "13.5px",
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: ".04em",
-                    color: "var(--ink-60)",
-                  }}
-                >
-                  What do you need? <em style={{ color: "var(--cobalt)", fontStyle: "normal" }}>*</em>
-                </span>
+              <fieldset className="field full">
+                <legend>
+                  What do you need? <em aria-hidden="true">*</em>
+                </legend>
                 <div className="pills" onChange={() => clearError("services")}>
                   {SERVICES.map((s) => (
                     <Fragment key={s.id}>
@@ -188,7 +183,7 @@ export default function ContactView() {
                   ))}
                 </div>
                 <span className={`ferr${errors.services ? " show" : ""}`}>Pick at least one option.</span>
-              </div>
+              </fieldset>
               <div className="field full">
                 <label htmlFor="message">
                   About the project <em>*</em>

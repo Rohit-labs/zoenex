@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Clock from "./Clock";
 
 export default function Footer() {
   return (
@@ -11,13 +10,17 @@ export default function Footer() {
         <div className="foot-grid">
           <div>
             <Link className="logo" href="/" style={{ color: "var(--paper-on-night)" }}>
-              <i />
+              <span className="logo-mark" aria-hidden="true">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/zoenex-mark.png" alt="" draggable={false} />
+              </span>
               <span className="logo-word">
                 ZOENEX
                 <em>STUDIOS</em>
               </span>
             </Link>
             <p className="foot-blurb">AI automation, web and motion studio. Mumbai based, working worldwide.</p>
+            <span className="mono-tag" style={{ marginTop: "16px", display: "inline-block" }}>EST. 2026</span>
           </div>
           <div>
             <h4>Studio</h4>
@@ -26,7 +29,7 @@ export default function Footer() {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/work">Work</Link>
+                <Link href="/#services">Services</Link>
               </li>
               <li>
                 <Link href="/contact">Contact</Link>
@@ -54,28 +57,17 @@ export default function Footer() {
                 <a href="mailto:hello@zoenex.studio">hello@zoenex.studio</a>
               </li>
               <li>
-                <a href="#" rel="noopener">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" rel="noopener">
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" rel="noopener">
-                  X / Twitter
-                </a>
+                <div className="social-chips" aria-label="Social links — coming soon">
+                  <i>LinkedIn</i>
+                  <i>Instagram</i>
+                  <i>X / Twitter</i>
+                </div>
               </li>
             </ul>
           </div>
         </div>
         <div className="foot-bottom">
           <span>© 2026 Zoenex Studios. All rights reserved.</span>
-          <span className="mono-tag">
-            Mumbai — <Clock /> IST
-          </span>
         </div>
       </div>
     </footer>

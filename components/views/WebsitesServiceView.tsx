@@ -79,8 +79,8 @@ export default function WebsitesServiceView() {
       <section className="page-hero">
         <div className="wrap shero-grid">
           <div>
-            <span className="eyebrow rv">Service 02 — ZNX/WEB</span>
-            <h1 className="h-mega rv" style={{ marginTop: "22px" }}>
+            <span className="eyebrow rv">Websites & Product</span>
+            <h1 className="h-mega rv">
               Sites built
               <br />
               to convert
@@ -95,8 +95,8 @@ export default function WebsitesServiceView() {
                 Start a web project
                 <ArrowRight />
               </Link>
-              <Link href="/work" className="btn btn-line" data-magnetic>
-                View work
+              <Link href="/#services" className="btn btn-line" data-magnetic>
+                View services
               </Link>
             </div>
           </div>
@@ -205,12 +205,12 @@ export default function WebsitesServiceView() {
       </section>
 
       <BigCta
-        ghost="WEB"
-        badge="Now booking web builds — Q3 2026"
+        ghost="WEBSITE"
+        badge="Open for new projects"
         titleTop="Your site should"
         titleSwipe="work harder."
         lede="Bring the brief — or just the problem. We'll scope it honestly and give you a fixed quote within days, not weeks."
-        cta="Start a web project"
+        cta="Let's talk"
       />
     </div>
   );

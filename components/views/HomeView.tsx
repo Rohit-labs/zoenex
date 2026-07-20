@@ -4,13 +4,11 @@ import Link from "next/link";
 import { useRef } from "react";
 import { useViewAnimations } from "@/lib/useViewAnimations";
 import BigCta from "../BigCta";
-import Clock from "../Clock";
 import HeroArt from "../HeroArt";
 import { ArrowRight, ArrowUpRight } from "../icons";
 
 const SERVICES = [
   {
-    code: "ZNX/AUT",
     title: "AI Automation",
     body: "Custom AI agents and workflow systems that take repetitive work off your team — lead handling, support, reporting, internal operations.",
     tags: ["AI agents", "Chatbots", "CRM workflows", "API integrations", "RAG systems"],
@@ -27,7 +25,6 @@ const SERVICES = [
     ),
   },
   {
-    code: "ZNX/WEB",
     title: "Websites & Product",
     body: "Fast, conversion-focused marketing sites and web apps — designed end to end, built on modern stacks, measured against real business goals.",
     tags: ["Marketing sites", "Web apps", "E-commerce", "Design systems", "SEO & performance"],
@@ -45,7 +42,6 @@ const SERVICES = [
     ),
   },
   {
-    code: "ZNX/MTN",
     title: "Motion Design",
     body: "Brand films, product explainers, UI motion and social-first video that give your product the launch it deserves — and keep it moving after.",
     tags: ["Brand films", "Explainers", "UI motion", "3D & WebGL", "Social video"],
@@ -64,10 +60,42 @@ const SERVICES = [
 ];
 
 const SELECTED_WORK = [
-  { span: "s7", art: "art-orbit", num: "01", cat: "AI Automation · 2026", title: "Nordwind Ops Copilot", res: "62% faster response time" },
-  { span: "s5", art: "art-eclipse", num: "02", cat: "E-commerce · 2026", title: "Solstice Skincare", res: "+38% conversion" },
-  { span: "s5", art: "art-halftone", num: "03", cat: "Brand Motion · 2025", title: "Pulseloop Launch Film", res: "2.1M organic views" },
-  { span: "s7", art: "art-grid3d", num: "04", cat: "Web App + AI · 2025", title: "Meridian Realty Portal", res: "3× qualified leads / month" },
+  {
+    span: "s7",
+    art: "art-orbit",
+    num: "01",
+    cat: "AI Automation · 2026",
+    title: "Nordwind Ops Copilot",
+    res: "62% faster response time",
+    href: "/services/ai-automation",
+  },
+  {
+    span: "s5",
+    art: "art-eclipse",
+    num: "02",
+    cat: "E-commerce · 2026",
+    title: "Solstice Skincare",
+    res: "+38% conversion",
+    href: "/services/websites",
+  },
+  {
+    span: "s5",
+    art: "art-halftone",
+    num: "03",
+    cat: "Brand Motion · 2025",
+    title: "Pulseloop Launch Film",
+    res: "2.1M organic views",
+    href: "/services/motion-design",
+  },
+  {
+    span: "s7",
+    art: "art-grid3d",
+    num: "04",
+    cat: "Web App + AI · 2025",
+    title: "Meridian Realty Portal",
+    res: "3× qualified leads / month",
+    href: "/services/websites",
+  },
 ];
 
 const STEPS = [
@@ -110,7 +138,6 @@ export default function HomeView() {
         <div className="wrap" style={{ width: "100%" }}>
           <div className="hero-top rv">
             <span className="eyebrow">Zoenex Studios — est. 2026</span>
-            <span className="mono-tag">AI Automation / Web / Motion</span>
           </div>
           <h1 className="h-mega" id="heroTitle" aria-label="Machines that work. Design that moves.">
             <span className="line">
@@ -118,7 +145,7 @@ export default function HomeView() {
             </span>
             <span className="line">
               <span className="line-inner">
-                that work<em>.</em>
+                that work<em aria-hidden="true">.</em>
               </span>
             </span>
             <span className="line">
@@ -126,7 +153,7 @@ export default function HomeView() {
             </span>
             <span className="line">
               <span className="line-inner">
-                <em>moves.</em>
+                <em aria-hidden="true">moves.</em>
               </span>
             </span>
           </h1>
@@ -137,20 +164,13 @@ export default function HomeView() {
             </p>
             <div className="hero-cta rv">
               <Link href="/contact" className="btn btn-fill" data-magnetic>
-                Start a project
+                Let's talk
                 <ArrowRight />
               </Link>
-              <Link href="/work" className="btn btn-line" data-magnetic>
-                View work
+              <Link href="/#services" className="btn btn-line" data-magnetic>
+                Explore services
               </Link>
             </div>
-          </div>
-          <div className="hero-meta rv">
-            <span className="mono-tag">
-              Mumbai — <Clock /> IST
-            </span>
-            <span className="mono-tag">Booking Q3 2026</span>
-            <span className="mono-tag">Scroll ↓</span>
           </div>
         </div>
       </section>
@@ -166,7 +186,7 @@ export default function HomeView() {
         </div>
       </div>
 
-      <section className="sec">
+      <section className="sec" id="services">
         <div className="wrap">
           <div className="sec-head">
             <span className="eyebrow rv">Capabilities</span>
@@ -184,15 +204,9 @@ export default function HomeView() {
           </div>
 
           {SERVICES.map((s) => (
-            <article className="svc" key={s.code}>
-              <span className="svc-code">
-                <span className="live" />
-                {s.code}
-              </span>
+            <article className="svc home-svc" key={s.title}>
               <div>
-                <h3>
-                  <Link href={s.href}>{s.title}</Link>
-                </h3>
+                <h3>{s.title}</h3>
                 <p className="svc-body">{s.body}</p>
                 <ul className="svc-tags">
                   {s.tags.map((t) => (
@@ -201,9 +215,10 @@ export default function HomeView() {
                 </ul>
               </div>
               {s.sig}
-              <Link className="svc-go" href={s.href} aria-label={s.aria} data-cursor>
+              <span className="svc-go" aria-hidden="true">
                 <ArrowUpRight size={17} />
-              </Link>
+              </span>
+              <Link className="svc-hit" href={s.href} aria-label={s.aria} />
             </article>
           ))}
         </div>
@@ -219,8 +234,8 @@ export default function HomeView() {
                 <br />
                 not promises.
               </h2>
-              <Link href="/work" className="btn btn-line rv" data-magnetic>
-                All projects
+              <Link href="/#services" className="btn btn-line rv" data-magnetic>
+                View services
                 <ArrowRight />
               </Link>
             </div>
@@ -228,7 +243,7 @@ export default function HomeView() {
 
           <div className="scwork">
             {SELECTED_WORK.map((w) => (
-              <Link className={`scard ${w.span} rv`} href="/work" key={w.num}>
+              <Link className={`scard ${w.span} rv`} href={w.href} key={w.num}>
                 <div className={`art ${w.art}`} />
                 <span className="scard-frame" />
                 <span className="scard-num">{w.num}</span>
@@ -298,8 +313,8 @@ export default function HomeView() {
       </section>
 
       <BigCta
-        ghost="ZNX"
-        badge="Booking Q3 2026 — 2 slots open"
+        ghost="STUDIO"
+        badge="Open for new projects"
         titleTop="Let's build"
         titleSwipe="something rare."
         lede="Tell us what you're building. We reply within one business day with honest next steps — no sales script."

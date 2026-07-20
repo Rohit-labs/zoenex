@@ -65,19 +65,30 @@ export default function AutomationServiceView() {
 
   return (
     <div className="view active" ref={ref}>
-      <section className="page-hero">
-        <div className="wrap">
-          <span className="eyebrow rv">Service 01 — ZNX/AUT</span>
-          <h1 className="h-mega rv" style={{ marginTop: "22px" }}>
-            Work that
-            <br />
-            runs itself
-            <em className="accent">.</em>
-          </h1>
-          <p className="lede rv">
-            Custom AI agents and workflow systems that take repetitive operations off your team — lead handling, support,
-            reporting, internal ops — and run them around the clock.
-          </p>
+      <section className="page-hero page-hero-wide">
+        <div className="wrap wide-hero-grid">
+          <div className="wide-hero-copy">
+            <span className="eyebrow rv">AI Automation</span>
+            <h1 className="h-mega rv">
+              Work that
+              <br />
+              runs itself
+              <em className="accent">.</em>
+            </h1>
+            <p className="lede rv">
+              Custom AI agents and workflow systems that take repetitive operations off your team — lead handling, support,
+              reporting, internal ops — and run them around the clock.
+            </p>
+            <div className="hero-cta rv" style={{ justifyContent: "flex-start", marginTop: "38px" }}>
+              <Link href="/contact" className="btn btn-fill" data-magnetic>
+                Book an automation audit
+                <ArrowRight />
+              </Link>
+              <Link href="/#services" className="btn btn-line" data-magnetic>
+                View services
+              </Link>
+            </div>
+          </div>
           <div className="term rv" aria-hidden="true">
             <div className="term-bar">
               <i />
@@ -100,15 +111,6 @@ export default function AutomationServiceView() {
               </span>
               <span className="ln cur">&gt; awaiting next event</span>
             </div>
-          </div>
-          <div className="hero-cta rv" style={{ justifyContent: "flex-start", marginTop: "38px" }}>
-            <Link href="/contact" className="btn btn-fill" data-magnetic>
-              Book an automation audit
-              <ArrowRight />
-            </Link>
-            <Link href="/work" className="btn btn-line" data-magnetic>
-              View work
-            </Link>
           </div>
         </div>
       </section>
@@ -197,8 +199,8 @@ export default function AutomationServiceView() {
       </section>
 
       <BigCta
-        ghost="AUT"
-        badge="Automation audits open — Q3 2026"
+        ghost="AUTOMATE"
+        badge="Open for new projects"
         titleTop="Stop doing"
         titleSwipe="robot work."
         lede="Tell us where the hours go. We'll tell you which ones a system can own — and what that's worth per month."

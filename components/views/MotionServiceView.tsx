@@ -105,6 +105,8 @@ export default function MotionServiceView() {
           gsap.set(frames, { clearProps: "transform" });
         };
       });
+
+      return () => mm.revert();
     },
     { scope: ref }
   );
@@ -113,8 +115,8 @@ export default function MotionServiceView() {
     <div className="view active" ref={ref}>
       <section className="page-hero on-night mtn-hero">
         <div className="wrap">
-          <span className="eyebrow rv">Service 03 — ZNX/MTN</span>
-          <h1 className="h-mega rv" style={{ marginTop: "22px" }}>
+          <span className="eyebrow rv">Motion Design</span>
+          <h1 className="h-mega rv">
             Motion that
             <br />
             <span className="stroke-night">stops the scroll</span>
@@ -134,8 +136,8 @@ export default function MotionServiceView() {
               Start a motion project
               <ArrowRight />
             </Link>
-            <Link href="/work" className="btn btn-line" data-magnetic>
-              View work
+            <Link href="/#services" className="btn btn-line" data-magnetic>
+              View services
             </Link>
           </div>
         </div>
@@ -229,12 +231,12 @@ export default function MotionServiceView() {
       </section>
 
       <BigCta
-        ghost="MTN"
-        badge="Production slots open — Q3 2026"
+        ghost="MOTION"
+        badge="Open for new projects"
         titleTop="Make them"
         titleSwipe="hit replay."
         lede="Tell us what you're launching. We'll pitch a concept and a fixed production quote within a week."
-        cta="Start a motion project"
+        cta="Let's talk"
       />
     </div>
   );
