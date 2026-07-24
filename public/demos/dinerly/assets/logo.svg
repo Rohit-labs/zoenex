@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="74" height="74">
+  <circle cx="50" cy="50" r="47" fill="#0B0E0F" stroke="#C8973F" stroke-width="2"/>
+  <circle cx="50" cy="50" r="43" fill="none" stroke="#C8973F" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6"/>
+  <!-- Crossed Fork & Knife -->
+  <g stroke="#C8973F" stroke-width="1.5" stroke-linecap="round" fill="none" transform="translate(0, -2)">
+    <!-- Knife -->
+    <path d="M44 26 L55 37 M47 23 C52 20, 56 24, 55 37 L44 26 Z"/>
+    <line x1="44" y1="26" x2="36" y2="18"/>
+    <!-- Fork -->
+    <path d="M56 23 L45 34 M56 23 C54 26, 52 28, 49 26 L52 29 M58 25 C56 28, 54 30, 51 28 M60 27 L53 34 M45 34 L38 41"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="50" y="58" font-family="'Bevan', 'Oswald', serif" font-size="12" font-weight="bold" fill="#FAFBFC" text-anchor="middle" letter-spacing="1.2">DINERLY</text>
+  <!-- Tagline -->
+  <text x="50" y="70" font-family="'Yellowtail', cursive" font-size="9" fill="#C8973F" text-anchor="middle">since 1998</text>
+</svg>

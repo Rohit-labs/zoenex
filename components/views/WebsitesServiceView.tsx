@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { useViewAnimations } from "@/lib/useViewAnimations";
 import BigCta from "../BigCta";
-import { ArrowRight } from "../icons";
+import { ArrowRight, ArrowUpRight } from "../icons";
 
 const OFFERS = [
   {
@@ -154,6 +154,47 @@ export default function WebsitesServiceView() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="sec" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="eyebrow rv">Recent build</span>
+            <div className="row">
+              <h2 className="h-xl rv">
+                See one
+                <br />
+                in the wild.
+              </h2>
+              <p className="lede rv" style={{ maxWidth: "40ch" }}>
+                A turnkey site we designed and built end to end — click through the real thing, live.
+              </p>
+            </div>
+          </div>
+          <a className="casestudy rv" href="/demos/aerum/index.html" target="_blank" rel="noopener noreferrer">
+            <div className="cs-shot">
+              <span className="art-label">Web Design · Live</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80"
+                alt="AERUM — panoramic modular real-estate website"
+                loading="lazy"
+              />
+            </div>
+            <div className="cs-body">
+              <span className="cs-cat">Real Estate · 2026</span>
+              <h3>AERUM — Modular Real Estate</h3>
+              <p>
+                A panoramic modular-home builder&rsquo;s site: cinematic hero carousel, a filterable model catalog, materials and
+                build-process sections, an FAQ and a scheduling flow — fully responsive and accessible.
+              </p>
+              <span className="cs-go">
+                Open the live site
+                <ArrowUpRight size={16} />
+              </span>
+            </div>
+          </a>
         </div>
       </section>
 

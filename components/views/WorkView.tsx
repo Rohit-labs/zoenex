@@ -13,7 +13,57 @@ const FILTERS = [
   { key: "motion", label: "Motion" },
 ];
 
-const PROJECTS = [
+type Project = {
+  span: string;
+  cats: string[];
+  label: string;
+  title: string;
+  cat: string;
+  body: string;
+  res: string;
+  art?: string;
+  img?: string;
+  alt?: string;
+  demo?: string;
+};
+
+const PROJECTS: Project[] = [
+  {
+    span: "s12",
+    cats: ["web"],
+    label: "Web Design",
+    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80",
+    alt: "AERUM — panoramic modular real-estate website",
+    demo: "/demos/aerum/index.html",
+    title: "AERUM — Modular Real Estate",
+    cat: "Web Design · 2026",
+    body: "A turnkey site for a panoramic modular-home builder — cinematic hero carousel, a filterable model catalog, materials and build-process sections, an FAQ and a scheduling flow. Fully responsive and accessible.",
+    res: "Live design — click to explore",
+  },
+  {
+    span: "s6",
+    cats: ["web"],
+    label: "Web Design",
+    img: "/demos/dinerly/assets/video/hero-poster.jpg",
+    alt: "DINERLY — dark, appetite-driven restaurant website",
+    demo: "/demos/dinerly/index.html",
+    title: "DINERLY — Fine-Casual Dining",
+    cat: "Restaurant · 2026",
+    body: "A warm, appetite-driven restaurant site with a silent video hero, full-bleed food photography, a custom order cart, a validated reservation flow and a gallery lightbox — fully responsive.",
+    res: "Live design — click to explore",
+  },
+  {
+    span: "s6",
+    cats: ["web", "motion"],
+    label: "Web + Motion",
+    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1600&q=80",
+    alt: "ASTRONOMIA — luxury horology watch website",
+    demo: "https://astronomia-navy.vercel.app",
+    title: "ASTRONOMIA — Luxury Horology",
+    cat: "Web / Scroll · 2026",
+    body: "A cinematic single-page site for a gravitational-tourbillon timepiece — scroll-driven chapters, sculpted material stories, full technical spec tables and limited-edition collector storytelling.",
+    res: "Live site — click to explore",
+  },
   {
     span: "s7",
     cats: ["automation"],
@@ -134,11 +184,17 @@ export default function WorkView() {
           <div className="wgrid">
             {PROJECTS.map((p) => {
               const show = filter === "all" || p.cats.includes(filter);
-              return (
-                <Link className={`wcard ${p.span} rv${show ? "" : " hide"}`} href="/contact" key={p.title}>
+              const cls = `wcard ${p.span} rv${show ? "" : " hide"}`;
+              const inner = (
+                <>
                   <div className="wthumb">
                     <span className="art-label">{p.label}</span>
-                    <div className={`art ${p.art}`} />
+                    {p.img ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img className="wshot" src={p.img} alt={p.alt || p.title} loading="lazy" />
+                    ) : (
+                      <div className={`art ${p.art}`} />
+                    )}
                   </div>
                   <div className="wmeta">
                     <div className="top">
@@ -148,6 +204,16 @@ export default function WorkView() {
                     <p>{p.body}</p>
                     <span className="wres">{p.res}</span>
                   </div>
+                </>
+              );
+              /* real client work links out to the live build; the rest invite a brief */
+              return p.demo ? (
+                <a className={cls} href={p.demo} target="_blank" rel="noopener noreferrer" key={p.title}>
+                  {inner}
+                </a>
+              ) : (
+                <Link className={cls} href="/contact" key={p.title}>
+                  {inner}
                 </Link>
               );
             })}
