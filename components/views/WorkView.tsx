@@ -161,7 +161,8 @@ export default function WorkView() {
         titleTop="Your name"
         titleSwipe="goes here next."
         lede="Bring us the problem — we'll tell you honestly whether automation, a rebuild or motion moves it most."
-        cta="Start a project"
+        cta="Book a 20-min call"
+        reassure={["Async-friendly across time zones", "Fixed quotes, no surprises", "NDA on request", "Reply within 1 business day"]}
       />
     </div>
   );

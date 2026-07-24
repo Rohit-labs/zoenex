@@ -6,6 +6,9 @@ import { gsap, useGSAP } from "@/lib/gsap";
 import { useViewAnimations } from "@/lib/useViewAnimations";
 import { ArrowRight } from "../icons";
 
+/* Replace with your real Cal.com / Calendly link (or an embedded scheduler) to go live. */
+const SCHEDULER_URL = "https://cal.com/zoenex/intro-call";
+
 const SERVICES = [
   { id: "s-aut", value: "AI Automation", label: "AI Automation" },
   { id: "s-web", value: "Website / Product", label: "Website / Product" },
@@ -88,13 +91,42 @@ export default function ContactView() {
             should move<em className="accent">.</em>
           </h1>
           <p className="lede rv">
-            Two minutes of your time, one business day for our reply. If we&rsquo;re not the right fit, we&rsquo;ll say so and point you
-            somewhere better.
+            The fastest path is a 20-minute call — pick a time and we&rsquo;ll talk it through. Prefer to write? Send a brief below and
+            we&rsquo;ll reply within one business day. If we&rsquo;re not the right fit, we&rsquo;ll say so and point you somewhere better.
           </p>
         </div>
       </section>
 
-      <section className="sec" id="enquiry" style={{ paddingTop: "28px" }}>
+      <section className="sec" style={{ paddingTop: "8px", paddingBottom: 0 }}>
+        <div className="wrap">
+          <div className="bookband rv">
+            <div className="bb-copy">
+              <span className="eyebrow bb-eyebrow">The fastest path</span>
+              <h2>Book a 20-minute intro call.</h2>
+              <p>
+                No slides, no sales script — a straight conversation about what you&rsquo;re building, what&rsquo;s slowing you down, and
+                whether we&rsquo;re the right team to move it.
+              </p>
+            </div>
+            <div className="bb-side">
+              <a className="btn btn-fill" href={SCHEDULER_URL} target="_blank" rel="noopener" data-magnetic>
+                Pick a time
+                <ArrowRight />
+              </a>
+              <ul className="bb-tags" aria-label="What to expect">
+                <li>20 min</li>
+                <li>Your time zone</li>
+                <li>No obligation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="sec" id="enquiry" style={{ paddingTop: "clamp(48px,6vw,80px)" }}>
+        <div className="wrap" style={{ marginBottom: "clamp(36px,4vw,56px)" }}>
+          <span className="eyebrow rv">Or send a brief</span>
+        </div>
         <div className="wrap cgrid">
           <aside className="cinfo rv">
             <div className="iblk">
@@ -110,7 +142,21 @@ export default function ContactView() {
             <div className="iblk">
               <h4>Response time</h4>
               <p>Within 1 business day</p>
-              <p className="sub">Mon–Fri, 10:00–19:00 IST</p>
+              <p className="sub">Async-friendly · overlap with EU daily, US by arrangement</p>
+            </div>
+            <div className="iblk">
+              <h4>Payments</h4>
+              <div className="pay">
+                <span>Stripe</span>
+                <span>Wise</span>
+                <span>PayPal</span>
+              </div>
+              <p className="sub">Invoiced in USD, EUR, GBP or INR</p>
+            </div>
+            <div className="iblk">
+              <h4>Terms</h4>
+              <p style={{ fontSize: "15px", fontWeight: 500 }}>Fixed quotes · milestone billing</p>
+              <p className="sub">Contract on every project · NDA on request</p>
             </div>
             <div className="iblk">
               <h4>Elsewhere</h4>

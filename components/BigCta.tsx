@@ -9,9 +9,10 @@ type Props = {
   titleSwipe: string;
   lede: string;
   cta: string;
+  reassure?: string[];
 };
 
-export default function BigCta({ ghost, badge, titleTop, titleSwipe, lede, cta }: Props) {
+export default function BigCta({ ghost, badge, titleTop, titleSwipe, lede, cta, reassure }: Props) {
   return (
     <section className="sec on-night bigcta">
       <div className="bigcta-bg" aria-hidden="true">
@@ -42,6 +43,13 @@ export default function BigCta({ ghost, badge, titleTop, titleSwipe, lede, cta }
           {cta}
           <ArrowRight />
         </Link>
+        {reassure && reassure.length > 0 && (
+          <ul className="reassure rv">
+            {reassure.map((r) => (
+              <li key={r}>{r}</li>
+            ))}
+          </ul>
+        )}
         <div className="cta-contact rv">
           <a className="cta-mail" href="mailto:hello@zoenex.studio">
             hello@zoenex.studio

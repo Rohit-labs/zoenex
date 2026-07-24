@@ -8,9 +8,9 @@ import Loader from "@/components/Loader";
 import Nav from "@/components/Nav";
 
 export const metadata: Metadata = {
-  title: "Zoenex Studios — AI Automation, Websites & Motion Design",
+  title: "Zoenex Studios — Websites that convert, move & run themselves",
   description:
-    "Zoenex Studios builds AI automation systems, high-performance websites and motion design for ambitious brands. Mumbai based, working worldwide.",
+    "We help ambitious B2B teams turn their website into a 24/7 growth engine — designed, animated and automated end to end. Trusted by teams in the US, UK, UAE & India. Book a 20-minute call.",
 };
 
 export const viewport: Viewport = {

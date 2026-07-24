@@ -77,13 +77,26 @@ function runViewMotion(root: HTMLElement, opts: Options, afterLoader: boolean) {
   }
   if (below.length) {
     gsap.set(below, { y: 44, autoAlpha: 0 });
+    const reveal = (els: Element[]) =>
+      gsap.to(els, { y: 0, autoAlpha: 1, duration: 0.95, stagger: 0.09, overwrite: true, clearProps: "transform" });
     ScrollTrigger.batch(below, {
       start: "top 88%",
       once: true,
-      onEnter: (batch) => {
-        gsap.to(batch, { y: 0, autoAlpha: 1, duration: 0.95, stagger: 0.09, overwrite: true, clearProps: "transform" });
-      },
+      onEnter: (batch) => reveal(batch),
     });
+    /* ScrollTrigger.batch never fires onEnter for elements already past their
+       start when the batch is created — e.g. after browser scroll-restoration
+       on refresh, or a deep link landing mid-page. Those would stay hidden yet
+       keep their layout box, leaving a phantom gap. Sweep any that are already
+       on-screen and reveal them; a second pass covers late scroll restoration. */
+    const sweep = () => {
+      const stuck = below.filter(
+        (el) => getComputedStyle(el).visibility === "hidden" && el.getBoundingClientRect().top < window.innerHeight
+      );
+      if (stuck.length) reveal(stuck);
+    };
+    sweep();
+    gsap.delayedCall(0.9, sweep);
   }
 
   /* counters */

@@ -17,7 +17,10 @@ export default function Footer() {
                 <em>STUDIOS</em>
               </span>
             </Link>
-            <p className="foot-blurb">AI automation, web and motion studio. Mumbai based, working worldwide.</p>
+            <p className="foot-blurb">
+              Websites that convert, move and run themselves — web, motion and AI in one studio. Mumbai based, working with teams in the
+              US, UK, UAE &amp; India. Replies within one business day.
+            </p>
           </div>
           <div>
             <h4>Studio</h4>

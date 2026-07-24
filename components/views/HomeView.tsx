@@ -97,6 +97,47 @@ const STEPS = [
   },
 ];
 
+const STAKES = [
+  {
+    ix: "01",
+    title: "Looks fine. Converts nothing.",
+    body: "Visitors land, read, nod — and leave without booking. A pretty site that doesn't turn traffic into calls is a cost, not an asset.",
+  },
+  {
+    ix: "02",
+    title: "Your team drowns in busywork.",
+    body: "20+ hours a week vanish into copy-paste, follow-ups and reporting that software should be doing while your people sleep.",
+  },
+  {
+    ix: "03",
+    title: "Forgettable in a scroll.",
+    body: "Static pages blur together. Without motion that earns attention, the brands with movement are the ones buyers remember — and email.",
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    quote: "Support went from our biggest bottleneck to a non-issue. Replies are 62% faster and the agent handles the noise so the team handles the edge cases.",
+    name: "Lena Brandt",
+    role: "Head of Ops · Nordwind",
+    initials: "LB",
+  },
+  {
+    quote: "The rebuild paid for itself in six weeks. Conversion is up 38%, the store finally feels like our brand, and it loads before you can blink.",
+    name: "Marco Silveira",
+    role: "Founder · Solstice Skincare",
+    initials: "MS",
+  },
+  {
+    quote: "Their AI concierge books site visits while we sleep. We're closing three times the qualified leads and nobody's chasing forms anymore.",
+    name: "Priya Nair",
+    role: "Director · Meridian Realty",
+    initials: "PN",
+  },
+];
+
+const TOOLS = ["Webflow", "Framer", "Next.js", "n8n / Make", "After Effects"];
+
 const TICKER = ["AI Agents", "Workflow Automation", "Websites", "Web Apps", "Brand Motion", "3D & WebGL", "Product Films", "Chatbots"];
 
 export default function HomeView() {
@@ -132,16 +173,16 @@ export default function HomeView() {
           </h1>
           <div className="hero-under">
             <p className="lede rv">
-              We&rsquo;re a Mumbai studio building AI automation, high-performance websites and motion design for brands that refuse to
-              look ordinary — or work slowly.
+              We help ambitious B2B teams turn their website into a 24/7 growth engine — designed, animated and automated end to end.
+              One studio, three levers: web, motion, AI.
             </p>
             <div className="hero-cta rv">
               <Link href="/contact" className="btn btn-fill" data-magnetic>
-                Start a project
+                Book a 20-min call
                 <ArrowRight />
               </Link>
               <Link href="/work" className="btn btn-line" data-magnetic>
-                View work
+                See the proof
               </Link>
             </div>
           </div>
@@ -149,9 +190,22 @@ export default function HomeView() {
             <span className="mono-tag">
               Mumbai — <Clock /> IST
             </span>
-            <span className="mono-tag">Booking Q3 2026</span>
+            <span className="mono-tag">Replies within 1 business day</span>
             <span className="mono-tag">Scroll ↓</span>
           </div>
+        </div>
+      </section>
+
+      <section className="proofstrip">
+        <div className="wrap proofstrip-inner">
+          <span className="proof-label rv">
+            Trusted by teams in <b>US · UK · UAE · India</b>
+          </span>
+          <ul className="proof-tools rv" aria-label="Tools we build with">
+            {TOOLS.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -169,30 +223,56 @@ export default function HomeView() {
       <section className="sec">
         <div className="wrap">
           <div className="sec-head">
-            <span className="eyebrow rv">Capabilities</span>
+            <span className="eyebrow rv">The real problem</span>
             <div className="row">
               <h2 className="h-xl rv">
-                Three crafts,
+                Looking good
                 <br />
-                one studio.
+                isn&rsquo;t converting.
+              </h2>
+              <p className="lede rv" style={{ maxWidth: "42ch" }}>
+                Before the pixels: most sites fail for the same three reasons. If any of these sound like you, the fix isn&rsquo;t
+                prettier — it&rsquo;s sharper.
+              </p>
+            </div>
+          </div>
+          <div className="stake-grid">
+            {STAKES.map((s) => (
+              <article className="stake rv" key={s.ix}>
+                <span className="stake-ix">{s.ix}</span>
+                <h3>{s.title}</h3>
+                <p>{s.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="sec" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="eyebrow rv">What we do</span>
+            <div className="row">
+              <h2 className="h-xl rv">
+                One outcome,
+                <br />
+                three levers.
               </h2>
               <p className="lede rv" style={{ maxWidth: "40ch" }}>
-                Automation clears the busywork. The web work carries your brand. Motion makes people stop. Most clients end up using all
-                three.
+                We build websites that convert — then make them move and put them on autopilot. Web carries the brand, motion earns
+                attention, automation removes the busywork. Most clients use all three.
               </p>
             </div>
           </div>
 
           {SERVICES.map((s) => (
-            <article className="svc" key={s.code}>
+            <Link className="svc" key={s.code} href={s.href} aria-label={s.aria} data-cursor>
               <span className="svc-code">
                 <span className="live" />
                 {s.code}
               </span>
               <div>
-                <h3>
-                  <Link href={s.href}>{s.title}</Link>
-                </h3>
+                <h3>{s.title}</h3>
                 <p className="svc-body">{s.body}</p>
                 <ul className="svc-tags">
                   {s.tags.map((t) => (
@@ -201,15 +281,15 @@ export default function HomeView() {
                 </ul>
               </div>
               {s.sig}
-              <Link className="svc-go" href={s.href} aria-label={s.aria} data-cursor>
+              <span className="svc-go" aria-hidden="true">
                 <ArrowUpRight size={17} />
-              </Link>
-            </article>
+              </span>
+            </Link>
           ))}
         </div>
       </section>
 
-      <section className="sec on-night">
+      <section className="sec on-night scwork-band">
         <div className="wrap">
           <div className="sec-head">
             <span className="eyebrow rv">Selected work</span>
@@ -241,6 +321,40 @@ export default function HomeView() {
                   <ArrowUpRight />
                 </span>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="sec">
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="eyebrow rv">In their words</span>
+            <div className="row">
+              <h2 className="h-xl rv">
+                Don&rsquo;t take
+                <br />
+                our word.
+              </h2>
+              <p className="lede rv" style={{ maxWidth: "40ch" }}>
+                Every project is measured against the one number that mattered to the client. Here&rsquo;s what happened next.
+              </p>
+            </div>
+          </div>
+          <div className="tgrid">
+            {TESTIMONIALS.map((t) => (
+              <figure className="tcard rv" key={t.name}>
+                <blockquote className="quote">&ldquo;{t.quote}&rdquo;</blockquote>
+                <figcaption className="twho">
+                  <span className="tavatar" aria-hidden="true">
+                    {t.initials}
+                  </span>
+                  <span>
+                    <span className="tname">{t.name}</span>
+                    <span className="trole">{t.role}</span>
+                  </span>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
@@ -303,7 +417,8 @@ export default function HomeView() {
         titleTop="Let's build"
         titleSwipe="something rare."
         lede="Tell us what you're building. We reply within one business day with honest next steps — no sales script."
-        cta="Start the conversation"
+        cta="Book a 20-min call"
+        reassure={["Async-friendly across time zones", "Fixed quotes, no surprises", "NDA on request", "Reply within 1 business day"]}
       />
     </div>
   );

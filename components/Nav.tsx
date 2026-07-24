@@ -67,7 +67,7 @@ export default function Nav() {
             </Link>
           ))}
           <Link href="/contact" className="btn btn-fill" data-magnetic>
-            Start a project
+            Book a call
             <ArrowRight />
           </Link>
         </nav>
