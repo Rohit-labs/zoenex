@@ -193,7 +193,7 @@ section{position:relative}
 
 /* hero backdrop art */
 .hero>.wrap{position:relative;z-index:2}
-.hero-art{position:absolute;top:0;bottom:0;right:-8%;margin:auto 0;height:min(58vw,760px);width:min(58vw,760px);z-index:1;pointer-events:none}
+.hero-art{position:absolute;top:0;bottom:0;right:0;margin:auto 0;height:min(54vw,720px);width:min(54vw,720px);z-index:1;pointer-events:none}
 .hero-art::before{content:'';position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(31,59,234,.20),rgba(31,59,234,.07) 42%,transparent 66%);filter:blur(6px);z-index:-1}
 
 /* scroll-progress hairline */
@@ -220,7 +220,7 @@ section{position:relative}
 .hero-art .fallback .ring:nth-child(2){inset:12%}
 .hero-art .fallback .ring:nth-child(3){inset:24%}
 .hero-art .fallback .core{position:absolute;left:50%;top:50%;width:14%;aspect-ratio:1;transform:translate(-50%,-50%);background:var(--cobalt);border-radius:50%}
-@media (max-width:860px){.hero-art{opacity:.5;right:-24%;width:min(90vw,560px);height:min(90vw,560px)}}
+@media (max-width:860px){.hero-art{opacity:.5;right:-6%;width:min(84vw,520px);height:min(84vw,520px)}}
 
 /* ---------- ticker ---------- */
 .ticker{border-top:1px solid var(--ink-12);border-bottom:1px solid var(--ink-12);overflow:hidden;padding:18px 0;background:var(--bone);position:relative}
