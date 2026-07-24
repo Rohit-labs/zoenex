@@ -193,7 +193,7 @@ section{position:relative}
 
 /* hero backdrop art */
 .hero>.wrap{position:relative;z-index:2}
-.hero-art{position:absolute;top:0;bottom:0;right:0;margin:auto 0;height:min(54vw,720px);width:min(54vw,720px);z-index:1;pointer-events:none}
+.hero-art{position:absolute;top:0;bottom:0;right:0;margin:auto 0;height:min(54vw,720px);width:min(54vw,720px);z-index:1;pointer-events:none;opacity:.6}
 .hero-art::before{content:'';position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(31,59,234,.20),rgba(31,59,234,.07) 42%,transparent 66%);filter:blur(6px);z-index:-1}
 
 /* scroll-progress hairline */
@@ -469,12 +469,12 @@ footer{background:var(--night);color:var(--paper-on-night);padding:clamp(56px,7v
 .wres{margin-top:10px;font-family:var(--mono);font-size:12px;display:inline-flex;gap:8px;align-items:center}
 .wres::before{content:'↗';color:var(--cobalt);font-size:15px}
 .wcard.hide{display:none}
-/* portrait 9:16 reel card — full-width, vertical film beside the copy so nothing is cropped */
-.wcard.vcard{grid-column:1/-1;display:grid;grid-template-columns:clamp(220px,24vw,286px) 1fr;align-items:center;gap:clamp(22px,3.6vw,56px);padding:clamp(16px,1.8vw,24px)}
+/* portrait 9:16 reel card — compact, vertical film beside the copy so nothing is cropped */
+.wcard.vcard{display:grid;grid-template-columns:clamp(180px,17vw,232px) 1fr;align-items:center;gap:clamp(16px,1.8vw,28px);padding:clamp(12px,1.2vw,18px)}
 .wcard.vcard .wthumb{aspect-ratio:9/16;border-radius:12px;background:var(--night)}
 .wcard.vcard .wmeta{padding:0}
-@media (max-width:880px){.wcard.s7,.wcard.s5,.wcard.s6{grid-column:span 12}.wcard.s12 .wthumb{aspect-ratio:16/10}}
-@media (max-width:600px){.wcard.vcard{grid-template-columns:1fr;justify-items:start;gap:20px}.wcard.vcard .wthumb{width:min(74vw,300px)}}
+@media (max-width:880px){.wcard.s7,.wcard.s5,.wcard.s6{grid-column:span 12}.wcard.s12 .wthumb{aspect-ratio:16/10}
+  .wcard.vcard{grid-template-columns:1fr;padding:0}.wcard.vcard .wthumb{width:100%;max-width:360px;margin-inline:auto}.wcard.vcard .wmeta{padding:22px 24px 26px}}
 
 /* ---------- service detail pages (shared) ---------- */
 .pairs{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:clamp(60px,8vw,100px);border-top:1px solid var(--ink-12);padding-top:clamp(30px,4vw,44px)}

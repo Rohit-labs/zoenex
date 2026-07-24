@@ -130,7 +130,7 @@ const PROJECTS: Project[] = [
     res: "Reporting cycle cut from 5 days to 4 hours",
   },
   {
-    span: "s6",
+    span: "s12",
     cats: ["motion", "web"],
     label: "Motion + Web",
     art: "art-bars",
