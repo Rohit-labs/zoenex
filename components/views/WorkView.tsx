@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
     span: "s6",
     cats: ["web"],
     label: "Web Design",
-    img: "/demos/dinerly/assets/video/hero-poster.jpg",
+    img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1600&q=80",
     alt: "DINERLY — dark, appetite-driven restaurant website",
     demo: "/demos/dinerly/index.html",
     title: "DINERLY — Fine-Casual Dining",
