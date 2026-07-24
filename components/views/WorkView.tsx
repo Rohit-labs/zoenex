@@ -23,6 +23,9 @@ type Project = {
   res: string;
   art?: string;
   img?: string;
+  video?: string;
+  videoWebm?: string;
+  poster?: string;
   alt?: string;
   demo?: string;
 };
@@ -106,6 +109,20 @@ const PROJECTS: Project[] = [
   },
   {
     span: "s6",
+    cats: ["motion"],
+    label: "Motion",
+    video: "/motion/aura-preview.mp4",
+    videoWebm: "/motion/aura-preview.webm",
+    poster: "/motion/aura-poster.jpg",
+    alt: "AURA — cinematic running-shoe product film",
+    demo: "/motion/aura.mp4",
+    title: "AURA — Product Film",
+    cat: "Product Motion · 2026",
+    body: "A cinematic product reel for the AURA running shoe — dynamic reveals, particle and debris simulation and hero beauty shots, cut for vertical social.",
+    res: "Live sample — click to watch",
+  },
+  {
+    span: "s6",
     cats: ["automation"],
     label: "AI Automation",
     art: "art-contour",
@@ -115,7 +132,7 @@ const PROJECTS: Project[] = [
     res: "Reporting cycle cut from 5 days to 4 hours",
   },
   {
-    span: "s6",
+    span: "s12",
     cats: ["motion", "web"],
     label: "Motion + Web",
     art: "art-bars",
@@ -189,7 +206,21 @@ export default function WorkView() {
                 <>
                   <div className="wthumb">
                     <span className="art-label">{p.label}</span>
-                    {p.img ? (
+                    {p.video ? (
+                      <video
+                        className="wshot"
+                        poster={p.poster}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        aria-label={p.alt || p.title}
+                      >
+                        {p.videoWebm ? <source src={p.videoWebm} type="video/webm" /> : null}
+                        <source src={p.video} type="video/mp4" />
+                      </video>
+                    ) : p.img ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img className="wshot" src={p.img} alt={p.alt || p.title} loading="lazy" />
                     ) : (
