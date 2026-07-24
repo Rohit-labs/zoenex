@@ -24,7 +24,6 @@ type Project = {
   art?: string;
   img?: string;
   video?: string;
-  videoWebm?: string;
   poster?: string;
   alt?: string;
   demo?: string;
@@ -112,7 +111,6 @@ const PROJECTS: Project[] = [
     cats: ["motion"],
     label: "Motion",
     video: "/motion/aura-preview.mp4",
-    videoWebm: "/motion/aura-preview.webm",
     poster: "/motion/aura-poster.jpg",
     alt: "AURA — cinematic running-shoe product film",
     demo: "/motion/aura.mp4",
@@ -132,7 +130,7 @@ const PROJECTS: Project[] = [
     res: "Reporting cycle cut from 5 days to 4 hours",
   },
   {
-    span: "s12",
+    span: "s6",
     cats: ["motion", "web"],
     label: "Motion + Web",
     art: "art-bars",
@@ -201,7 +199,7 @@ export default function WorkView() {
           <div className="wgrid">
             {PROJECTS.map((p) => {
               const show = filter === "all" || p.cats.includes(filter);
-              const cls = `wcard ${p.span} rv${show ? "" : " hide"}`;
+              const cls = `wcard ${p.span} rv${p.video ? " vcard" : ""}${show ? "" : " hide"}`;
               const inner = (
                 <>
                   <div className="wthumb">
@@ -217,7 +215,6 @@ export default function WorkView() {
                         preload="metadata"
                         aria-label={p.alt || p.title}
                       >
-                        {p.videoWebm ? <source src={p.videoWebm} type="video/webm" /> : null}
                         <source src={p.video} type="video/mp4" />
                       </video>
                     ) : p.img ? (
