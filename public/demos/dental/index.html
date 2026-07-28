@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modern dentistry with gentle care. Expert dental care for healthy, confident smiles at every age.">
+  <title>Dental — Modern Dentistry With Gentle Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ====== HERO SECTION ====== -->
+  <section class="hero" id="hero">
+
+    <!-- Hero image -->
+    <div class="hero-img-wrap">
+      <img src="hero.jpg" alt="Dentist carefully examining a patient in a warm, modern clinic" class="hero-img">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <!-- Navigation (overlays on hero) -->
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#" class="nav-logo" aria-label="Dental home">
+        <svg class="nav-logo-icon" width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="2" fill="currentColor"/>
+          <line x1="16" y1="4" x2="16" y2="10" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="16" y1="22" x2="16" y2="28" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="4" y1="16" x2="10" y2="16" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="22" y1="16" x2="28" y2="16" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <span class="nav-wordmark">Dental</span>
+      </a>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link nav-link--active">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">About us</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <a href="#contact" class="nav-cta" id="btn-bookcall">
+        BOOK A CALL
+        <span class="nav-cta-arrow" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </nav>
+
+    <!-- Hero content -->
+    <div class="hero-content">
+      <h1 class="hero-headline">MODERN<br>DENTISTRY WITH<br>GENTLE CARE.</h1>
+      <p class="hero-body">Expert dental care for healthy,<br>confident smiles at every age—<br>delivered with comfort, precision,<br>and trust.</p>
+    </div>
+
+    <!-- Service pills -->
+    <div class="hero-pills">
+      <span class="hero-pill hero-pill--outline">Dental Checkups</span>
+      <span class="hero-pill hero-pill--filled">Teeth Cleaning</span>
+      <span class="hero-pill hero-pill--outline">Tooth Filling</span>
+      <span class="hero-pill hero-pill--filled">Gum Treatment</span>
+      <span class="hero-pill hero-pill--outline">Retainers</span>
+    </div>
+
+    <!-- Slide indicator -->
+    <div class="hero-slider">
+      <span class="hero-slider-arrows">
+        <button class="hero-slider-btn" aria-label="Previous slide">&lt;</button>
+        <span class="hero-slider-num">01</span>
+      </span>
+      <span class="hero-slider-track"><span class="hero-slider-fill"></span></span>
+      <span class="hero-slider-total">05</span>
+    </div>
+
+    <!-- Doctor card -->
+    <div class="hero-doc-card">
+      <img src="doc1.jpg" alt="Dr. Jonas Suherman" class="hero-doc-img">
+      <div class="hero-doc-info">
+        <strong class="hero-doc-name">Dr. Jonas Suherman</strong>
+        <span class="hero-doc-role">Pediatric Dentistry</span>
+        <span class="hero-doc-exp">7 year Experience <span class="hero-doc-rating">(4.5 Rating)</span></span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ====== SERVICES ====== -->
+  <section class="services" id="services">
+    <div class="services-inner">
+
+      <!-- Header row -->
+      <div class="services-top">
+        <div class="services-heading-area">
+          <span class="services-eyebrow">Our Features /</span>
+          <h2 class="services-heading">DISCOVER OUR SIGNATURE<br>DENTAL SERVICES</h2>
+        </div>
+        <p class="services-desc">Experience modern dental care delivered with comfort, precision, and attention to detail. Our clinic provides a calm, welcoming environment designed to make every visit stress-free.</p>
+      </div>
+
+      <!-- Reviews row + cards -->
+      <div class="services-body">
+
+        <!-- Left — reviews -->
+        <div class="services-reviews">
+          <div class="services-avatars">
+            <img src="doc1.jpg" alt="" class="services-avatar" aria-hidden="true">
+            <img src="doc2.jpg" alt="" class="services-avatar" aria-hidden="true">
+            <img src="hero.jpg" alt="" class="services-avatar" aria-hidden="true">
+            <div class="services-review-count"><strong>750+</strong><span>Reviews</span></div>
+          </div>
+          <div class="services-review-text">
+            <p>Discover delighted patient reviews about their comforting and satisfying dental care experience.</p>
+            <div class="services-review-nav">
+              <button class="carousel-btn" aria-label="Previous review">&lt;</button>
+              <button class="carousel-btn" aria-label="Next review">&gt;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right — 3 cards -->
+        <div class="services-cards">
+          <div class="service-card reveal">
+            <div class="service-card-img-wrap">
+              <img src="cleaning.jpg" alt="Professional teeth cleaning procedure" class="service-card-img">
+              <div class="service-card-overlay">
+                <span class="service-card-label">Teeth<br>Cleaning</span>
+                <span class="service-card-arrow">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-card-img-wrap">
+              <img src="checkup.jpg" alt="Dental checkup in progress" class="service-card-img">
+              <div class="service-card-overlay">
+                <span class="service-card-label">Dental<br>Checkups</span>
+                <span class="service-card-arrow">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-card-img-wrap">
+              <img src="veneers.jpg" alt="Dental veneers application" class="service-card-img">
+              <div class="service-card-overlay">
+                <span class="service-card-label">Dental<br>Veneers</span>
+                <span class="service-card-arrow">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT ====== -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      
+      <!-- Left column: image and stats -->
+      <div class="about-left-col">
+        <!-- Left image -->
+        <div class="about-img-wrap reveal">
+          <img src="about.jpg" alt="Dentist performing a precise dental procedure" class="about-img">
+        </div>
+        
+        <!-- Stats row -->
+        <div class="about-stats">
+          <div class="about-stat reveal">
+            <span class="about-stat-num">98%</span>
+            <span class="about-stat-label">SATISFACTION<br>RATE</span>
+          </div>
+          <div class="about-stat reveal">
+            <span class="about-stat-num">50K</span>
+            <span class="about-stat-label">SMILES<br>TRANSFORMED</span>
+          </div>
+          <div class="about-stat reveal">
+            <span class="about-stat-num">4.9</span>
+            <span class="about-stat-label">CUSTOMERS<br>RATING</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right column: text block and doctor cards -->
+      <div class="about-right-col">
+        <!-- Right content -->
+        <div class="about-content reveal">
+          <span class="about-eyebrow">About Dental /</span>
+          <h2 class="about-heading">EXCELLENCE IN<br>DENTISTRY WITH<br>COMPASSIONATE CARE</h2>
+          <p class="about-body">Discover delighted patient reviews about their comforting and satisfying dental care experience. Our dedicated team brings years of expertise and genuine warmth to every interaction.</p>
+          <a href="#contact" class="about-readmore">
+            Read more
+            <span class="about-readmore-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </span>
+          </a>
+        </div>
+        
+        <!-- Doctor cards -->
+        <div class="about-doctors">
+          <div class="doctor-card reveal">
+            <div class="doctor-card-img-wrap">
+              <img src="doc1.jpg" alt="Dr. Albert Flores" class="doctor-card-img">
+              <span class="doctor-card-arrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </span>
+            </div>
+            <strong class="doctor-card-name">Dr. Albert Flores</strong>
+            <span class="doctor-card-role">Pediatric Dentist</span>
+          </div>
+          <div class="doctor-card reveal">
+            <div class="doctor-card-img-wrap">
+              <img src="doc2.jpg" alt="Dr. Monica Webb" class="doctor-card-img">
+              <span class="doctor-card-arrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </span>
+            </div>
+            <strong class="doctor-card-name">Dr. Monica Webb</strong>
+            <span class="doctor-card-role">Pediatric Dentist</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-inner">
+      <span class="testimonials-eyebrow">Testimonials /</span>
+      <h2 class="testimonials-heading">WHAT OUR PATIENTS SAY</h2>
+      <div class="testimonials-grid">
+        <blockquote class="test-card reveal">
+          <div class="test-stars" aria-label="5 stars">★★★★★</div>
+          <p class="test-quote">"The team made my dental implant procedure completely painless. I was nervous, but their expertise and care put me at ease immediately."</p>
+          <footer class="test-footer">
+            <img src="doc2.jpg" alt="" class="test-avatar" aria-hidden="true">
+            <div><strong>Sarah Mitchell</strong><span>Dental Implant</span></div>
+          </footer>
+        </blockquote>
+        <blockquote class="test-card reveal">
+          <div class="test-stars" aria-label="5 stars">★★★★★</div>
+          <p class="test-quote">"My children used to dread the dentist. Now they actually look forward to their checkups. The pediatric team here is exceptional."</p>
+          <footer class="test-footer">
+            <img src="doc1.jpg" alt="" class="test-avatar" aria-hidden="true">
+            <div><strong>James Rodriguez</strong><span>Family Dentistry</span></div>
+          </footer>
+        </blockquote>
+        <blockquote class="test-card reveal">
+          <div class="test-stars" aria-label="5 stars">★★★★★</div>
+          <p class="test-quote">"Best veneers I've ever had. The attention to detail and the natural-looking results exceeded all my expectations. Truly life-changing."</p>
+          <footer class="test-footer">
+            <img src="hero.jpg" alt="" class="test-avatar" aria-hidden="true">
+            <div><strong>Amara Okafor</strong><span>Dental Veneers</span></div>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== BLOG ====== -->
+  <section class="blog" id="blog">
+    <div class="blog-inner">
+      <span class="blog-eyebrow">Latest Articles /</span>
+      <h2 class="blog-heading">DENTAL CARE INSIGHTS</h2>
+      <div class="blog-grid">
+        <article class="blog-card reveal">
+          <div class="blog-card-img-wrap"><img src="cleaning.jpg" alt="" class="blog-card-img"></div>
+          <span class="blog-card-tag">Oral Health</span>
+          <h3 class="blog-card-title">5 Daily Habits for Healthier Gums</h3>
+          <p class="blog-card-excerpt">Simple routines that prevent gum disease and keep your smile confident every day.</p>
+          <a href="#" class="blog-card-link">Read Article →</a>
+        </article>
+        <article class="blog-card reveal">
+          <div class="blog-card-img-wrap"><img src="veneers.jpg" alt="" class="blog-card-img"></div>
+          <span class="blog-card-tag">Cosmetic</span>
+          <h3 class="blog-card-title">Veneers vs Whitening: What's Right?</h3>
+          <p class="blog-card-excerpt">Understanding the options so you can choose the best path to your perfect smile.</p>
+          <a href="#" class="blog-card-link">Read Article →</a>
+        </article>
+        <article class="blog-card reveal">
+          <div class="blog-card-img-wrap"><img src="checkup.jpg" alt="" class="blog-card-img"></div>
+          <span class="blog-card-tag">Prevention</span>
+          <h3 class="blog-card-title">Why Regular Checkups Matter</h3>
+          <p class="blog-card-excerpt">How biannual visits catch issues early and save you time, pain and money long-term.</p>
+          <a href="#" class="blog-card-link">Read Article →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT / CTA ====== -->
+  <section class="cta-band" id="contact">
+    <div class="cta-inner">
+      <div class="cta-left reveal">
+        <span class="cta-eyebrow">Get In Touch /</span>
+        <h2 class="cta-heading">READY FOR YOUR<br>BEST SMILE?</h2>
+        <p class="cta-body">Book a consultation at our clinic today. New patients welcome. Same-week appointments available.</p>
+        <div class="cta-details">
+          <div class="cta-detail">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.13.8.33 1.6.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c1.2.37 2 .57 2.81.7a2 2 0 0 1 1.72 2z"/></svg>
+            +44 20 7123 4567
+          </div>
+          <div class="cta-detail">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            14 Harley Street, London W1G 9PH
+          </div>
+          <div class="cta-detail">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Mon – Fri: 9:00 AM – 6:00 PM
+          </div>
+        </div>
+      </div>
+      <div class="cta-right reveal">
+        <form class="cta-form" novalidate>
+          <div class="cta-form-row">
+            <div class="cta-field"><label for="f-fname">First name</label><input type="text" id="f-fname" placeholder="Jane" autocomplete="given-name"></div>
+            <div class="cta-field"><label for="f-lname">Last name</label><input type="text" id="f-lname" placeholder="Smith" autocomplete="family-name"></div>
+          </div>
+          <div class="cta-field"><label for="f-email">Email address</label><input type="email" id="f-email" placeholder="jane@email.com" autocomplete="email"></div>
+          <div class="cta-field"><label for="f-phone">Phone number</label><input type="tel" id="f-phone" placeholder="+44 7000 000000" autocomplete="tel"></div>
+          <div class="cta-field">
+            <label for="f-service">Service</label>
+            <select id="f-service">
+              <option value="">Select a service…</option>
+              <option>General Checkup</option>
+              <option>Teeth Cleaning</option>
+              <option>Dental Veneers</option>
+              <option>Root Canal</option>
+              <option>Teeth Whitening</option>
+              <option>Orthodontics</option>
+            </select>
+          </div>
+          <button type="submit" class="cta-submit" id="btn-submit">Book Appointment →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="2" fill="currentColor"/>
+          <line x1="16" y1="4" x2="16" y2="10" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="16" y1="22" x2="16" y2="28" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="4" y1="16" x2="10" y2="16" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="22" y1="16" x2="28" y2="16" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <span>Dental</span>
+      </div>
+      <p class="footer-copy">© 2026 Dental Clinic. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

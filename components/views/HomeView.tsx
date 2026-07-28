@@ -65,7 +65,7 @@ const SERVICES = [
 
 const SELECTED_WORK = [
   { span: "s7", art: "art-orbit", num: "01", cat: "AI Automation · 2026", title: "Nordwind Ops Copilot", res: "62% faster response time" },
-  { span: "s5", art: "art-eclipse", num: "02", cat: "E-commerce · 2026", title: "Solstice Skincare", res: "+38% conversion" },
+  { span: "s5", art: "art-eclipse", num: "02", cat: "Web Design · 2026", title: "Dental — Modern Dentistry", res: "Live design — click to explore" },
   { span: "s5", art: "art-halftone", num: "03", cat: "Brand Motion · 2025", title: "Pulseloop Launch Film", res: "2.1M organic views" },
   { span: "s7", art: "art-grid3d", num: "04", cat: "Web App + AI · 2025", title: "Meridian Realty Portal", res: "3× qualified leads / month" },
 ];
