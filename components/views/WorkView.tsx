@@ -58,7 +58,7 @@ const PROJECTS: Project[] = [
     span: "s6",
     cats: ["web", "motion"],
     label: "Web + Motion",
-    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1600&q=80",
+    img: "/demos/astronomia/astronomia_sky.png",
     alt: "ASTRONOMIA — luxury horology watch website",
     demo: "https://astronomia-navy.vercel.app",
     title: "ASTRONOMIA — Luxury Horology",
