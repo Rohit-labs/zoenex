@@ -7,10 +7,54 @@ import GlobalEffects from "@/components/GlobalEffects";
 import Loader from "@/components/Loader";
 import Nav from "@/components/Nav";
 
+const SITE_URL = "https://zoenexstudios.in";
+
 export const metadata: Metadata = {
+  /* metadataBase makes every relative URL in this file absolute. Without it
+     Next emits relative og:image paths, which the social scrapers cannot
+     resolve — the link preview comes out blank. */
+  metadataBase: new URL(SITE_URL),
+
   title: "Zoenex Studios — Websites that convert, move & run themselves",
   description:
     "We help ambitious B2B teams turn their website into a 24/7 growth engine — designed, animated and automated end to end. Trusted by teams in the US, UK, UAE & India. Book a 20-minute call.",
+
+  /* "./" resolves per route, so /work canonicalises to /work rather than to
+     the homepage. A literal "/" here would point every page at the root. */
+  alternates: { canonical: "./" },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  openGraph: {
+    type: "website",
+    siteName: "Zoenex Studios",
+    locale: "en_US",
+    url: "./",
+    title: "Zoenex Studios — Websites that convert, move & run themselves",
+    description:
+      "Web, motion and AI in one studio. We turn B2B websites into a 24/7 growth engine — designed, animated and automated end to end.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Zoenex Studios",
+      },
+    ],
+  },
+
+  /* No twitter: block — the studio has no X presence, and WhatsApp, LinkedIn
+     and Facebook all read Open Graph. Scrapers that prefer Twitter cards fall
+     back to og: when they are absent. */
 };
 
 export const viewport: Viewport = {
