@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://zoenex.vercel.app";
+const BASE_URL = "https://zoenexstudios.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
