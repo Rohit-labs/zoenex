@@ -7,10 +7,12 @@ import GlobalEffects from "@/components/GlobalEffects";
 import Loader from "@/components/Loader";
 import Nav from "@/components/Nav";
 
+const SITE_URL = "https://zoenexstudios.in";
+
 export const metadata: Metadata = {
-  title: "Zoenex Studios | Web Development, AI Automation & Digital Solutions",
+  title: "Zoenex Studios — Websites that convert, move & run themselves",
   description:
-    "Zoenex Studios builds modern websites, AI-powered solutions, and business automation systems to help businesses grow and operate smarter. Book a call today.",
+    "We help ambitious B2B teams turn their website into a 24/7 growth engine — designed, animated and automated end to end. Trusted by teams in the US, UK, UAE & India. Book a 20-minute call.",
 };
 
 export const viewport: Viewport = {
