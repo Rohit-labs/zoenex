@@ -44,6 +44,8 @@ export default function ContactView() {
   const successRef = useRef<HTMLDivElement>(null);
   const [errors, setErrors] = useState<Errors>(NO_ERRORS);
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   useViewAnimations(ref);
 
   useGSAP(
@@ -57,7 +59,7 @@ export default function ContactView() {
 
   const clearError = (key: keyof Errors) => setErrors((e) => (e[key] ? { ...e, [key]: false } : e));
 
-  const onSubmit = (ev: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (ev: FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
     const form = ev.currentTarget;
     const value = (name: string) => (form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | null)?.value ?? "";
@@ -71,13 +73,56 @@ export default function ContactView() {
     setErrors(next);
     if (next.name || next.email || next.message || next.services) return;
 
-    /* Demo submit — POST this payload to your backend / API route to go live */
-    const data: Record<string, string> = {};
-    new FormData(form).forEach((v, k) => {
-      data[k] = data[k] ? data[k] + ", " + String(v) : String(v);
+    setSubmitting(true);
+    setSubmitError(null);
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      console.error("Web3Forms Access Key is missing from environment variables.");
+      setSubmitError("Form submission is currently misconfigured (missing API key).");
+      setSubmitting(false);
+      return;
+    }
+
+    const checkedServices: string[] = [];
+    form.querySelectorAll('input[name="services"]:checked').forEach((el) => {
+      checkedServices.push((el as HTMLInputElement).value);
     });
-    console.log("Enquiry payload:", data);
-    setSent(true);
+
+    const payload = {
+      access_key: accessKey,
+      name: value("name").trim(),
+      email: value("email").trim(),
+      company: value("company").trim(),
+      services: checkedServices.join(", "),
+      message: value("message").trim(),
+      subject: `New Zoenex Enquiry from ${value("name").trim()}`,
+      from_name: "Zoenex Studios Website",
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSent(true);
+        form.reset();
+      } else {
+        setSubmitError(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error("Web3Forms submission error:", err);
+      setSubmitError("Network error. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -132,7 +177,7 @@ export default function ContactView() {
             <div className="iblk">
               <h4>Email</h4>
               <a href="mailto:hello@zoenex.studio">hello@zoenex.studio</a>
-              <p className="sub">New projects &amp; general enquiries</p>
+              <p className="sub">New projects & general enquiries</p>
             </div>
             <div className="iblk">
               <h4>Studio</h4>
@@ -252,12 +297,17 @@ export default function ContactView() {
                 </span>
               </div>
               <div className="ffoot">
-                <button type="submit" className="btn btn-fill" data-magnetic>
-                  Send enquiry
+                <button type="submit" className="btn btn-fill" data-magnetic disabled={submitting}>
+                  {submitting ? "Sending..." : "Send enquiry"}
                   <ArrowRight />
                 </button>
                 <span className="mono-tag">No spam. No mailing list. Just a reply.</span>
               </div>
+              {submitError && (
+                <span className="ferr show" style={{ marginTop: "14px", display: "block" }}>
+                  {submitError}
+                </span>
+              )}
             </form>
             <div className={`fsuccess${sent ? " show" : ""}`} ref={successRef} role="status">
               <div className="ok">✓</div>

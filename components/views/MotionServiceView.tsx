@@ -121,8 +121,7 @@ export default function MotionServiceView() {
             <em className="accent">.</em>
           </h1>
           <p className="lede rv">
-            Brand films, product explainers, UI motion and social-first video that give your product the launch it deserves — and
-            keep it moving after.
+            We produce cinematic brand launch films, product explainers, and social-first video campaigns for digital advertising. From interactive UI motion design to 3D WebGL assets, we create high-impact visual stories that drive customer engagement.
           </p>
           <ul className="svc-tags rv" style={{ marginTop: "30px" }}>
             {["Brand films", "Explainers", "UI motion", "3D & WebGL", "Social video"].map((t) => (
@@ -135,7 +134,7 @@ export default function MotionServiceView() {
               <ArrowRight />
             </Link>
             <Link href="/work" className="btn btn-line" data-magnetic>
-              View work
+              View our video projects
             </Link>
           </div>
         </div>
@@ -217,11 +216,11 @@ export default function MotionServiceView() {
           <div className="pairs rv">
             <span className="mono-tag">Pairs well with —</span>
             <Link href="/services/ai-automation" className="btn btn-line" data-magnetic>
-              AI Automation
+              AI Automation Solutions
               <ArrowRight />
             </Link>
             <Link href="/services/websites" className="btn btn-line" data-magnetic>
-              Websites &amp; Product
+              Websites & Web Development
               <ArrowRight />
             </Link>
           </div>

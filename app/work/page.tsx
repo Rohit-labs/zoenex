@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import WorkView from "@/components/views/WorkView";
 
 export const metadata: Metadata = {
-  title: "Work — Zoenex Studios",
+  title: "Our Portfolio & Case Studies | Zoenex Studios",
   description:
-    "Selected projects by Zoenex Studios — automation systems, websites and films, each one measured against the number that mattered to the client.",
+    "Explore our portfolio of web development, AI automation workflows, and motion design projects delivered for B2B teams worldwide.",
 };
 
 export default function WorkPage() {

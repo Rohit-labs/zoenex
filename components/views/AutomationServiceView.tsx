@@ -75,8 +75,7 @@ export default function AutomationServiceView() {
             <em className="accent">.</em>
           </h1>
           <p className="lede rv">
-            Custom AI agents and workflow systems that take repetitive operations off your team — lead handling, support,
-            reporting, internal ops — and run them around the clock.
+            Zoenex Studios builds custom AI agents, automated workflows, and intelligent business automation solutions. We connect your tools, build custom AI helpers, and streamline repetitive operations so your team can focus on growth.
           </p>
           <div className="term rv" aria-hidden="true">
             <div className="term-bar">
@@ -107,7 +106,7 @@ export default function AutomationServiceView() {
               <ArrowRight />
             </Link>
             <Link href="/work" className="btn btn-line" data-magnetic>
-              View work
+              View our case studies
             </Link>
           </div>
         </div>
@@ -185,11 +184,11 @@ export default function AutomationServiceView() {
           <div className="pairs rv">
             <span className="mono-tag">Pairs well with —</span>
             <Link href="/services/websites" className="btn btn-line" data-magnetic>
-              Websites &amp; Product
+              Websites & Web Development
               <ArrowRight />
             </Link>
             <Link href="/services/motion-design" className="btn btn-line" data-magnetic>
-              Motion Design
+              Motion Design Services
               <ArrowRight />
             </Link>
           </div>

@@ -87,8 +87,7 @@ export default function WebsitesServiceView() {
               <em className="accent">.</em>
             </h1>
             <p className="lede rv">
-              Fast, conversion-focused marketing sites and web apps — designed end to end, built on modern stacks and measured
-              against real business goals.
+              We deliver professional web development services, building fast, custom web applications and conversion-focused marketing websites. From design systems to custom front-end development, we build digital solutions measured against real business goals.
             </p>
             <div className="hero-cta rv" style={{ justifyContent: "flex-start", marginTop: "38px" }}>
               <Link href="/contact" className="btn btn-fill" data-magnetic>
@@ -96,7 +95,7 @@ export default function WebsitesServiceView() {
                 <ArrowRight />
               </Link>
               <Link href="/work" className="btn btn-line" data-magnetic>
-                View work
+                View our web projects
               </Link>
             </div>
           </div>
@@ -234,11 +233,11 @@ export default function WebsitesServiceView() {
           <div className="pairs rv">
             <span className="mono-tag">Pairs well with —</span>
             <Link href="/services/ai-automation" className="btn btn-line" data-magnetic>
-              AI Automation
+              AI Automation Solutions
               <ArrowRight />
             </Link>
             <Link href="/services/motion-design" className="btn btn-line" data-magnetic>
-              Motion Design
+              Motion Design Services
               <ArrowRight />
             </Link>
           </div>

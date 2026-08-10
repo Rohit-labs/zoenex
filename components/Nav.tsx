@@ -42,7 +42,7 @@ export default function Nav() {
         <Link className="logo" href="/">
           <span className="logo-mark" aria-hidden="true">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/zoenex-mark.png" alt="" draggable={false} />
+            <img src="/zoenex-mark.png" alt="Zoenex Studios logo" draggable={false} />
           </span>
           <span className="logo-word">
             ZOENEX

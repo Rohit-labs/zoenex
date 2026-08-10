@@ -35,7 +35,7 @@ const PROJECTS: Project[] = [
     cats: ["web"],
     label: "Web Design",
     img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80",
-    alt: "AERUM — panoramic modular real-estate website",
+    alt: "AERUM - High-performance responsive real estate web application design",
     demo: "/demos/aerum/index.html",
     title: "AERUM — Modular Real Estate",
     cat: "Web Design · 2026",
@@ -47,7 +47,7 @@ const PROJECTS: Project[] = [
     cats: ["web"],
     label: "Web Design",
     img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1600&q=80",
-    alt: "DINERLY — dark, appetite-driven restaurant website",
+    alt: "Dinerly - Premium custom dark-mode restaurant website layout",
     demo: "/demos/dinerly/index.html",
     title: "DINERLY — Fine-Casual Dining",
     cat: "Restaurant · 2026",
@@ -59,7 +59,7 @@ const PROJECTS: Project[] = [
     cats: ["web", "motion"],
     label: "Web + Motion",
     img: "/demos/astronomia/astronomia_sky.png",
-    alt: "ASTRONOMIA — luxury horology watch website",
+    alt: "Astronomia - Luxury single-page watch website showcasing interactive gravity-tourbillon motion design",
     demo: "https://astronomia-navy.vercel.app",
     title: "ASTRONOMIA — Luxury Horology",
     cat: "Web / Scroll · 2026",
@@ -81,7 +81,7 @@ const PROJECTS: Project[] = [
     cats: ["web"],
     label: "Web Design",
     img: "/demos/dental/hero.jpg",
-    alt: "DENTAL — modern dentistry with gentle care website",
+    alt: "Dental - Clean modern dental clinic landing page with online appointment booking form",
     demo: "/demos/dental/index.html",
     title: "Dental — Modern Dentistry",
     cat: "Web Design · 2026",
@@ -114,7 +114,7 @@ const PROJECTS: Project[] = [
     label: "Motion",
     video: "/motion/aura-preview.mp4",
     poster: "/motion/aura-poster.jpg",
-    alt: "AURA — cinematic running-shoe product film",
+    alt: "AURA - Cinematic 3D product motion design video for running shoes",
     demo: "/motion/aura.mp4",
     title: "AURA — Product Film",
     cat: "Product Motion · 2026",
@@ -179,7 +179,7 @@ export default function WorkView() {
             projects<em className="accent">.</em>
           </h1>
           <p className="lede rv">
-            Automation systems, websites and films — each one measured against the number that mattered to the client.
+            Selected projects by Zoenex Studios — custom web development, AI automation workflows, and motion design campaigns, each measured against real business results.
           </p>
         </div>
       </section>

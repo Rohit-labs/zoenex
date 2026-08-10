@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import MotionServiceView from "@/components/views/MotionServiceView";
 
 export const metadata: Metadata = {
-  title: "Motion Design — Zoenex Studios",
+  title: "Motion Design, Brand & Product Videos | Zoenex Studios",
   description:
-    "Brand films, product explainers, UI motion and social-first video. Our workflow: script & concept, styleframes & boards, animation & production, sound & polish, delivery & cutdowns.",
+    "Professional motion design services. We create high-quality brand launch films, product explainers, UI motion, and 3D social videos to engage your audience.",
 };
 
 export default function MotionDesignPage() {

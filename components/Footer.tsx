@@ -19,7 +19,7 @@ export default function Footer() {
             </Link>
             <p className="foot-blurb">
               Websites that convert, move and run themselves — web, motion and AI in one studio. Mumbai based, working with teams in the
-              US, UK, UAE &amp; India. Replies within one business day.
+              US, UK, UAE & India. Replies within one business day.
             </p>
           </div>
           <div>
@@ -43,7 +43,7 @@ export default function Footer() {
                 <Link href="/services/ai-automation">AI Automation</Link>
               </li>
               <li>
-                <Link href="/services/websites">Websites &amp; Product</Link>
+                <Link href="/services/websites">Websites & Product</Link>
               </li>
               <li>
                 <Link href="/services/motion-design">Motion Design</Link>

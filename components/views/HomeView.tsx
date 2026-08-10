@@ -12,10 +12,10 @@ const SERVICES = [
   {
     code: "ZNX/AUT",
     title: "AI Automation",
-    body: "Custom AI agents and workflow systems that take repetitive work off your team — lead handling, support, reporting, internal operations.",
+    body: "Custom AI agents, intelligent chatbots, and workflow automation systems that eliminate repetitive tasks. We build business automation solutions that streamline operations, handle leads, and integrate systems.",
     tags: ["AI agents", "Chatbots", "CRM workflows", "API integrations", "RAG systems"],
     href: "/services/ai-automation",
-    aria: "Explore AI Automation",
+    aria: "Explore our AI automation solutions",
     sig: (
       <div className="svc-sig sig-aut" aria-hidden="true">
         <span className="n on" />
@@ -29,10 +29,10 @@ const SERVICES = [
   {
     code: "ZNX/WEB",
     title: "Websites & Product",
-    body: "Fast, conversion-focused marketing sites and web apps — designed end to end, built on modern stacks, measured against real business goals.",
+    body: "High-performance websites, custom web applications, and e-commerce platforms designed for conversion. We provide end-to-end web development services using modern stacks optimized for speed and SEO.",
     tags: ["Marketing sites", "Web apps", "E-commerce", "Design systems", "SEO & performance"],
     href: "/services/websites",
-    aria: "Explore Websites and Product",
+    aria: "Explore our web development services",
     sig: (
       <div className="svc-sig sig-web" aria-hidden="true">
         <div className="bar">
@@ -47,10 +47,10 @@ const SERVICES = [
   {
     code: "ZNX/MTN",
     title: "Motion Design",
-    body: "Brand films, product explainers, UI motion and social-first video that give your product the launch it deserves — and keep it moving after.",
+    body: "Cinematic brand films, product explainers, and social-first video campaigns for digital advertising. We design UI animations and 3D motion assets that capture attention and drive customer engagement.",
     tags: ["Brand films", "Explainers", "UI motion", "3D & WebGL", "Social video"],
     href: "/services/motion-design",
-    aria: "Explore Motion Design",
+    aria: "Explore our motion design services",
     sig: (
       <div className="svc-sig sig-mtn" aria-hidden="true">
         <i />
@@ -153,28 +153,27 @@ export default function HomeView() {
             <span className="eyebrow">Zoenex Studios — est. 2026</span>
             <span className="mono-tag">AI Automation / Web / Motion</span>
           </div>
-          <h1 className="h-mega" id="heroTitle" aria-label="Machines that work. Design that moves.">
+          <h1 className="h-mega" id="heroTitle" aria-label="Websites that convert. AI & automation.">
             <span className="line">
-              <span className="line-inner">Machines</span>
+              <span className="line-inner">Websites</span>
             </span>
             <span className="line">
               <span className="line-inner">
-                that work<em>.</em>
+                that convert<em>.</em>
               </span>
             </span>
             <span className="line">
-              <span className="line-inner">Design that</span>
+              <span className="line-inner">AI &</span>
             </span>
             <span className="line">
               <span className="line-inner">
-                <em>moves.</em>
+                <em>automation.</em>
               </span>
             </span>
           </h1>
           <div className="hero-under">
             <p className="lede rv">
-              We help ambitious B2B teams turn their website into a 24/7 growth engine — designed, animated and automated end to end.
-              One studio, three levers: web, motion, AI.
+              Zoenex Studios builds modern websites, custom AI solutions, and business automation systems that help companies operate smarter and grow. We turn your digital presence into a 24/7 growth engine through three integrated services: high-performance web development, intelligent workflow automation, and cinematic motion design.
             </p>
             <div className="hero-cta rv">
               <Link href="/contact" className="btn btn-fill" data-magnetic>
@@ -182,7 +181,7 @@ export default function HomeView() {
                 <ArrowRight />
               </Link>
               <Link href="/work" className="btn btn-line" data-magnetic>
-                See the proof
+                See our portfolio
               </Link>
             </div>
           </div>
@@ -300,7 +299,7 @@ export default function HomeView() {
                 not promises.
               </h2>
               <Link href="/work" className="btn btn-line rv" data-magnetic>
-                All projects
+                Explore all projects
                 <ArrowRight />
               </Link>
             </div>
