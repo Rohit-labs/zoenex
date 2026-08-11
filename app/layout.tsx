@@ -23,6 +23,21 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-T126TLF41Q"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-T126TLF41Q');
+            `,
+          }}
+        />
+      </head>
       <body className="loading">
         {/* the loader's hero image must be ready before first paint */}
         <link rel="preload" as="image" href="/zoenex-logo.jpg" fetchPriority="high" />
