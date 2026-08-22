@@ -200,6 +200,56 @@ export default function WebsitesServiceView() {
       <section className="sec" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <div className="sec-head">
+            <span className="eyebrow rv">SEO Foundations</span>
+            <div className="row">
+              <h2 className="h-xl rv">
+                Digital Growth &
+                <br />
+                SEO Foundations.
+              </h2>
+              <p className="lede rv" style={{ maxWidth: "42ch" }}>
+                Your website should be built to be discoverable. Our development process incorporates technical SEO fundamentals and local SEO alignment from day one.
+              </p>
+            </div>
+          </div>
+          <div className="wgrid" style={{ marginTop: "40px" }}>
+            <article className="wcard s6 rv">
+              <div className="wthumb">
+                <span className="art-label">Technical SEO</span>
+                <div className="art art-bars" />
+              </div>
+              <div className="wmeta">
+                <div className="top">
+                  <h3>Built for Discoverability</h3>
+                  <span className="cat">Core Web Vitals</span>
+                </div>
+                <p>
+                  Our websites are engineered using semantic HTML, structured data, responsive mobile-first design, Core Web Vitals optimization, metadata configuration, and accessibility standards to maximize search crawlability and load performance.
+                </p>
+              </div>
+            </article>
+            <article className="wcard s6 rv">
+              <div className="wthumb">
+                <span className="art-label">Local SEO</span>
+                <div className="art art-eclipse" />
+              </div>
+              <div className="wmeta">
+                <div className="top">
+                  <h3>Location-Ready Architecture</h3>
+                  <span className="cat">Mumbai & Beyond</span>
+                </div>
+                <p>
+                  For businesses targeting specific locations like Mumbai, we structure sites around location pages, Google Business Profile alignment, LocalBusiness structured JSON-LD schema, and consistent NAP (Name, Address, Phone) citations.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="sec" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="sec-head">
             <span className="eyebrow rv">The WEB workflow</span>
             <h2 className="h-xl rv">
               Brief to
@@ -234,10 +284,6 @@ export default function WebsitesServiceView() {
             <span className="mono-tag">Pairs well with —</span>
             <Link href="/services/ai-automation" className="btn btn-line" data-magnetic>
               AI Automation Solutions
-              <ArrowRight />
-            </Link>
-            <Link href="/services/motion-design" className="btn btn-line" data-magnetic>
-              Motion Design Services
               <ArrowRight />
             </Link>
           </div>

@@ -5,9 +5,6 @@ export default function Footer() {
   return (
     <footer>
       <div className="wrap">
-        <div className="foot-mark" aria-hidden="true">
-          Zoenex
-        </div>
         <div className="foot-grid">
           <div>
             <Link className="logo" href="/" style={{ color: "var(--paper-on-night)" }}>
@@ -18,7 +15,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="foot-blurb">
-              Websites that convert, move and run themselves — web, motion and AI in one studio. Mumbai based, working with teams in the
+              Websites that convert and run themselves — web development and AI automation in one studio. Mumbai based, working with teams in the
               US, UK, UAE & India. Replies within one business day.
             </p>
           </div>
@@ -45,16 +42,13 @@ export default function Footer() {
               <li>
                 <Link href="/services/websites">Websites & Product</Link>
               </li>
-              <li>
-                <Link href="/services/motion-design">Motion Design</Link>
-              </li>
             </ul>
           </div>
           <div>
             <h4>Connect</h4>
             <ul>
               <li>
-                <a href="mailto:hello@zoenex.studio">hello@zoenex.studio</a>
+                <a href="mailto:zoenexstudios@gmail.com">zoenexstudios@gmail.com</a>
               </li>
               <li>
                 <a href="#" rel="noopener">
@@ -62,7 +56,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" rel="noopener">
+                <a href="https://www.instagram.com/madebyzoenex" target="_blank" rel="noopener noreferrer">
                   Instagram
                 </a>
               </li>

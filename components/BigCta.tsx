@@ -51,8 +51,8 @@ export default function BigCta({ ghost, badge, titleTop, titleSwipe, lede, cta, 
           </ul>
         )}
         <div className="cta-contact rv">
-          <a className="cta-mail" href="mailto:hello@zoenex.studio">
-            hello@zoenex.studio
+          <a className="cta-mail" href="mailto:zoenexstudios@gmail.com">
+            zoenexstudios@gmail.com
           </a>
         </div>
       </div>

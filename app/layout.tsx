@@ -10,9 +10,9 @@ import Nav from "@/components/Nav";
 const SITE_URL = "https://zoenexstudios.in";
 
 export const metadata: Metadata = {
-  title: "Zoenex Studios | Web Development, AI Automation & Digital Solutions",
+  title: "Zoenex Studios | Web Development & AI Automation Mumbai",
   description:
-    "Zoenex Studios builds modern websites, AI-powered solutions, and business automation systems to help businesses grow and operate smarter. Book a call today.",
+    "Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web apps, and automated workflows. Book a call today.",
 };
 
 export const viewport: Viewport = {
@@ -24,6 +24,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" href="/icon.png" />
+        <link rel="apple-touch-icon" href="/icon.png" />
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-T126TLF41Q"></script>
         <script
@@ -35,6 +39,43 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
               gtag('config', 'G-T126TLF41Q');
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "Zoenex Studios",
+              "image": "https://zoenexstudios.in/icon.png",
+              "url": "https://zoenexstudios.in",
+              "email": "zoenexstudios@gmail.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Mumbai",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "19.0760",
+                "longitude": "72.8777"
+              },
+              "sameAs": [
+                "https://linkedin.com/company/zoenex-studios"
+              ],
+              "areaServed": [
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "Mumbai"
+                },
+                {
+                  "@type": "Country",
+                  "name": "India"
+                }
+              ]
+            }),
           }}
         />
       </head>

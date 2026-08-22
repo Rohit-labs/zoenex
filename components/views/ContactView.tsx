@@ -4,6 +4,7 @@ import { Fragment, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { useViewAnimations } from "@/lib/useViewAnimations";
+import { FAQs } from "@/lib/faqs";
 import { ArrowRight } from "../icons";
 
 /* Replace with your real Cal.com / Calendly link (or an embedded scheduler) to go live. */
@@ -12,27 +13,7 @@ const SCHEDULER_URL = "https://cal.com/zoenex/intro-call";
 const SERVICES = [
   { id: "s-aut", value: "AI Automation", label: "AI Automation" },
   { id: "s-web", value: "Website / Product", label: "Website / Product" },
-  { id: "s-mtn", value: "Motion Design", label: "Motion Design" },
   { id: "s-ns", value: "Not sure", label: "Not sure — advise me" },
-];
-
-const FAQ = [
-  {
-    q: "How long does a typical project take?",
-    a: "Most websites ship in 4–8 weeks, automation systems in 3–6 weeks, and motion projects in 2–5 weeks depending on scope. You'll get a fixed timeline in the proposal before anything starts.",
-  },
-  {
-    q: "Do you work with clients outside India?",
-    a: "Yes — about half our work is international. We're remote-first, overlap with EU hours daily and with US hours by arrangement, and invoice in INR or USD.",
-  },
-  {
-    q: "Can you take over an existing site or automation?",
-    a: "Usually, yes. We start with a short paid audit of the current build, then give you a plan: improve in place, rebuild in parts, or start fresh — with honest reasoning for each.",
-  },
-  {
-    q: "What happens after launch?",
-    a: "Every project includes a handover and 30 days of post-launch support. After that, most clients keep us on a monthly retainer for optimisation, new automations and fresh motion content.",
-  },
 ];
 
 type Errors = { name: boolean; email: boolean; message: boolean; services: boolean };
@@ -176,7 +157,7 @@ export default function ContactView() {
           <aside className="cinfo rv">
             <div className="iblk">
               <h4>Email</h4>
-              <a href="mailto:hello@zoenex.studio">hello@zoenex.studio</a>
+              <a href="mailto:zoenexstudios@gmail.com">zoenexstudios@gmail.com</a>
               <p className="sub">New projects & general enquiries</p>
             </div>
             <div className="iblk">
@@ -329,7 +310,7 @@ export default function ContactView() {
             </h2>
           </div>
           <div className="faq rv">
-            {FAQ.map((f) => (
+            {FAQs.map((f) => (
               <details key={f.q}>
                 <summary>{f.q}</summary>
                 <p>{f.a}</p>

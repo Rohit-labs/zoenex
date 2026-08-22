@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRef } from "react";
 import { useViewAnimations } from "@/lib/useViewAnimations";
+import { FAQs } from "@/lib/faqs";
 import BigCta from "../BigCta";
 import Clock from "../Clock";
 import HeroArt from "../HeroArt";
@@ -11,9 +12,9 @@ import { ArrowRight, ArrowUpRight } from "../icons";
 const SERVICES = [
   {
     code: "ZNX/AUT",
-    title: "AI Automation",
-    body: "Custom AI agents, intelligent chatbots, and workflow automation systems that eliminate repetitive tasks. We build business automation solutions that streamline operations, handle leads, and integrate systems.",
-    tags: ["AI agents", "Chatbots", "CRM workflows", "API integrations", "RAG systems"],
+    title: "AI & Business Automation",
+    body: "We connect AI and automation to the processes your business already uses. From AI assistants and lead management to automated emails, CRM workflows, data processing, customer support and internal business workflows, we build systems that reduce repetitive work and help teams operate faster.",
+    tags: ["AI assistants", "Lead management", "CRM automation", "Workflow automation", "Data processing"],
     href: "/services/ai-automation",
     aria: "Explore our AI automation solutions",
     sig: (
@@ -28,9 +29,9 @@ const SERVICES = [
   },
   {
     code: "ZNX/WEB",
-    title: "Websites & Product",
-    body: "High-performance websites, custom web applications, and e-commerce platforms designed for conversion. We provide end-to-end web development services using modern stacks optimized for speed and SEO.",
-    tags: ["Marketing sites", "Web apps", "E-commerce", "Design systems", "SEO & performance"],
+    title: "Web Development",
+    body: "Custom websites and web applications designed around your business goals — from high-performance company websites and landing pages to e-commerce experiences and custom web platforms. We focus on responsive design, accessibility, Core Web Vitals, performance optimization, SEO-ready structure, conversion-focused layouts and scalable development.",
+    tags: ["Custom websites", "Web apps", "E-commerce", "Local SEO", "Core Web Vitals"],
     href: "/services/websites",
     aria: "Explore our web development services",
     sig: (
@@ -44,74 +45,101 @@ const SERVICES = [
       </div>
     ),
   },
-  {
-    code: "ZNX/MTN",
-    title: "Motion Design",
-    body: "Cinematic brand films, product explainers, and social-first video campaigns for digital advertising. We design UI animations and 3D motion assets that capture attention and drive customer engagement.",
-    tags: ["Brand films", "Explainers", "UI motion", "3D & WebGL", "Social video"],
-    href: "/services/motion-design",
-    aria: "Explore our motion design services",
-    sig: (
-      <div className="svc-sig sig-mtn" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-        <i />
-        <i />
-      </div>
-    ),
-  },
 ];
 
-const SELECTED_WORK = [
-  { span: "s7", art: "art-orbit", num: "01", cat: "AI Automation · 2026", title: "Nordwind Ops Copilot", res: "62% faster response time" },
-  { span: "s5", art: "art-eclipse", num: "02", cat: "Web Design · 2026", title: "Dental — Modern Dentistry", res: "Live design — click to explore" },
-  { span: "s5", art: "art-halftone", num: "03", cat: "Brand Motion · 2025", title: "Pulseloop Launch Film", res: "2.1M organic views" },
-  { span: "s7", art: "art-grid3d", num: "04", cat: "Web App + AI · 2025", title: "Meridian Realty Portal", res: "3× qualified leads / month" },
+interface SelectedWorkItem {
+  span: string;
+  num: string;
+  cat: string;
+  title: string;
+  res: string;
+  demo?: string;
+  img?: string;
+  art?: string;
+  href?: string;
+}
+
+const SELECTED_WORK: SelectedWorkItem[] = [
+  {
+    span: "s7",
+    num: "01",
+    cat: "Influencer Marketing · 2026",
+    title: "LICOSASH — Influencer Desk",
+    res: "Live site — click to explore",
+    demo: "https://licosash.com",
+    img: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80",
+  },
+  {
+    span: "s5",
+    num: "02",
+    cat: "Web Design · 2026",
+    title: "AERUM — Modular Real Estate",
+    res: "Live design — click to explore",
+    demo: "/demos/aerum/index.html",
+    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80",
+  },
+  {
+    span: "s5",
+    num: "03",
+    cat: "Web / Scroll · 2026",
+    title: "ASTRONOMIA — Luxury Horology",
+    res: "Live site — click to explore",
+    demo: "https://astronomia-navy.vercel.app",
+    img: "/demos/astronomia/astronomia_sky.png",
+  },
+  {
+    span: "s7",
+    num: "04",
+    cat: "Restaurant · 2026",
+    title: "DINERLY — Fine-Casual Dining",
+    res: "Live design — click to explore",
+    demo: "/demos/dinerly/index.html",
+    img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1600&q=80",
+  },
 ];
 
 const STEPS = [
   {
     side: "left",
     num: "Step 01",
-    title: "Discover & Agree",
-    body: "A working session to map goals, bottlenecks and audience. You leave with a scoped plan, a fixed quote and a signed agreement to kick things off.",
+    title: "Discover",
+    body: "We map your business goals, audience, technical requirements and operational bottlenecks. You receive a clear scope, project plan and quote before development begins.",
   },
   {
     side: "right",
     num: "Step 02",
     title: "Design",
-    body: "Interface, motion and system design in tight loops — you review real prototypes, not static decks.",
+    body: "We create the interface, user experience, visual system and motion direction through iterative prototypes rather than static design decks.",
   },
   {
     side: "left",
     num: "Step 03",
     title: "Build",
-    body: "Development and production with weekly demos. Everything tested, documented and performance-budgeted.",
+    body: "Development happens in focused iterations with regular demos. Projects are tested for responsiveness, accessibility, performance, security and maintainability.",
   },
   {
     side: "right",
     num: "Step 04",
-    title: "Automate",
-    body: "We wire in the AI layer, train your team, and stay on for optimisation once it's live.",
+    title: "Automate & Launch",
+    body: "Where automation or AI can improve the business, we integrate the required systems, test the workflows and help your team adopt the new tools.",
   },
 ];
 
 const STAKES = [
   {
     ix: "01",
-    title: "Looks fine. Converts nothing.",
-    body: "Visitors land, read, nod — and leave without booking. A pretty site that doesn't turn traffic into calls is a cost, not an asset.",
+    title: "Your website gets traffic but not customers.",
+    body: "Visitors arrive, browse your pages, and leave without contacting you. We build conversion-focused websites with clear messaging, intuitive navigation, responsive layouts, strong calls to action, and performance in mind.",
   },
   {
     ix: "02",
-    title: "Your team drowns in busywork.",
-    body: "20+ hours a week vanish into copy-paste, follow-ups and reporting that software should be doing while your people sleep.",
+    title: "Your team is drowning in repetitive work.",
+    body: "Copy-paste tasks, lead follow-ups, data entry, reporting, emails and other repetitive processes consume valuable hours. We design custom automations and AI-powered workflows that connect your tools and reduce manual work.",
   },
   {
     ix: "03",
-    title: "Forgettable in a scroll.",
-    body: "Static pages blur together. Without motion that earns attention, the brands with movement are the ones buyers remember — and email.",
+    title: "Your brand looks like everyone else's.",
+    body: "Modern businesses compete for attention across websites, social media and digital advertising. We use motion design, UI animation, 3D assets and cinematic visuals to create digital experiences people remember.",
   },
 ];
 
@@ -136,9 +164,9 @@ const TESTIMONIALS = [
   },
 ];
 
-const TOOLS = ["Webflow", "Framer", "Next.js", "n8n / Make", "After Effects"];
+const TOOLS = ["Next.js", "React", "TypeScript", "Node.js", "n8n / Make"];
 
-const TICKER = ["AI Agents", "Workflow Automation", "Websites", "Web Apps", "Brand Motion", "3D & WebGL", "Product Films", "Chatbots"];
+const TICKER = ["AI Agents", "Workflow Automation", "Websites", "Web Apps", "Chatbots", "Lead Management", "CRM Integrations"];
 
 export default function HomeView() {
   const ref = useRef<HTMLDivElement>(null);
@@ -151,9 +179,9 @@ export default function HomeView() {
         <div className="wrap" style={{ width: "100%" }}>
           <div className="hero-top rv">
             <span className="eyebrow">Zoenex Studios — est. 2026</span>
-            <span className="mono-tag">AI Automation / Web / Motion</span>
+            <span className="mono-tag">AI Automation / Web Development</span>
           </div>
-          <h1 className="h-mega" id="heroTitle" aria-label="Websites that convert. AI & automation.">
+          <h1 className="h-mega" id="heroTitle" aria-label="Websites that convert. AI that works.">
             <span className="line">
               <span className="line-inner">Websites</span>
             </span>
@@ -163,17 +191,17 @@ export default function HomeView() {
               </span>
             </span>
             <span className="line">
-              <span className="line-inner">AI &</span>
+              <span className="line-inner">AI that</span>
             </span>
             <span className="line">
               <span className="line-inner">
-                <em>automation.</em>
+                <em>works.</em>
               </span>
             </span>
           </h1>
           <div className="hero-under">
             <p className="lede rv">
-              Zoenex Studios builds modern websites, custom AI solutions, and business automation systems that help companies operate smarter and grow. We turn your digital presence into a 24/7 growth engine through three integrated services: high-performance web development, intelligent workflow automation, and cinematic motion design.
+              Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web applications, AI-powered solutions, and workflow automations for modern businesses.
             </p>
             <div className="hero-cta rv">
               <Link href="/contact" className="btn btn-fill" data-magnetic>
@@ -255,11 +283,10 @@ export default function HomeView() {
               <h2 className="h-xl rv">
                 One outcome,
                 <br />
-                three levers.
+                two levers.
               </h2>
               <p className="lede rv" style={{ maxWidth: "40ch" }}>
-                We build websites that convert — then make them move and put them on autopilot. Web carries the brand, motion earns
-                attention, automation removes the busywork. Most clients use all three.
+                We build websites that convert — then put them on autopilot. Web carries the brand, automation removes the busywork. Most clients use both.
               </p>
             </div>
           </div>
@@ -306,21 +333,38 @@ export default function HomeView() {
           </div>
 
           <div className="scwork">
-            {SELECTED_WORK.map((w) => (
-              <Link className={`scard ${w.span} rv`} href="/work" key={w.num}>
-                <div className={`art ${w.art}`} />
-                <span className="scard-frame" />
-                <span className="scard-num">{w.num}</span>
-                <div className="scard-meta">
-                  <span className="scard-cat">{w.cat}</span>
-                  <h3>{w.title}</h3>
-                  <span className="scard-res">{w.res}</span>
-                </div>
-                <span className="scard-go">
-                  <ArrowUpRight />
-                </span>
-              </Link>
-            ))}
+            {SELECTED_WORK.map((w) => {
+              const inner = (
+                <>
+                  {w.img ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img className="art" src={w.img} alt={w.title} style={{ objectFit: "cover" }} />
+                  ) : (
+                    <div className={`art ${w.art}`} />
+                  )}
+                  <span className="scard-frame" />
+                  <span className="scard-num">{w.num}</span>
+                  <div className="scard-meta">
+                    <span className="scard-cat">{w.cat}</span>
+                    <h3>{w.title}</h3>
+                    <span className="scard-res">{w.res}</span>
+                  </div>
+                  <span className="scard-go">
+                    <ArrowUpRight />
+                  </span>
+                </>
+              );
+
+              return w.demo ? (
+                <a className={`scard ${w.span} rv`} href={w.demo} target="_blank" rel="noopener noreferrer" key={w.num}>
+                  {inner}
+                </a>
+              ) : (
+                <Link className={`scard ${w.span} rv`} href={w.href || "/work"} key={w.num}>
+                  {inner}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -388,7 +432,7 @@ export default function HomeView() {
           <div className="metrics" style={{ marginTop: "clamp(70px,9vw,120px)" }}>
             <div className="metric rv">
               <b data-count="40">0</b>
-              <span>Projects shipped across web, AI and motion</span>
+              <span>Projects shipped across web development and AI automation</span>
             </div>
             <div className="metric rv">
               <b data-count="12000" data-suffix="+">
@@ -408,6 +452,44 @@ export default function HomeView() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="sec" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="eyebrow rv">Questions</span>
+            <h2 className="h-xl rv">
+              Frequently
+              <br />
+              asked questions.
+            </h2>
+          </div>
+          <div className="faq rv" style={{ marginTop: "40px" }}>
+            {FAQs.map((f) => (
+              <details key={f.q}>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": FAQs.map((f) => ({
+                "@type": "Question",
+                "name": f.q,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": f.a
+                }
+              }))
+            })
+          }}
+        />
       </section>
 
       <BigCta

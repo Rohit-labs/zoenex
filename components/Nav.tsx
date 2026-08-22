@@ -33,11 +33,8 @@ export default function Nav() {
 
   useGSAP(() => initMagnetic(ref.current!), { scope: ref });
 
-  /* pages that open on a dark hero need the light-on-dark nav treatment */
-  const onDark = pathname === "/services/motion-design";
-
   return (
-    <header className={`nav${scrolled ? " scrolled" : ""}${onDark ? " on-dark" : ""}`} ref={ref}>
+    <header className={`nav${scrolled ? " scrolled" : ""}`} ref={ref}>
       <div className="wrap nav-inner">
         <Link className="logo" href="/">
           <span className="logo-mark" aria-hidden="true">

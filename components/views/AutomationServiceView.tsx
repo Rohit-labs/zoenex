@@ -187,10 +187,6 @@ export default function AutomationServiceView() {
               Websites & Web Development
               <ArrowRight />
             </Link>
-            <Link href="/services/motion-design" className="btn btn-line" data-magnetic>
-              Motion Design Services
-              <ArrowRight />
-            </Link>
           </div>
         </div>
       </section>
