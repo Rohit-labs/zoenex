@@ -44,38 +44,66 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              "name": "Zoenex Studios",
-              "image": "https://zoenexstudios.in/icon.png",
-              "url": "https://zoenexstudios.in",
-              "email": "zoenexstudios@gmail.com",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Mumbai",
-                "addressRegion": "Maharashtra",
-                "addressCountry": "IN"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "19.0760",
-                "longitude": "72.8777"
-              },
-              "sameAs": [
-                "https://linkedin.com/company/zoenex-studios"
-              ],
-              "areaServed": [
-                {
-                  "@type": "AdministrativeArea",
-                  "name": "Mumbai"
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Zoenex Studios",
+                "description": "Zoenex Studios is a high-performance web development and custom AI business automation studio based in Mumbai, India, serving clients globally.",
+                "url": "https://zoenexstudios.in",
+                "logo": "https://zoenexstudios.in/icon.png",
+                "email": "zoenexstudios@gmail.com",
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "email": "zoenexstudios@gmail.com",
+                  "contactType": "customer support",
+                  "availableLanguage": "English"
                 },
-                {
-                  "@type": "Country",
-                  "name": "India"
-                }
-              ]
-            }),
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Mumbai",
+                  "addressRegion": "Maharashtra",
+                  "addressCountry": "IN"
+                },
+                "sameAs": [
+                  "https://linkedin.com/company/zoenex-studios",
+                  "https://www.instagram.com/madebyzoenex"
+                ]
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                "name": "Zoenex Studios",
+                "image": "https://zoenexstudios.in/icon.png",
+                "url": "https://zoenexstudios.in",
+                "email": "zoenexstudios@gmail.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Mumbai",
+                  "addressRegion": "Maharashtra",
+                  "addressCountry": "IN"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "19.0760",
+                  "longitude": "72.8777"
+                },
+                "sameAs": [
+                  "https://linkedin.com/company/zoenex-studios",
+                  "https://www.instagram.com/madebyzoenex"
+                ],
+                "areaServed": [
+                  {
+                    "@type": "AdministrativeArea",
+                    "name": "Mumbai"
+                  },
+                  {
+                    "@type": "Country",
+                    "name": "India"
+                  }
+                ]
+              }
+            ]),
           }}
         />
       </head>
