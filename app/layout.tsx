@@ -24,6 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" href="/icon.png" />
