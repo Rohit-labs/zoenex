@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import Script from "next/script";
 import "./globals.css";
 import Cursor from "@/components/Cursor";
 import Footer from "@/components/Footer";
@@ -30,8 +31,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" type="image/png" href="/icon.png" />
         <link rel="apple-touch-icon" href="/icon.png" />
         {/* Microsoft Clarity */}
-        <script
-          type="text/javascript"
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){
@@ -43,8 +45,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           }}
         />
         {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-T126TLF41Q"></script>
-        <script
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-T126TLF41Q"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
