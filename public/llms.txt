@@ -1,12 +1,12 @@
 # Zoenex Studios
 
-> Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web applications, AI-powered solutions, and workflow automations.
+> Zoenex Studios is a web development and AI automation agency based in Mumbai, India. We build high-performance business websites, custom web applications, AI-powered solutions, and workflow automations.
 
 ## About Zoenex Studios
 
 Zoenex Studios combines software development, artificial intelligence, and automation to build digital solutions for businesses.
 
-The studio focuses on practical technology and premium digital experiences rather than template-based websites or generic automation.
+The agency focuses on practical technology and premium digital experiences rather than template-based websites or generic automation.
 
 Core areas of expertise include:
 
