@@ -8,12 +8,16 @@ import GlobalEffects from "@/components/GlobalEffects";
 import Loader from "@/components/Loader";
 import Nav from "@/components/Nav";
 
-const SITE_URL = "https://zoenexstudios.in";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://zoenexstudios.in";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Zoenex Studios | Web Development & AI Automation Mumbai",
   description:
-    "Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web apps, and automated workflows. Book a call today.",
+    "Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web apps, and automated workflows.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export const viewport: Viewport = {

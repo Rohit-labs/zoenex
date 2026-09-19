@@ -7,8 +7,6 @@ import { useViewAnimations } from "@/lib/useViewAnimations";
 import { FAQs } from "@/lib/faqs";
 import { ArrowRight } from "../icons";
 
-/* Replace with your real Cal.com / Calendly link (or an embedded scheduler) to go live. */
-const SCHEDULER_URL = "https://cal.com/zoenex/intro-call";
 
 const SERVICES = [
   { id: "s-aut", value: "AI Automation", label: "AI Automation" },
@@ -135,8 +133,8 @@ export default function ContactView() {
               </p>
             </div>
             <div className="bb-side">
-              <a className="btn btn-fill" href={SCHEDULER_URL} target="_blank" rel="noopener" data-magnetic>
-                Pick a time
+              <a className="btn btn-fill" href="#enquiry" data-magnetic>
+                Send a brief
                 <ArrowRight />
               </a>
               <ul className="bb-tags" aria-label="What to expect">

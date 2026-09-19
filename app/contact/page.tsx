@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Contact Our Team | Zoenex Studios",
   description:
     "Get in touch with Zoenex Studios for custom web development, AI solutions, business automation, and digital design queries. Quick response times.",
+  alternates: {
+    canonical: "https://zoenexstudios.in/contact",
+  },
 };
 
 export default function ContactPage() {
