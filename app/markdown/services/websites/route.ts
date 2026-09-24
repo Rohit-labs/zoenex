@@ -19,7 +19,7 @@ We build high-performance custom websites and web applications designed around b
 4. **Launch & Handover**: Analytics tracking, speed tests, and system training.
 
 ## Back to Home
-- [https://zoenexstudios.in/](https://zoenexstudios.in/)
+- [https://zoenexstudios.in](https://zoenexstudios.in)
 `;
 
   return new NextResponse(content, {

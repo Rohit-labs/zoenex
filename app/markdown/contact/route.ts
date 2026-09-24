@@ -23,7 +23,7 @@ Get in touch to build a high-performance website or automate business workflows.
    Yes, we sign NDAs upon request before scoping detailed projects.
 
 ## Back to Home
-- [https://zoenexstudios.in/](https://zoenexstudios.in/)
+- [https://zoenexstudios.in](https://zoenexstudios.in)
 `;
 
   return new NextResponse(content, {

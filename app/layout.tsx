@@ -12,11 +12,60 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://zoenexstudios.in";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Zoenex Studios | Web Development & AI Automation Mumbai",
+  title: {
+    default: "Zoenex Studios | Web Development & AI Automation Mumbai",
+    template: "%s | Zoenex Studios",
+  },
   description:
     "Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web apps, and automated workflows.",
+  keywords: [
+    "web development mumbai",
+    "AI automation",
+    "custom web applications",
+    "workflow automation",
+    "Next.js web developers",
+    "business automation agency",
+    "Zoenex Studios",
+  ],
+  authors: [{ name: "Zoenex Studios", url: SITE_URL }],
+  creator: "Zoenex Studios",
+  publisher: "Zoenex Studios",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: "Zoenex Studios",
+    title: "Zoenex Studios | Web Development & AI Automation Mumbai",
+    description:
+      "Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web apps, and automated workflows.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Zoenex Studios - Web Development & AI Automation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zoenex Studios | Web Development & AI Automation Mumbai",
+    description:
+      "Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web apps, and automated workflows.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -91,7 +140,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   "addressCountry": "IN"
                 },
                 "sameAs": [
-                  "https://linkedin.com/company/zoenex-studios",
+                  "https://www.linkedin.com/company/zoenex-studios",
                   "https://www.instagram.com/madebyzoenex"
                 ]
               },
@@ -114,7 +163,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   "longitude": "72.8777"
                 },
                 "sameAs": [
-                  "https://linkedin.com/company/zoenex-studios",
+                  "https://www.linkedin.com/company/zoenex-studios",
                   "https://www.instagram.com/madebyzoenex"
                 ],
                 "areaServed": [

@@ -19,7 +19,7 @@ We build intelligent systems and custom workflows that eliminate manual operatio
 4. **Maintenance & Handover**: Live monitoring, performance tuning, and updates.
 
 ## Back to Home
-- [https://zoenexstudios.in/](https://zoenexstudios.in/)
+- [https://zoenexstudios.in](https://zoenexstudios.in)
 `;
 
   return new NextResponse(content, {

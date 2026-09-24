@@ -8,7 +8,7 @@ The path you requested does not exist on Zoenex Studios.
 ## Recovery Guide
 Please refer to the following valid paths to locate what you are looking for:
 
-- **Homepage**: [https://zoenexstudios.in/](https://zoenexstudios.in/)
+- **Homepage**: [https://zoenexstudios.in](https://zoenexstudios.in)
 - **Sitemap XML**: [https://zoenexstudios.in/sitemap.xml](https://zoenexstudios.in/sitemap.xml)
 - **Agent Instructions (llms.txt)**: [https://zoenexstudios.in/llms.txt](https://zoenexstudios.in/llms.txt)
 - **Work Portfolio**: [https://zoenexstudios.in/work](https://zoenexstudios.in/work)

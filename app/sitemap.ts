@@ -5,7 +5,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://zoenexstudios.in";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${BASE_URL}/`,
+      url: BASE_URL,
       changeFrequency: "monthly",
       priority: 1,
     },
@@ -28,6 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/contact`,
       changeFrequency: "yearly",
       priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/llms.txt`,
+      changeFrequency: "monthly",
+      priority: 0.4,
     },
   ];
 }

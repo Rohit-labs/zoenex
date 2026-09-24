@@ -36,7 +36,7 @@ We focus on high-performance websites and custom web products. Here are our sele
    - **Result**: Live design sample.
 
 ## Back to Home
-- [https://zoenexstudios.in/](https://zoenexstudios.in/)
+- [https://zoenexstudios.in](https://zoenexstudios.in)
 `;
 
   return new NextResponse(content, {
