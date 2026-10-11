@@ -164,7 +164,7 @@ export default function BlogPostView({ post }: Props) {
                   </p>
                 </div>
                 <Link
-                  href="/contact"
+                  href="/audit"
                   className="btn btn-fill"
                   data-magnetic
                   style={{ background: "var(--cobalt)", borderColor: "var(--cobalt)" }}

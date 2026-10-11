@@ -21,11 +21,6 @@ const nextConfig = {
         destination: "/services/websites",
         permanent: true,
       },
-      {
-        source: "/audit",
-        destination: "/contact",
-        permanent: false,
-      },
     ];
   },
 };

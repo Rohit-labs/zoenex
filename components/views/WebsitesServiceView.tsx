@@ -193,7 +193,7 @@ export default function WebsitesServiceView() {
             </p>
             <div className="hero-cta rv" style={{ justifyContent: "flex-start", marginTop: "38px" }}>
               <Link
-                href="/contact"
+                href="/audit"
                 className="btn btn-fill"
                 data-magnetic
                 onClick={() => trackEvent("audit_cta_click", { location: "websites_hero" })}

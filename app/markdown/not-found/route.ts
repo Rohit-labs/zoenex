@@ -14,7 +14,8 @@ Please refer to the following valid paths to locate what you are looking for:
 - **Web Development & Portfolio**: [https://zoenexstudios.in/services/websites](https://zoenexstudios.in/services/websites)
 - **AI Automation Services**: [https://zoenexstudios.in/services/ai-automation](https://zoenexstudios.in/services/ai-automation)
 - **Website Development Services**: [https://zoenexstudios.in/services/websites](https://zoenexstudios.in/services/websites)
-- **Book an Audit & Contact**: [https://zoenexstudios.in/contact](https://zoenexstudios.in/contact)
+- **Book an Audit**: [https://zoenexstudios.in/audit](https://zoenexstudios.in/audit)
+- **Contact & Inquiries**: [https://zoenexstudios.in/contact](https://zoenexstudios.in/contact)
 `;
 
   return new NextResponse(content, {

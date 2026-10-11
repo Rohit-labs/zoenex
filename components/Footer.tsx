@@ -32,7 +32,7 @@ export default function Footer() {
                 <Link href="/blog">Blog</Link>
               </li>
               <li>
-                <Link href="/contact" onClick={() => trackEvent("audit_cta_click", { location: "footer" })}>
+                <Link href="/audit" onClick={() => trackEvent("audit_cta_click", { location: "footer" })}>
                   Book an Audit
                 </Link>
               </li>

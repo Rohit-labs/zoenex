@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import ContactView from "@/components/views/ContactView";
 
 export const metadata: Metadata = {
-  title: "Book an Audit & Contact | Zoenex Studios",
+  title: "Contact Our Team | Zoenex Studios",
   description:
-    "Request a practical review of your website, conversion experience, and automation opportunities. Book an audit with Zoenex Studios.",
+    "Get in touch with Zoenex Studios for custom web development, AI solutions, business automation, and digital inquiries. Send us a project brief.",
   alternates: {
     canonical: "https://zoenexstudios.in/contact",
   },
   openGraph: {
-    title: "Book an Audit & Contact | Zoenex Studios",
+    title: "Contact Our Team | Zoenex Studios",
     description:
-      "Get a practical review of your website, conversion experience, and opportunities for improvement. Book an audit with Zoenex Studios.",
+      "Get in touch with Zoenex Studios for custom web development, AI solutions, business automation, and digital inquiries.",
     url: "https://zoenexstudios.in/contact",
     siteName: "Zoenex Studios",
     images: [
@@ -19,16 +19,16 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Book an Audit with Zoenex Studios",
+        alt: "Contact Zoenex Studios",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Book an Audit & Contact | Zoenex Studios",
+    title: "Contact Our Team | Zoenex Studios",
     description:
-      "Request a practical review of your website, conversion experience, and opportunities for improvement.",
+      "Get in touch with Zoenex Studios to discuss your next web build or automation workflow.",
     images: ["/og-image.jpg"],
   },
 };
@@ -46,7 +46,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Book an Audit",
+      name: "Contact",
       item: "https://zoenexstudios.in/contact",
     },
   ],

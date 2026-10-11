@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 
 const VALID_PATHS = new Set([
   "/",
+  "/audit",
   "/services/ai-automation",
   "/services/websites",
   "/contact"

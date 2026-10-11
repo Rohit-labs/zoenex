@@ -225,7 +225,7 @@ export default function HomeView() {
             </p>
             <div className="hero-cta rv">
               <Link
-                href="/contact"
+                href="/audit"
                 className="btn btn-fill"
                 data-magnetic
                 onClick={() => trackEvent("audit_cta_click", { location: "home_hero" })}

@@ -2,32 +2,31 @@
 
 import { Fragment, useRef, useState } from "react";
 import type { FormEvent } from "react";
+import Link from "next/link";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { useViewAnimations } from "@/lib/useViewAnimations";
 import { FAQs } from "@/lib/faqs";
 import { trackEvent } from "@/lib/analytics";
 import { ArrowRight } from "../icons";
 
-const AUDIT_TYPES = [
-  { id: "audit-conv", value: "Website conversion audit", label: "Website conversion audit" },
-  { id: "audit-seo", value: "SEO and technical audit", label: "SEO and technical audit" },
-  { id: "audit-ux", value: "UX and design audit", label: "UX and design audit" },
-  { id: "audit-ai", value: "AI automation opportunity audit", label: "AI automation opportunity audit" },
-  { id: "audit-comp", value: "Comprehensive website audit", label: "Comprehensive website audit" },
+const SERVICES = [
+  { id: "s-aut", value: "AI Automation", label: "AI Automation" },
+  { id: "s-web", value: "Website / Product", label: "Website / Product" },
+  { id: "s-ns", value: "Not sure", label: "Not sure — advise me" },
 ];
 
 type Errors = {
   name: boolean;
   email: boolean;
-  website: boolean;
-  auditType: boolean;
+  message: boolean;
+  services: boolean;
 };
 
 const NO_ERRORS: Errors = {
   name: false,
   email: false,
-  website: false,
-  auditType: false,
+  message: false,
+  services: false,
 };
 
 export default function ContactView() {
@@ -36,7 +35,6 @@ export default function ContactView() {
   const successRef = useRef<HTMLDivElement>(null);
   const formStartedRef = useRef(false);
 
-  const [selectedAuditType, setSelectedAuditType] = useState<string>("Website conversion audit");
   const [errors, setErrors] = useState<Errors>(NO_ERRORS);
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -56,7 +54,7 @@ export default function ContactView() {
   const handleFieldInteraction = () => {
     if (!formStartedRef.current) {
       formStartedRef.current = true;
-      trackEvent("audit_form_start");
+      trackEvent("contact_form_start");
     }
   };
 
@@ -68,7 +66,6 @@ export default function ContactView() {
   const onSubmit = async (ev: FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
 
-    // Prevent duplicate concurrent submissions
     if (submitting) return;
 
     const form = ev.currentTarget;
@@ -77,36 +74,38 @@ export default function ContactView() {
 
     const nameVal = value("name").trim();
     const emailVal = value("email").trim();
-    const websiteVal = value("website").trim();
-    const botcheckVal = (form.elements.namedItem("botcheck") as HTMLInputElement | null)?.checked;
+    const messageVal = value("message").trim();
+    const checkedServices: string[] = [];
+    form.querySelectorAll('input[name="services"]:checked').forEach((el) => {
+      checkedServices.push((el as HTMLInputElement).value);
+    });
 
     const next: Errors = {
       name: nameVal.length < 2,
       email: !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailVal),
-      website: websiteVal.length < 3,
-      auditType: !selectedAuditType,
+      message: messageVal.length < 10,
+      services: checkedServices.length === 0,
     };
 
     setErrors(next);
-    if (next.name || next.email || next.website || next.auditType) return;
+    if (next.name || next.email || next.message || next.services) return;
 
-    // Check honeypot spam prevention
+    const botcheckVal = (form.elements.namedItem("botcheck") as HTMLInputElement | null)?.checked;
     if (botcheckVal) {
-      // Silently ignore bots
       setSent(true);
       return;
     }
 
     setSubmitting(true);
     setSubmitError(null);
-    trackEvent("audit_form_submit", { audit_type: selectedAuditType });
+    trackEvent("contact_form_submit");
 
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
     if (!accessKey) {
       console.error("Web3Forms Access Key is missing from environment variables.");
       setSubmitError("Form submission is currently misconfigured (missing API key).");
       setSubmitting(false);
-      trackEvent("audit_form_error", { message: "missing_access_key" });
+      trackEvent("contact_form_error", { message: "missing_access_key" });
       return;
     }
 
@@ -114,12 +113,11 @@ export default function ContactView() {
       access_key: accessKey,
       name: nameVal,
       email: emailVal,
-      company_or_website: websiteVal,
-      audit_type: selectedAuditType,
-      main_challenge: value("challenge").trim() || "Not specified",
-      additional_details: value("details").trim() || "None provided",
-      subject: `New Zoenex Audit Request: ${selectedAuditType} from ${nameVal}`,
-      from_name: "Zoenex Studios Audit Form",
+      company: value("company").trim() || "Not specified",
+      services: checkedServices.join(", "),
+      message: messageVal,
+      subject: `New Zoenex Project Enquiry from ${nameVal}`,
+      from_name: "Zoenex Studios Contact Form",
     };
 
     try {
@@ -136,17 +134,17 @@ export default function ContactView() {
       if (result.success) {
         setSent(true);
         form.reset();
-        trackEvent("audit_form_success", { audit_type: selectedAuditType });
+        trackEvent("contact_form_success");
       } else {
         const errorMsg = result.message || "Something went wrong. Please try again.";
         setSubmitError(errorMsg);
-        trackEvent("audit_form_error", { message: errorMsg });
+        trackEvent("contact_form_error", { message: errorMsg });
       }
     } catch (err) {
       console.error("Web3Forms submission error:", err);
       const networkError = "Network error. Please check your connection and try again.";
       setSubmitError(networkError);
-      trackEvent("audit_form_error", { message: networkError });
+      trackEvent("contact_form_error", { message: networkError });
     } finally {
       setSubmitting(false);
     }
@@ -156,16 +154,19 @@ export default function ContactView() {
     <div className="view active" ref={ref}>
       <section className="page-hero">
         <div className="wrap">
-          <span className="eyebrow rv">Book an Audit</span>
+          <span className="eyebrow rv">Contact</span>
           <h1 className="h-mega rv" style={{ marginTop: "22px" }}>
-            Get a practical
+            Tell us what
             <br />
-            website review<em className="accent">.</em>
+            should move<em className="accent">.</em>
           </h1>
           <p className="lede rv">
-            Get a practical review of your website, conversion experience, and opportunities for improvement. Submit
-            your website and tell us what you want to improve. We&rsquo;ll review your request and follow up with the next
-            steps.
+            Send a brief below and we&rsquo;ll reply within one business day. If we&rsquo;re not the right fit, we&rsquo;ll
+            say so and point you somewhere better. Looking specifically for a website or automation teardown? You can also{" "}
+            <Link href="/audit" style={{ color: "var(--cobalt)", textDecoration: "underline" }}>
+              Book an Audit
+            </Link>
+            .
           </p>
         </div>
       </section>
@@ -174,43 +175,43 @@ export default function ContactView() {
         <div className="wrap">
           <div className="bookband rv">
             <div className="bb-copy">
-              <span className="eyebrow bb-eyebrow">Practical diagnostic</span>
-              <h2>Book your website audit.</h2>
+              <span className="eyebrow bb-eyebrow">Website review</span>
+              <h2>Want an in-depth audit instead?</h2>
               <p>
-                Submit your website and tell us what you want to improve. We&rsquo;ll review your request, examine conversion
-                friction, performance bottlenecks, and architecture, and follow up with the next steps.
+                If you want us to review your existing website, Core Web Vitals, conversion leaks, and automation
+                opportunities, request a dedicated audit teardown.
               </p>
             </div>
             <div className="bb-side">
-              <a
+              <Link
                 className="btn btn-fill"
-                href="#audit-form"
+                href="/audit"
                 data-magnetic
-                onClick={() => trackEvent("audit_cta_click", { location: "contact_bookband" })}
+                onClick={() => trackEvent("audit_cta_click", { location: "contact_to_audit_band" })}
               >
                 Book an Audit
                 <ArrowRight />
-              </a>
-              <ul className="bb-tags" aria-label="Audit focus areas">
+              </Link>
+              <ul className="bb-tags" aria-label="Audit highlights">
+                <li>UX Teardown</li>
                 <li>Core Web Vitals</li>
-                <li>Conversion UX</li>
-                <li>Actionable Next Steps</li>
+                <li>Actionable Steps</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="sec" id="audit-form" style={{ paddingTop: "clamp(48px,6vw,80px)" }}>
+      <section className="sec" id="enquiry" style={{ paddingTop: "clamp(48px,6vw,80px)" }}>
         <div className="wrap" style={{ marginBottom: "clamp(36px,4vw,56px)" }}>
-          <span className="eyebrow rv">Audit Request</span>
+          <span className="eyebrow rv">Project Brief & General Inquiry</span>
         </div>
         <div className="wrap cgrid">
           <aside className="cinfo rv">
             <div className="iblk">
               <h4>Email</h4>
               <a href="mailto:zoenexstudios@gmail.com">zoenexstudios@gmail.com</a>
-              <p className="sub">Direct engineering & studio enquiries</p>
+              <p className="sub">New projects & general enquiries</p>
             </div>
             <div className="iblk">
               <h4>Studio</h4>
@@ -218,9 +219,9 @@ export default function ContactView() {
               <p className="sub">Remote-first, working worldwide</p>
             </div>
             <div className="iblk">
-              <h4>What happens next</h4>
-              <p>Engineering review</p>
-              <p className="sub">We review your submission and follow up with practical findings and next steps.</p>
+              <h4>Response time</h4>
+              <p>Within 1 business day</p>
+              <p className="sub">Async-friendly · overlap with EU daily, US by arrangement</p>
             </div>
             <div className="iblk">
               <h4>Payments</h4>
@@ -265,15 +266,15 @@ export default function ContactView() {
 
               <div className="field">
                 <label htmlFor="name">
-                  Full name <em>*</em>
+                  Name <em>*</em>
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   autoComplete="name"
-                  placeholder="e.g. Alex Morgan"
                   required
+                  placeholder="e.g. Alex Morgan"
                   aria-required="true"
                   aria-invalid={errors.name ? "true" : undefined}
                   className={errors.name ? "error" : undefined}
@@ -281,7 +282,7 @@ export default function ContactView() {
                   onFocus={handleFieldInteraction}
                 />
                 <span className={`ferr${errors.name ? " show" : ""}`} role="alert">
-                  Please enter your full name.
+                  Please enter your name.
                 </span>
               </div>
 
@@ -294,8 +295,8 @@ export default function ContactView() {
                   id="email"
                   name="email"
                   autoComplete="email"
-                  placeholder="e.g. alex@company.com"
                   required
+                  placeholder="e.g. alex@company.com"
                   aria-required="true"
                   aria-invalid={errors.email ? "true" : undefined}
                   className={errors.email ? "error" : undefined}
@@ -303,29 +304,20 @@ export default function ContactView() {
                   onFocus={handleFieldInteraction}
                 />
                 <span className={`ferr${errors.email ? " show" : ""}`} role="alert">
-                  Please enter a valid work email address.
+                  Please enter a valid email address.
                 </span>
               </div>
 
               <div className="field full">
-                <label htmlFor="website">
-                  Company name or website URL <em>*</em>
-                </label>
+                <label htmlFor="company">Company (optional)</label>
                 <input
                   type="text"
-                  id="website"
-                  name="website"
-                  placeholder="e.g. company.com or Company Name"
-                  required
-                  aria-required="true"
-                  aria-invalid={errors.website ? "true" : undefined}
-                  className={errors.website ? "error" : undefined}
-                  onInput={() => clearError("website")}
+                  id="company"
+                  name="company"
+                  autoComplete="organization"
+                  placeholder="e.g. Acme Corp"
                   onFocus={handleFieldInteraction}
                 />
-                <span className={`ferr${errors.website ? " show" : ""}`} role="alert">
-                  Please enter your website URL or company name.
-                </span>
               </div>
 
               <div className="field full">
@@ -339,51 +331,45 @@ export default function ContactView() {
                     color: "var(--ink-60)",
                   }}
                 >
-                  Audit type <em style={{ color: "var(--cobalt)", fontStyle: "normal" }}>*</em>
+                  What do you need? <em style={{ color: "var(--cobalt)", fontStyle: "normal" }}>*</em>
                 </span>
                 <div className="pills">
-                  {AUDIT_TYPES.map((a) => (
-                    <Fragment key={a.id}>
+                  {SERVICES.map((s) => (
+                    <Fragment key={s.id}>
                       <input
-                        type="radio"
-                        id={a.id}
-                        name="auditType"
-                        value={a.value}
-                        checked={selectedAuditType === a.value}
-                        onChange={() => {
-                          setSelectedAuditType(a.value);
-                          clearError("auditType");
-                        }}
+                        type="checkbox"
+                        id={s.id}
+                        name="services"
+                        value={s.value}
+                        onChange={() => clearError("services")}
                       />
-                      <label htmlFor={a.id}>{a.label}</label>
+                      <label htmlFor={s.id}>{s.label}</label>
                     </Fragment>
                   ))}
                 </div>
-                <span className={`ferr${errors.auditType ? " show" : ""}`} role="alert">
-                  Please select an audit type.
+                <span className={`ferr${errors.services ? " show" : ""}`} role="alert">
+                  Pick at least one option.
                 </span>
               </div>
 
               <div className="field full">
-                <label htmlFor="challenge">Main challenge (optional)</label>
-                <input
-                  type="text"
-                  id="challenge"
-                  name="challenge"
-                  placeholder="e.g. Visitors bounce without submitting, high load times, low mobile leads"
-                  onFocus={handleFieldInteraction}
-                />
-              </div>
-
-              <div className="field full">
-                <label htmlFor="details">Additional details (optional)</label>
+                <label htmlFor="message">
+                  About the project <em>*</em>
+                </label>
                 <textarea
-                  id="details"
-                  name="details"
-                  placeholder="Specific pages to review, key metrics, current tech stack, or objectives you would like us to look into."
-                  style={{ minHeight: "110px" }}
+                  id="message"
+                  name="message"
+                  placeholder="What are you building, what's slowing you down, and when do you want it live?"
+                  required
+                  aria-required="true"
+                  aria-invalid={errors.message ? "true" : undefined}
+                  className={errors.message ? "error" : undefined}
+                  onInput={() => clearError("message")}
                   onFocus={handleFieldInteraction}
                 />
+                <span className={`ferr${errors.message ? " show" : ""}`} role="alert">
+                  Tell us a little about the project (10+ characters helps).
+                </span>
               </div>
 
               <div className="ffoot">
@@ -394,12 +380,10 @@ export default function ContactView() {
                   disabled={submitting}
                   aria-busy={submitting}
                 >
-                  {submitting ? "Submitting request..." : "Book an Audit"}
+                  {submitting ? "Sending..." : "Send enquiry"}
                   <ArrowRight />
                 </button>
-                <span className="mono-tag">
-                  Submit your website and tell us what you want to improve. We&rsquo;ll review your request and follow up with the next steps.
-                </span>
+                <span className="mono-tag">No spam. No mailing list. Just an honest reply.</span>
               </div>
 
               {submitError && (
@@ -411,10 +395,8 @@ export default function ContactView() {
 
             <div className={`fsuccess${sent ? " show" : ""}`} ref={successRef} role="status">
               <div className="ok">✓</div>
-              <h3>Audit Request Received</h3>
-              <p>
-                Thanks — your website details are in our inbox. We&rsquo;ll review your request and follow up with the next steps.
-              </p>
+              <h3>Enquiry sent</h3>
+              <p>Thanks — your brief has landed in our inbox. Expect a reply from the Zoenex team within one business day.</p>
             </div>
           </div>
         </div>

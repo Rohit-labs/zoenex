@@ -12,10 +12,12 @@ type Props = {
   titleSwipe: string;
   lede: string;
   cta: string;
+  href?: string;
   reassure?: string[];
 };
 
-export default function BigCta({ ghost, badge, titleTop, titleSwipe, lede, cta, reassure }: Props) {
+export default function BigCta({ ghost, badge, titleTop, titleSwipe, lede, cta, href, reassure }: Props) {
+  const targetHref = href || (cta === "Book an Audit" ? "/audit" : "/contact");
   return (
     <section className="sec on-night bigcta">
       <div className="bigcta-bg" aria-hidden="true">
@@ -43,7 +45,7 @@ export default function BigCta({ ghost, badge, titleTop, titleSwipe, lede, cta, 
           {lede}
         </p>
         <Link
-          href="/contact"
+          href={targetHref}
           className="btn btn-fill rv"
           data-magnetic
           onClick={() => trackEvent("audit_cta_click", { location: "big_cta", cta })}

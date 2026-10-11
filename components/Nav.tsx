@@ -70,7 +70,7 @@ export default function Nav() {
             );
           })}
           <Link
-            href="/contact"
+            href="/audit"
             className="btn btn-fill"
             data-magnetic
             onClick={() => trackEvent("audit_cta_click", { location: "nav" })}

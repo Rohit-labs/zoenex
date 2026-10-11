@@ -13,7 +13,8 @@ Zoenex Studios is a web development and AI automation studio based in Mumbai, In
 - **Sitemap**: [https://zoenexstudios.in/sitemap.xml](https://zoenexstudios.in/sitemap.xml)
 - **Agent Instructions**: [https://zoenexstudios.in/llms.txt](https://zoenexstudios.in/llms.txt)
 - **Portfolio**: [https://zoenexstudios.in/services/websites](https://zoenexstudios.in/services/websites)
-- **Book an Audit & Contact**: [https://zoenexstudios.in/contact](https://zoenexstudios.in/contact)
+- **Book an Audit**: [https://zoenexstudios.in/audit](https://zoenexstudios.in/audit)
+- **Contact**: [https://zoenexstudios.in/contact](https://zoenexstudios.in/contact)
 - **Websites Service**: [https://zoenexstudios.in/services/websites](https://zoenexstudios.in/services/websites)
 - **AI Automation Service**: [https://zoenexstudios.in/services/ai-automation](https://zoenexstudios.in/services/ai-automation)
 `;
