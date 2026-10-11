@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRef } from "react";
 import { useViewAnimations } from "@/lib/useViewAnimations";
 import { FAQs } from "@/lib/faqs";
@@ -8,6 +9,7 @@ import BigCta from "../BigCta";
 import Clock from "../Clock";
 import HeroArt from "../HeroArt";
 import { ArrowRight, ArrowUpRight } from "../icons";
+import { trackEvent } from "@/lib/analytics";
 
 const SERVICES = [
   {
@@ -72,6 +74,24 @@ const SELECTED_WORK: SelectedWorkItem[] = [
   {
     span: "s5",
     num: "02",
+    cat: "Education · 2026",
+    title: "VIBRANT ACADEMY — Education & Admissions",
+    res: "Live site — click to explore",
+    demo: "https://vibrant-academy.in",
+    img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80",
+  },
+  {
+    span: "s7",
+    num: "03",
+    cat: "Healthcare · 2026",
+    title: "DR. JHA PHYSIO — Healthcare & Clinic",
+    res: "Live site — click to explore",
+    demo: "https://drjhaphysio.in",
+    img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80",
+  },
+  {
+    span: "s5",
+    num: "04",
     cat: "Web Design · 2026",
     title: "AERUM — Modular Real Estate",
     res: "Live design — click to explore",
@@ -80,7 +100,7 @@ const SELECTED_WORK: SelectedWorkItem[] = [
   },
   {
     span: "s5",
-    num: "03",
+    num: "05",
     cat: "Web / Scroll · 2026",
     title: "ASTRONOMIA — Luxury Horology",
     res: "Live site — click to explore",
@@ -89,7 +109,7 @@ const SELECTED_WORK: SelectedWorkItem[] = [
   },
   {
     span: "s7",
-    num: "04",
+    num: "06",
     cat: "Restaurant · 2026",
     title: "DINERLY — Fine-Casual Dining",
     res: "Live design — click to explore",
@@ -181,7 +201,7 @@ export default function HomeView() {
             <span className="eyebrow">Zoenex Studios — est. 2026</span>
             <span className="mono-tag">AI Automation / Web Development</span>
           </div>
-          <h1 className="h-mega" id="heroTitle" aria-label="Websites that convert. AI that works.">
+          <h1 className="h-mega" id="heroTitle" aria-label="High-Performance Web Development & Custom AI Automation in Mumbai">
             <span className="line">
               <span className="line-inner">Websites</span>
             </span>
@@ -195,7 +215,7 @@ export default function HomeView() {
             </span>
             <span className="line">
               <span className="line-inner">
-                <em>works.</em>
+                <em>scales.</em>
               </span>
             </span>
           </h1>
@@ -204,11 +224,16 @@ export default function HomeView() {
               Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web applications, AI-powered solutions, and workflow automations for modern businesses.
             </p>
             <div className="hero-cta rv">
-              <Link href="/contact" className="btn btn-fill" data-magnetic>
-                Book a 20-min call
+              <Link
+                href="/contact"
+                className="btn btn-fill"
+                data-magnetic
+                onClick={() => trackEvent("audit_cta_click", { location: "home_hero" })}
+              >
+                Book an Audit
                 <ArrowRight />
               </Link>
-              <Link href="/work" className="btn btn-line" data-magnetic>
+              <Link href="/services/websites" className="btn btn-line" data-magnetic>
                 See our portfolio
               </Link>
             </div>
@@ -252,7 +277,7 @@ export default function HomeView() {
           <div className="sec-head">
             <span className="eyebrow rv">The real problem</span>
             <div className="row">
-              <h2 className="h-xl rv">
+              <h2 className="h-xl rv" aria-label="Web Development & Conversion: Looking good isn't converting">
                 Looking good
                 <br />
                 isn&rsquo;t converting.
@@ -280,7 +305,7 @@ export default function HomeView() {
           <div className="sec-head">
             <span className="eyebrow rv">What we do</span>
             <div className="row">
-              <h2 className="h-xl rv">
+              <h2 className="h-xl rv" aria-label="Custom Web Development & Business AI Automation">
                 One outcome,
                 <br />
                 two levers.
@@ -320,12 +345,12 @@ export default function HomeView() {
           <div className="sec-head">
             <span className="eyebrow rv">Selected work</span>
             <div className="row">
-              <h2 className="h-xl rv">
+              <h2 className="h-xl rv" aria-label="Client Case Studies: Web Development and AI Automations">
                 Proof,
                 <br />
                 not promises.
               </h2>
-              <Link href="/work" className="btn btn-line rv" data-magnetic>
+              <Link href="/services/websites" className="btn btn-line rv" data-magnetic>
                 Explore all projects
                 <ArrowRight />
               </Link>
@@ -337,8 +362,14 @@ export default function HomeView() {
               const inner = (
                 <>
                   {w.img ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img className="art" src={w.img} alt={w.title} style={{ objectFit: "cover" }} />
+                    <Image
+                      className="art"
+                      src={w.img}
+                      alt={w.title}
+                      fill
+                      sizes="(max-width: 820px) 100vw, 50vw"
+                      style={{ objectFit: "cover" }}
+                    />
                   ) : (
                     <div className={`art ${w.art}`} />
                   )}
@@ -360,7 +391,7 @@ export default function HomeView() {
                   {inner}
                 </a>
               ) : (
-                <Link className={`scard ${w.span} rv`} href={w.href || "/work"} key={w.num}>
+                <Link className={`scard ${w.span} rv`} href={w.href || "/services/websites"} key={w.num}>
                   {inner}
                 </Link>
               );
@@ -493,13 +524,13 @@ export default function HomeView() {
       </section>
 
       <BigCta
-        ghost="ZNX"
-        badge="Booking Q3 2026 — 2 slots open"
-        titleTop="Let's build"
-        titleSwipe="something rare."
-        lede="Tell us what you're building. We reply within one business day with honest next steps — no sales script."
-        cta="Book a 20-min call"
-        reassure={["Async-friendly across time zones", "Fixed quotes, no surprises", "NDA on request", "Reply within 1 business day"]}
+        ghost="AUDIT"
+        badge="Audits open — Q3 2026"
+        titleTop="Get a practical review"
+        titleSwipe="that moves the needle."
+        lede="Get a practical review of your website, conversion experience, and opportunities for improvement. We'll examine bottlenecks and follow up with clear next steps."
+        cta="Book an Audit"
+        reassure={["Conversion & speed analysis", "Actionable teardown", "NDA on request", "Reply within 1 business day"]}
       />
     </div>
   );

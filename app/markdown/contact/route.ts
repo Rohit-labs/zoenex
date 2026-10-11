@@ -5,6 +5,11 @@ export async function GET() {
 
 Get in touch to build a high-performance website or automate business workflows.
 
+## Book an Audit
+Request a practical review of your website, conversion experience, and opportunities for improvement:
+- **Audit Request**: [https://zoenexstudios.in/contact](https://zoenexstudios.in/contact)
+- **Audit Types**: Website conversion audit, SEO and technical audit, UX and design audit, AI automation opportunity audit, Comprehensive website audit.
+
 ## Contact Information
 - **Email**: zoenexstudios@gmail.com
 - **Response Time**: Within 1 business day

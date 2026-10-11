@@ -121,14 +121,28 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             __html: JSON.stringify([
               {
                 "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Zoenex Studios",
+                "url": "https://zoenexstudios.in",
+                "description": "High-performance web development and AI automation studio in Mumbai.",
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Zoenex Studios",
+                  "url": "https://zoenexstudios.in"
+                }
+              },
+              {
+                "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "Zoenex Studios",
                 "description": "Zoenex Studios is a high-performance web development and custom AI business automation studio based in Mumbai, India, serving clients globally.",
                 "url": "https://zoenexstudios.in",
                 "logo": "https://zoenexstudios.in/icon.png",
                 "email": "zoenexstudios@gmail.com",
+                "telephone": ["+91 7021453048", "+91 8591494402"],
                 "contactPoint": {
                   "@type": "ContactPoint",
+                  "telephone": "+91 7021453048",
                   "email": "zoenexstudios@gmail.com",
                   "contactType": "customer support",
                   "availableLanguage": "English"
@@ -140,7 +154,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   "addressCountry": "IN"
                 },
                 "sameAs": [
-                  "https://www.linkedin.com/company/zoenex-studios",
                   "https://www.instagram.com/madebyzoenex"
                 ]
               },
@@ -151,6 +164,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 "image": "https://zoenexstudios.in/icon.png",
                 "url": "https://zoenexstudios.in",
                 "email": "zoenexstudios@gmail.com",
+                "telephone": ["+91 7021453048", "+91 8591494402"],
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": "Mumbai",
@@ -163,7 +177,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   "longitude": "72.8777"
                 },
                 "sameAs": [
-                  "https://www.linkedin.com/company/zoenex-studios",
                   "https://www.instagram.com/madebyzoenex"
                 ],
                 "areaServed": [

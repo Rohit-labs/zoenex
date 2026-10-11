@@ -1,10 +1,112 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRef } from "react";
 import { useViewAnimations } from "@/lib/useViewAnimations";
 import BigCta from "../BigCta";
-import { ArrowRight, ArrowUpRight } from "../icons";
+import { ArrowRight } from "../icons";
+import { trackEvent } from "@/lib/analytics";
+
+type Project = {
+  span: string;
+  cats: string[];
+  label: string;
+  title: string;
+  cat: string;
+  body: string;
+  res: string;
+  img: string;
+  alt: string;
+  demo: string;
+};
+
+const PROJECTS: Project[] = [
+  {
+    span: "s12",
+    cats: ["web"],
+    label: "Web Design & Development",
+    img: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80",
+    alt: "Licosash - Influencer Marketing Agency and Influencer Desk website",
+    demo: "https://licosash.com",
+    title: "LICOSASH — Influencer Desk",
+    cat: "Influencer Marketing · 2026",
+    body: "A conversion-focused, high-performance website built for Licosash, a premium celebrity and influencer marketing agency, streamlining campaign inquiries and talent onboarding.",
+    res: "Live site — click to explore",
+  },
+  {
+    span: "s7",
+    cats: ["web"],
+    label: "Web Design & Development",
+    img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80",
+    alt: "Vibrant Academy - Premier coaching and academic institute website",
+    demo: "https://vibrant-academy.in",
+    title: "VIBRANT ACADEMY — Education & Admissions",
+    cat: "Education · 2026",
+    body: "A modern, high-conversion educational platform and student onboarding portal for Vibrant Academy, featuring structured academic programs, admission workflows, and rapid page load speeds.",
+    res: "Live site — click to explore",
+  },
+  {
+    span: "s5",
+    cats: ["web"],
+    label: "Web Design & Development",
+    img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80",
+    alt: "Dr Jha Physio - Healthcare and physiotherapy clinic website",
+    demo: "https://drjhaphysio.in",
+    title: "DR. JHA PHYSIO — Healthcare & Clinic",
+    cat: "Healthcare · 2026",
+    body: "A clean, patient-centric clinic website and consultation appointment system for Dr. Jha Physiotherapy Clinic, optimized for local search visibility and streamlined patient inquiries.",
+    res: "Live site — click to explore",
+  },
+  {
+    span: "s7",
+    cats: ["web"],
+    label: "Web Design & Development",
+    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80",
+    alt: "Aerum - Luxury modular housing and architecture website",
+    demo: "/demos/aerum/index.html",
+    title: "AERUM — Modular Real Estate",
+    cat: "Web Design · 2026",
+    body: "An interactive, scroll-driven showcase for a modular housing manufacturer. Smooth transitions, responsive grids, and clean typographic details.",
+    res: "Live design — click to explore",
+  },
+  {
+    span: "s5",
+    cats: ["web"],
+    label: "Web Design & Development",
+    img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1600&q=80",
+    alt: "Dinerly - Fine-casual restaurant website with interactive menu",
+    demo: "/demos/dinerly/index.html",
+    title: "DINERLY — Fine-Casual Dining",
+    cat: "Web Design · 2026",
+    body: "A sophisticated restaurant website featuring menu categorization, clean dark-mode visuals, responsive grid layouts, and reservation forms.",
+    res: "Live design — click to explore",
+  },
+  {
+    span: "s6",
+    cats: ["web"],
+    label: "Web Design & Development",
+    img: "/demos/astronomia/astronomia_sky.png",
+    alt: "Astronomia - Luxury single-page watch website showcasing interactive gravity-tourbillon motion design",
+    demo: "https://astronomia-navy.vercel.app",
+    title: "ASTRONOMIA — Luxury Horology",
+    cat: "Web / Scroll · 2026",
+    body: "An immersive digital exhibition for a high-end watchmaker. Includes dynamic tourbillon rotations, interactive technical specs, and a premium catalog.",
+    res: "Live site — click to explore",
+  },
+  {
+    span: "s6",
+    cats: ["web"],
+    label: "Web Design & Development",
+    img: "/demos/dental/hero.jpg",
+    alt: "Dental - Clean modern dental clinic landing page with online appointment booking form",
+    demo: "/demos/dental/index.html",
+    title: "Dental — Modern Dentistry",
+    cat: "Web Design · 2026",
+    body: "A clean, modern dental clinic landing page featuring service pills, doctor cards, patient testimonials, a latest articles grid, and an appointment booking form.",
+    res: "Live design — click to explore",
+  },
+];
 
 const OFFERS = [
   {
@@ -80,7 +182,7 @@ export default function WebsitesServiceView() {
         <div className="wrap shero-grid">
           <div>
             <span className="eyebrow rv">Service 02 — ZNX/WEB</span>
-            <h1 className="h-mega rv" style={{ marginTop: "22px" }}>
+            <h1 className="h-mega rv" style={{ marginTop: "22px" }} aria-label="Custom Web Development & High-Performance Web Applications in Mumbai">
               Sites built
               <br />
               to convert
@@ -90,13 +192,18 @@ export default function WebsitesServiceView() {
               We deliver professional web development services, building fast, custom web applications and conversion-focused marketing websites. From design systems to custom front-end development, we build digital solutions measured against real business goals.
             </p>
             <div className="hero-cta rv" style={{ justifyContent: "flex-start", marginTop: "38px" }}>
-              <Link href="/contact" className="btn btn-fill" data-magnetic>
-                Start a web project
+              <Link
+                href="/contact"
+                className="btn btn-fill"
+                data-magnetic
+                onClick={() => trackEvent("audit_cta_click", { location: "websites_hero" })}
+              >
+                Book an Audit
                 <ArrowRight />
               </Link>
-              <Link href="/work" className="btn btn-line" data-magnetic>
+              <a href="#projects" className="btn btn-line" data-magnetic>
                 View our web projects
-              </Link>
+              </a>
             </div>
           </div>
           <div className="webframe rv" aria-hidden="true">
@@ -126,7 +233,7 @@ export default function WebsitesServiceView() {
           <div className="sec-head">
             <span className="eyebrow rv">What we build</span>
             <div className="row">
-              <h2 className="h-xl rv">
+              <h2 className="h-xl rv" aria-label="Modern Next.js & React Web Engineering: Every pixel earns its keep">
                 Every pixel
                 <br />
                 earns its keep.
@@ -156,44 +263,49 @@ export default function WebsitesServiceView() {
         </div>
       </section>
 
-      <section className="sec" style={{ paddingTop: 0 }}>
+      <section className="sec" id="projects" style={{ paddingTop: 0 }}>
         <div className="wrap">
           <div className="sec-head">
-            <span className="eyebrow rv">Recent build</span>
+            <span className="eyebrow rv">Selected builds</span>
             <div className="row">
-              <h2 className="h-xl rv">
-                See one
+              <h2 className="h-xl rv" aria-label="Selected Projects & Web Development Portfolio | Zoenex Studios">
+                Selected
                 <br />
-                in the wild.
+                projects<em className="accent">.</em>
               </h2>
               <p className="lede rv" style={{ maxWidth: "40ch" }}>
-                A turnkey site we designed and built end to end — click through the real thing, live.
+                Live client websites and interactive builds designed and built end to end — click through the real thing, live.
               </p>
             </div>
           </div>
-          <a className="casestudy rv" href="/demos/aerum/index.html" target="_blank" rel="noopener noreferrer">
-            <div className="cs-shot">
-              <span className="art-label">Web Design · Live</span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80"
-                alt="AERUM — panoramic modular real-estate website"
-                loading="lazy"
-              />
-            </div>
-            <div className="cs-body">
-              <span className="cs-cat">Real Estate · 2026</span>
-              <h3>AERUM — Modular Real Estate</h3>
-              <p>
-                A panoramic modular-home builder&rsquo;s site: cinematic hero carousel, a filterable model catalog, materials and
-                build-process sections, an FAQ and a scheduling flow — fully responsive and accessible.
-              </p>
-              <span className="cs-go">
-                Open the live site
-                <ArrowUpRight size={16} />
-              </span>
-            </div>
-          </a>
+          <div className="wgrid">
+            {PROJECTS.map((p) => {
+              const cls = `wcard ${p.span} rv`;
+              return (
+                <a className={cls} href={p.demo} target="_blank" rel="noopener noreferrer" key={p.title}>
+                  <div className="wthumb">
+                    <span className="art-label">{p.label}</span>
+                    <Image
+                      className="wshot"
+                      src={p.img}
+                      alt={p.alt || p.title}
+                      fill
+                      sizes="(max-width: 820px) 100vw, 50vw"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="wmeta">
+                    <div className="top">
+                      <h3>{p.title}</h3>
+                      <span className="cat">{p.cat}</span>
+                    </div>
+                    <p>{p.body}</p>
+                    <span className="wres">{p.res}</span>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -202,7 +314,7 @@ export default function WebsitesServiceView() {
           <div className="sec-head">
             <span className="eyebrow rv">SEO Foundations</span>
             <div className="row">
-              <h2 className="h-xl rv">
+              <h2 className="h-xl rv" aria-label="Technical SEO & Core Web Vitals: Digital Growth & SEO Foundations">
                 Digital Growth &
                 <br />
                 SEO Foundations.
@@ -291,12 +403,13 @@ export default function WebsitesServiceView() {
       </section>
 
       <BigCta
-        ghost="WEB"
-        badge="Now booking web builds — Q3 2026"
+        ghost="AUDIT"
+        badge="Website audits open — Q3 2026"
         titleTop="Your site should"
         titleSwipe="work harder."
-        lede="Bring the brief — or just the problem. We'll scope it honestly and give you a fixed quote within days, not weeks."
-        cta="Start a web project"
+        lede="Get a practical review of your website, conversion experience, and opportunities for improvement. Submit your site for an audit."
+        cta="Book an Audit"
+        reassure={["Core Web Vitals teardown", "Conversion & UX analysis", "NDA on request", "Reply within 1 business day"]}
       />
     </div>
   );

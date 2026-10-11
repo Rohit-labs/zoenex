@@ -53,6 +53,15 @@ export default function Loader() {
         return;
       }
 
+      /* Single-run check: bypass loader on repeat page visits within same session */
+      if (typeof window !== "undefined" && window.sessionStorage?.getItem("zoenex_loader_shown")) {
+        hide();
+        return;
+      }
+      if (typeof window !== "undefined") {
+        window.sessionStorage?.setItem("zoenex_loader_shown", "1");
+      }
+
       const logo = loader.querySelector<HTMLElement>(".loader-logo");
       const shadow = loader.querySelector<HTMLElement>(".loader-shadow");
       const tilt = loader.querySelector<HTMLElement>(".loader-tilt");
@@ -60,7 +69,7 @@ export default function Loader() {
       const cEl = loader.querySelector(".loader-count");
 
       /* idle float — started once the entrance lands, killed on exit */
-      const idle = gsap.timeline({ paused: true, repeat: -1, yoyo: true, defaults: { duration: 2.4, ease: "sine.inOut" } });
+      const idle = gsap.timeline({ paused: true, repeat: -1, yoyo: true, defaults: { duration: 1.6, ease: "sine.inOut" } });
       idle
         .to(logo, { rotationY: 8, rotationX: -5, y: -12 }, 0)
         .to(shadow, { scaleX: 0.86, opacity: 0.55 }, 0);
@@ -80,31 +89,31 @@ export default function Loader() {
               window.dispatchEvent(new Event("zoenex:loaded"));
             },
           })
-          .to(shards, { autoAlpha: 0, z: "-=220", duration: 0.45, ease: "power2.in", stagger: 0.02 }, 0)
-          .to(shadow, { opacity: 0, duration: 0.3 }, 0)
+          .to(shards, { autoAlpha: 0, z: "-=180", duration: 0.25, ease: "power2.in", stagger: 0.01 }, 0)
+          .to(shadow, { opacity: 0, duration: 0.2 }, 0)
           /* the mark flies past the camera */
-          .to(logo, { z: 620, rotationY: -16, duration: 0.8, ease: "power3.in" }, 0)
-          .to(logo, { autoAlpha: 0, duration: 0.3, ease: "power1.in" }, 0.5)
-          .to(loader, { autoAlpha: 0, duration: 0.45, ease: "power2.inOut" }, 0.55);
+          .to(logo, { z: 500, rotationY: -12, duration: 0.35, ease: "power3.in" }, 0)
+          .to(logo, { autoAlpha: 0, duration: 0.2, ease: "power1.in" }, 0.2)
+          .to(loader, { autoAlpha: 0, duration: 0.3, ease: "power2.inOut" }, 0.2);
       };
 
       /* entrance */
-      gsap.set(logo, { z: -640, rotationY: -68, rotationX: 16, autoAlpha: 0, transformPerspective: 1200 });
-      gsap.set(shadow, { opacity: 0, scaleX: 1.3 });
+      gsap.set(logo, { z: -400, rotationY: -45, rotationX: 12, autoAlpha: 0, transformPerspective: 1200 });
+      gsap.set(shadow, { opacity: 0, scaleX: 1.2 });
       shards.forEach((s) => gsap.set(s, { z: Number(s.dataset.z), rotation: Number(s.dataset.r), autoAlpha: 0 }));
 
-      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-      tl.to(logo, { z: 0, rotationY: 0, rotationX: 0, autoAlpha: 1, duration: 1.35, delay: 0.15 })
-        .to(shadow, { opacity: 0.85, scaleX: 1, duration: 0.9, ease: "power2.out" }, "<0.45")
-        .to(shards, { autoAlpha: 1, duration: 0.8, stagger: 0.05, ease: "power2.out" }, "<-0.2")
-        .add(() => idle.play(), ">-0.3");
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      tl.to(logo, { z: 0, rotationY: 0, rotationX: 0, autoAlpha: 1, duration: 0.35, delay: 0.05 })
+        .to(shadow, { opacity: 0.85, scaleX: 1, duration: 0.3, ease: "power2.out" }, "<0.15")
+        .to(shards, { autoAlpha: 1, duration: 0.3, stagger: 0.02, ease: "power2.out" }, "<-0.1")
+        .add(() => idle.play(), ">-0.1");
 
       /* slow ambient drift per shard */
       shards.forEach((s, i) => {
         gsap.to(s, {
-          y: i % 2 ? "+=20" : "-=16",
-          rotation: `+=${i % 2 ? 10 : -8}`,
-          duration: 3 + (i % 4),
+          y: i % 2 ? "+=16" : "-=12",
+          rotation: `+=${i % 2 ? 8 : -6}`,
+          duration: 2.5 + (i % 3),
           yoyo: true,
           repeat: -1,
           ease: "sine.inOut",
@@ -112,8 +121,8 @@ export default function Loader() {
       });
 
       /* pointer parallax on the whole 3D group */
-      const rx = gsap.quickTo(tilt, "rotationX", { duration: 0.9, ease: "power3.out" });
-      const ry = gsap.quickTo(tilt, "rotationY", { duration: 0.9, ease: "power3.out" });
+      const rx = gsap.quickTo(tilt, "rotationX", { duration: 0.8, ease: "power3.out" });
+      const ry = gsap.quickTo(tilt, "rotationY", { duration: 0.8, ease: "power3.out" });
       const onMove = (e: PointerEvent) => {
         const nx = e.clientX / window.innerWidth - 0.5;
         const ny = e.clientY / window.innerHeight - 0.5;
@@ -122,21 +131,20 @@ export default function Loader() {
       };
       window.addEventListener("pointermove", onMove, { passive: true });
 
-      /* progress counter drives completion */
+      /* fast progress counter drives completion for optimal Core Web Vitals */
       const count = { v: 0 };
-      gsap.to(".loader-bar i", { scaleX: 1, duration: 2.1, ease: "power2.inOut", delay: 0.2 });
+      gsap.to(".loader-bar i", { scaleX: 1, duration: 0.38, ease: "power2.out" });
       gsap.to(count, {
         v: 100,
-        duration: 2.1,
-        ease: "power2.inOut",
-        delay: 0.2,
+        duration: 0.38,
+        ease: "power2.out",
         onUpdate() {
           if (cEl) cEl.textContent = String(Math.round(count.v)).padStart(2, "0");
         },
         onComplete: finish,
       });
 
-      const hardFallback = setTimeout(finish, 4200); // hard fallback
+      const hardFallback = setTimeout(finish, 850); // fast fallback
       return () => {
         clearTimeout(hardFallback);
         window.removeEventListener("pointermove", onMove);

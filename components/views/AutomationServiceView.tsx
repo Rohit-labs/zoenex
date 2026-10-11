@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { useViewAnimations } from "@/lib/useViewAnimations";
 import BigCta from "../BigCta";
 import { ArrowRight } from "../icons";
+import { trackEvent } from "@/lib/analytics";
 
 const SYSTEMS = [
   {
@@ -66,18 +67,35 @@ export default function AutomationServiceView() {
   return (
     <div className="view active" ref={ref}>
       <section className="page-hero">
-        <div className="wrap">
-          <span className="eyebrow rv">Service 01 — ZNX/AUT</span>
-          <h1 className="h-mega rv" style={{ marginTop: "22px" }}>
-            Work that
-            <br />
-            runs itself
-            <em className="accent">.</em>
-          </h1>
-          <p className="lede rv">
-            Zoenex Studios builds custom AI agents, automated workflows, and intelligent business automation solutions. We connect your tools, build custom AI helpers, and streamline repetitive operations so your team can focus on growth.
-          </p>
-          <div className="term rv" aria-hidden="true">
+        <div className="wrap shero-grid">
+          <div>
+            <span className="eyebrow rv">Service 01 — ZNX/AUT</span>
+            <h1 className="h-mega rv" style={{ marginTop: "22px" }} aria-label="AI Business Automation & Workflow Engineering in Mumbai">
+              Work that
+              <br />
+              runs itself
+              <em className="accent">.</em>
+            </h1>
+            <p className="lede rv">
+              Zoenex Studios builds custom AI agents, automated workflows, and intelligent business automation solutions. We connect your tools, build custom AI helpers, and streamline repetitive operations so your team can focus on growth.
+            </p>
+            <div className="hero-cta rv" style={{ justifyContent: "flex-start", marginTop: "38px" }}>
+              <Link
+                href="/contact"
+                className="btn btn-fill"
+                data-magnetic
+                onClick={() => trackEvent("audit_cta_click", { location: "automation_hero" })}
+              >
+                Book an Audit
+                <ArrowRight />
+              </Link>
+              <Link href="/services/websites" className="btn btn-line" data-magnetic>
+                View our web projects
+              </Link>
+            </div>
+          </div>
+
+          <div className="term rv" aria-hidden="true" style={{ marginTop: 0, width: "100%", maxWidth: "100%" }}>
             <div className="term-bar">
               <i />
               <i />
@@ -100,15 +118,6 @@ export default function AutomationServiceView() {
               <span className="ln cur">&gt; awaiting next event</span>
             </div>
           </div>
-          <div className="hero-cta rv" style={{ justifyContent: "flex-start", marginTop: "38px" }}>
-            <Link href="/contact" className="btn btn-fill" data-magnetic>
-              Book an automation audit
-              <ArrowRight />
-            </Link>
-            <Link href="/work" className="btn btn-line" data-magnetic>
-              View our case studies
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -117,7 +126,7 @@ export default function AutomationServiceView() {
           <div className="sec-head">
             <span className="eyebrow rv">What we build</span>
             <div className="row">
-              <h2 className="h-xl rv">
+              <h2 className="h-xl rv" aria-label="Autonomous AI Agents & CRM Integration (n8n, Make, HubSpot): Systems, not science projects">
                 Systems, not
                 <br />
                 science projects.
@@ -147,7 +156,7 @@ export default function AutomationServiceView() {
           <div className="sec-head">
             <span className="eyebrow rv">The AUT workflow</span>
             <div className="row">
-              <h2 className="h-xl rv">
+              <h2 className="h-xl rv" aria-label="The AI Automation Workflow: Audit to autopilot">
                 Audit to
                 <br />
                 autopilot.
@@ -197,7 +206,7 @@ export default function AutomationServiceView() {
         titleTop="Stop doing"
         titleSwipe="robot work."
         lede="Tell us where the hours go. We'll tell you which ones a system can own — and what that's worth per month."
-        cta="Book an automation audit"
+        cta="Book an Audit"
       />
     </div>
   );

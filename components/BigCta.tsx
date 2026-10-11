@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowRight } from "./icons";
+import { trackEvent } from "@/lib/analytics";
 
 type Props = {
   ghost: string;
@@ -39,7 +42,12 @@ export default function BigCta({ ghost, badge, titleTop, titleSwipe, lede, cta, 
         <p className="lede rv" style={{ marginLeft: "auto", marginRight: "auto" }}>
           {lede}
         </p>
-        <Link href="/contact" className="btn btn-fill rv" data-magnetic>
+        <Link
+          href="/contact"
+          className="btn btn-fill rv"
+          data-magnetic
+          onClick={() => trackEvent("audit_cta_click", { location: "big_cta", cta })}
+        >
           {cta}
           <ArrowRight />
         </Link>

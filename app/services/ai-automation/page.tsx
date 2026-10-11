@@ -33,6 +33,66 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://zoenexstudios.in",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "AI Automation",
+      item: "https://zoenexstudios.in/services/ai-automation",
+    },
+  ],
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "AI Business Automation & Workflow Engineering",
+  name: "AI Business Automation & Workflow Engineering",
+  provider: {
+    "@type": "ProfessionalService",
+    name: "Zoenex Studios",
+    url: "https://zoenexstudios.in",
+  },
+  areaServed: ["Mumbai", "India", "United States", "United Kingdom", "United Arab Emirates"],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "AI Automation Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Custom Autonomous AI Agents",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "CRM Integrations & Workflow Pipelines (n8n/Make)",
+        },
+      },
+    ],
+  },
+};
+
 export default function AiAutomationPage() {
-  return <AutomationServiceView />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, serviceSchema]) }}
+      />
+      <AutomationServiceView />
+    </>
+  );
 }

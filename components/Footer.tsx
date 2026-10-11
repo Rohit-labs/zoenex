@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Clock from "./Clock";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Footer() {
   return (
@@ -26,7 +29,12 @@ export default function Footer() {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/work">Work</Link>
+                <Link href="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link href="/contact" onClick={() => trackEvent("audit_cta_click", { location: "footer" })}>
+                  Book an Audit
+                </Link>
               </li>
               <li>
                 <Link href="/contact">Contact</Link>
@@ -51,18 +59,14 @@ export default function Footer() {
                 <a href="mailto:zoenexstudios@gmail.com">zoenexstudios@gmail.com</a>
               </li>
               <li>
-                <a href="#" rel="noopener">
-                  LinkedIn
-                </a>
+                <a href="tel:+917021453048">+91 7021453048</a>
+              </li>
+              <li>
+                <a href="tel:+918591494402">+91 8591494402</a>
               </li>
               <li>
                 <a href="https://www.instagram.com/madebyzoenex" target="_blank" rel="noopener noreferrer">
                   Instagram
-                </a>
-              </li>
-              <li>
-                <a href="#" rel="noopener">
-                  X / Twitter
                 </a>
               </li>
             </ul>

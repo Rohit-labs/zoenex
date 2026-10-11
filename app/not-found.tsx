@@ -43,7 +43,7 @@ export default function NotFound() {
         <Link href="/" className="btn btn-fill" data-magnetic>
           Go Home
         </Link>
-        <Link href="/work" className="btn btn-line" data-magnetic>
+        <Link href="/services/websites" className="btn btn-line" data-magnetic>
           See Portfolio
         </Link>
       </div>

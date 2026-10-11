@@ -6,10 +6,13 @@ import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@/lib/gsap";
 import { initMagnetic } from "@/lib/magnetic";
 import { ArrowRight } from "./icons";
+import { trackEvent } from "@/lib/analytics";
 
 const LINKS = [
   { href: "/", label: "Home" },
-  { href: "/work", label: "Work" },
+  { href: "/services/websites", label: "Websites" },
+  { href: "/services/ai-automation", label: "AI Automation" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -58,13 +61,21 @@ export default function Nav() {
           </svg>
         </button>
         <nav className={`nav-links${open ? " open" : ""}`} id="navLinks" aria-label="Primary">
-          {LINKS.map((l) => (
-            <Link key={l.href} href={l.href} aria-current={pathname === l.href ? "page" : undefined}>
-              {l.label}
-            </Link>
-          ))}
-          <Link href="/contact" className="btn btn-fill" data-magnetic>
-            Book a call
+          {LINKS.map((l) => {
+            const isActive = l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
+            return (
+              <Link key={l.href} href={l.href} aria-current={isActive ? "page" : undefined}>
+                {l.label}
+              </Link>
+            );
+          })}
+          <Link
+            href="/contact"
+            className="btn btn-fill"
+            data-magnetic
+            onClick={() => trackEvent("audit_cta_click", { location: "nav" })}
+          >
+            Book an Audit
             <ArrowRight />
           </Link>
         </nav>
