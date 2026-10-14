@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import BlogView from "@/components/views/BlogView";
 
 export const metadata: Metadata = {
-  title: "Insights & Engineering Blog | Zoenex Studios",
+  title: "Insights & Engineering Blog",
   description:
-    "Actionable technical guides on Next.js 15 web development, self-hosted n8n workflows, Core Web Vitals optimization, and enterprise AI agents from Zoenex Studios in Mumbai.",
+    "Read technical guides on Next.js 15 web development, self-hosted n8n workflows, Core Web Vitals, and enterprise AI agents from Zoenex Studios.",
   alternates: {
     canonical: "https://zoenexstudios.in/blog",
   },
   openGraph: {
     title: "Insights & Engineering Blog | Zoenex Studios",
     description:
-      "Actionable technical guides on Next.js 15 web development, self-hosted n8n workflows, Core Web Vitals optimization, and enterprise AI agents.",
+      "Read technical guides on Next.js 15 web development, self-hosted n8n workflows, Core Web Vitals, and enterprise AI agents from Zoenex Studios.",
     url: "https://zoenexstudios.in/blog",
     siteName: "Zoenex Studios",
     images: [

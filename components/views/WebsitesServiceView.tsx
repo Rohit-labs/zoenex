@@ -88,7 +88,7 @@ const PROJECTS: Project[] = [
     label: "Web Design & Development",
     img: "/demos/astronomia/astronomia_sky.png",
     alt: "Astronomia - Luxury single-page watch website showcasing interactive gravity-tourbillon motion design",
-    demo: "https://astronomia-navy.vercel.app",
+    demo: "/demos/astronomia/index.html",
     title: "ASTRONOMIA — Luxury Horology",
     cat: "Web / Scroll · 2026",
     body: "An immersive digital exhibition for a high-end watchmaker. Includes dynamic tourbillon rotations, interactive technical specs, and a premium catalog.",

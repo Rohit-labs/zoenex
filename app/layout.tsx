@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Zoenex Studios",
   },
   description:
-    "Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web apps, and automated workflows.",
+    "Zoenex Studios builds high-performance business websites, custom web applications, and AI automated workflows in Mumbai, India. Scale your brand.",
   keywords: [
     "web development mumbai",
     "AI automation",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "Zoenex Studios",
     title: "Zoenex Studios | Web Development & AI Automation Mumbai",
     description:
-      "Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web apps, and automated workflows.",
+      "Zoenex Studios builds high-performance business websites, custom web applications, and AI automated workflows in Mumbai, India. Scale your brand.",
     images: [
       {
         url: "/og-image.jpg",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Zoenex Studios | Web Development & AI Automation Mumbai",
     description:
-      "Zoenex Studios is a web development and AI automation studio based in Mumbai, India. We build high-performance business websites, custom web apps, and automated workflows.",
+      "Zoenex Studios builds high-performance business websites, custom web applications, and AI automated workflows in Mumbai, India. Scale your brand.",
     images: ["/og-image.jpg"],
   },
   robots: {

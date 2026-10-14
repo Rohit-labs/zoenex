@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import AutomationServiceView from "@/components/views/AutomationServiceView";
 
 export const metadata: Metadata = {
-  title: "AI Automation & Workflow Solutions | Zoenex Studios",
+  title: "AI Automation & Workflow Solutions",
   description:
-    "Automate repetitive business workflows with custom AI agents, chatbots, CRM integrations, and intelligent automation from Zoenex Studios. Reduce manual operations and scale faster.",
+    "Automate repetitive workflows with custom AI agents, CRM integrations, and smart business systems from Zoenex Studios. Eliminate manual busywork.",
   alternates: {
     canonical: "https://zoenexstudios.in/services/ai-automation",
   },
   openGraph: {
     title: "AI Automation & Workflow Solutions | Zoenex Studios",
     description:
-      "Automate repetitive business workflows with custom AI agents, chatbots, CRM integrations, and intelligent automation from Zoenex Studios.",
+      "Automate repetitive workflows with custom AI agents, CRM integrations, and smart business systems from Zoenex Studios.",
     url: "https://zoenexstudios.in/services/ai-automation",
     siteName: "Zoenex Studios",
     images: [

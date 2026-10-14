@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import AuditView from "@/components/views/AuditView";
 
 export const metadata: Metadata = {
-  title: "Book a Website Audit | Zoenex Studios",
+  title: "Book a Website Audit",
   description:
-    "Request a practical review of your website, conversion experience, Core Web Vitals, and automation opportunities. Submit your site for an audit with Zoenex Studios.",
+    "Request a practical review of your website, conversion experience, and automation opportunities. Book an audit teardown with Zoenex Studios.",
   alternates: {
     canonical: "https://zoenexstudios.in/audit",
   },
   openGraph: {
     title: "Book a Website Audit | Zoenex Studios",
     description:
-      "Get a practical review of your website, conversion experience, and opportunities for improvement. Submit your website to Zoenex Studios.",
+      "Request a practical review of your website, conversion experience, and automation opportunities. Book an audit teardown with Zoenex Studios.",
     url: "https://zoenexstudios.in/audit",
     siteName: "Zoenex Studios",
     images: [

@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `https://zoenexstudios.in/blog/${post.slug}`;
 
   return {
-    title: `${post.title} | Zoenex Studios`,
+    title: post.title,
     description: post.excerpt,
     alternates: {
       canonical: url,

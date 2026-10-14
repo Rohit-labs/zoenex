@@ -104,7 +104,7 @@ const SELECTED_WORK: SelectedWorkItem[] = [
     cat: "Web / Scroll · 2026",
     title: "ASTRONOMIA — Luxury Horology",
     res: "Live site — click to explore",
-    demo: "https://astronomia-navy.vercel.app",
+    demo: "/demos/astronomia/index.html",
     img: "/demos/astronomia/astronomia_sky.png",
   },
   {

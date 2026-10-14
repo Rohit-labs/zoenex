@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import ContactView from "@/components/views/ContactView";
 
 export const metadata: Metadata = {
-  title: "Contact Our Team | Zoenex Studios",
+  title: "Contact Our Team",
   description:
-    "Get in touch with Zoenex Studios for custom web development, AI solutions, business automation, and digital inquiries. Send us a project brief.",
+    "Get in touch with Zoenex Studios for custom web development and AI business automation. Send a brief to get a reply within one business day.",
   alternates: {
     canonical: "https://zoenexstudios.in/contact",
   },
   openGraph: {
     title: "Contact Our Team | Zoenex Studios",
     description:
-      "Get in touch with Zoenex Studios for custom web development, AI solutions, business automation, and digital inquiries.",
+      "Get in touch with Zoenex Studios for custom web development and AI business automation. Send a brief to get a reply within one business day.",
     url: "https://zoenexstudios.in/contact",
     siteName: "Zoenex Studios",
     images: [

@@ -27,7 +27,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "nextjs-vs-wordpress-b2b",
     title: "Next.js 15 vs. WordPress: Which Stack Best Supports B2B Revenue Growth in 2026?",
     excerpt:
-      "A deep architectural comparison of performance, security, SEO, and total cost of ownership between Next.js 15 App Router and legacy WordPress for modern enterprises.",
+      "A deep architectural comparison of speed, security, SEO, and total cost between Next.js 15 App Router and WordPress for modern enterprises.",
     category: "Web Development",
     date: "October 2026",
     readTime: "7 min read",
@@ -75,7 +75,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "what-is-n8n-executive-guide",
     title: "What is n8n? An Executive Guide to Self-Hosted Business Automation",
     excerpt:
-      "Why high-growth enterprises are switching from Zapier and Make to self-hosted n8n workflows for zero data leakage, unmetered execution, and complete pipeline autonomy.",
+      "Why enterprises switch from Zapier and Make to self-hosted n8n workflows for zero data leakage, unmetered execution, and pipeline autonomy.",
     category: "AI & Automation",
     date: "October 2026",
     readTime: "8 min read",
@@ -123,7 +123,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "core-web-vitals-business-impact",
     title: "Core Web Vitals Explained in Plain English: Why Sub-Second Load Speeds Drive Sales",
     excerpt:
-      "A breakdown of LCP, INP, and CLS metrics, how search engines rank technical speed, and the direct mathematical correlation between millisecond load times and B2B pipeline conversion.",
+      "A breakdown of LCP, INP, and CLS metrics, search engine speed ranking, and the proven correlation between millisecond load times and B2B conversions.",
     category: "Performance & SEO",
     date: "October 2026",
     readTime: "6 min read",
@@ -172,7 +172,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "why-b2b-website-traffic-not-converting",
     title: "Why Your B2B Website Traffic Isn't Converting: The 7 Silent Leaks in 2026",
     excerpt:
-      "If your analytics show healthy traffic but your inbox stays quiet, your site is suffering from silent conversion friction. Here is an actionable teardown of the 7 most common culprits.",
+      "If analytics show healthy traffic but your inbox stays quiet, your site suffers from conversion friction. Here is a teardown of the 7 common culprits.",
     category: "Web Development",
     date: "September 2026",
     readTime: "9 min read",
@@ -218,7 +218,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "secure-custom-ai-models-internal-data",
     title: "How to Securely Connect Custom AI Models to Internal Company Databases",
     excerpt:
-      "Enterprise architecture patterns for Retrieval-Augmented Generation (RAG), row-level access control, and privacy guardrails when deploying LLMs against proprietary corporate datasets.",
+      "Enterprise architecture patterns for RAG, row-level access control, and privacy guardrails when deploying LLMs against proprietary corporate data.",
     category: "AI & Automation",
     date: "September 2026",
     readTime: "8 min read",

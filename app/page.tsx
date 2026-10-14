@@ -4,14 +4,14 @@ import HomeView from "@/components/views/HomeView";
 export const metadata: Metadata = {
   title: "Web Developers in Mumbai | AI Automation & Design | Zoenex Studios",
   description:
-    "Zoenex Studios builds high-performance websites, AI automation systems, and web applications for businesses in Mumbai and beyond. Get custom web solutions and automated workflows.",
+    "Zoenex Studios builds high-performance websites, custom web apps, and AI automated workflows for businesses in Mumbai and worldwide. Scale with us.",
   alternates: {
     canonical: "https://zoenexstudios.in",
   },
   openGraph: {
     title: "Web Developers in Mumbai | AI Automation & Design | Zoenex Studios",
     description:
-      "Zoenex Studios builds high-performance websites, AI automation systems, and web applications for businesses in Mumbai and beyond.",
+      "Zoenex Studios builds high-performance websites, custom web apps, and AI automated workflows for businesses in Mumbai and worldwide.",
     url: "https://zoenexstudios.in",
     siteName: "Zoenex Studios",
     images: [

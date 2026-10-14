@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import WebsitesServiceView from "@/components/views/WebsitesServiceView";
 
 export const metadata: Metadata = {
-  title: "Web Development, Custom Web Applications & Portfolio | Zoenex Studios",
+  title: "Web Development & Custom Web Applications",
   description:
-    "Zoenex Studios builds fast, conversion-focused websites, web applications, and e-commerce platforms. Explore our live client builds and selected web development portfolio.",
+    "Zoenex Studios designs fast, conversion-focused websites, custom web apps, and e-commerce platforms. Explore our live builds and web portfolio.",
   alternates: {
     canonical: "https://zoenexstudios.in/services/websites",
   },

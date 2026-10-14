@@ -51,7 +51,7 @@ We build high-performance custom websites and web applications designed around b
 
 6. **ASTRONOMIA — Luxury Horology**
    - **Category**: Web Design & Development
-   - **Link**: [https://astronomia-navy.vercel.app](https://astronomia-navy.vercel.app)
+   - **Link**: [https://zoenexstudios.in/demos/astronomia/index.html](https://zoenexstudios.in/demos/astronomia/index.html)
    - **Description**: An immersive digital exhibition for a high-end watchmaker.
    - **Result**: Live design sample.
 
