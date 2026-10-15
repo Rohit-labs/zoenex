@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/lib/blog-data";
+import { LOCATIONS } from "@/lib/locations-data";
 
 const rawUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://zoenexstudios.in";
 const BASE_URL = rawUrl.replace(/^http:\/\//, "https://").replace(/\/+$/, "");
@@ -11,6 +12,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: 0.7,
   }));
+
+  const locationEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/locations`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ...LOCATIONS.map((loc) => ({
+      url: `${BASE_URL}/locations/${loc.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: loc.slug === "mumbai" ? 0.9 : 0.85,
+    })),
+  ];
 
   const demoEntries: MetadataRoute.Sitemap = [
     {
@@ -77,6 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     ...demoEntries,
+    ...locationEntries,
     ...blogEntries,
     {
       url: `${BASE_URL}/llms.txt`,

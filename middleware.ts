@@ -5,6 +5,7 @@ const VALID_PATHS = new Set([
   "/",
   "/audit",
   "/blog",
+  "/locations",
   "/services/ai-automation",
   "/services/websites",
   "/contact"
