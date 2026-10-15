@@ -8,7 +8,8 @@ import GlobalEffects from "@/components/GlobalEffects";
 import Loader from "@/components/Loader";
 import Nav from "@/components/Nav";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://zoenexstudios.in";
+const rawUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://zoenexstudios.in";
+const SITE_URL = rawUrl.replace(/^http:\/\//, "https://").replace(/\/+$/, "");
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

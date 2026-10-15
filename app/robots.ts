@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://zoenexstudios.in";
+const rawUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://zoenexstudios.in";
+const BASE_URL = rawUrl.replace(/^http:\/\//, "https://").replace(/\/+$/, "");
 
 /**
  * /robots.txt previously 404'd. Google assumes "allow" when it is missing, so
