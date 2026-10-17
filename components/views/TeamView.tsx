@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { useViewAnimations } from "@/lib/useViewAnimations";
 import { TEAM_MEMBERS, TeamMember } from "@/lib/team-data";
 import BigCta from "../BigCta";
-import { ArrowRight, ArrowUpRight, LinkedInIcon, GitHubIcon, MailIcon } from "../icons";
+import { ArrowRight, ArrowUpRight, LinkedInIcon, MailIcon } from "../icons";
 import { trackEvent } from "@/lib/analytics";
 
 export default function TeamView() {
@@ -118,21 +118,6 @@ export default function TeamView() {
                       LinkedIn Profile
                       <ArrowUpRight size={13} />
                     </a>
-
-                    {founder.github && (
-                      <a
-                        href={founder.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="team-social-btn"
-                        data-magnetic
-                        onClick={() => trackEvent("social_click", { network: "github", profile: founder.id })}
-                      >
-                        <GitHubIcon />
-                        GitHub
-                        <ArrowUpRight size={13} />
-                      </a>
-                    )}
 
                     <Link
                       href="/contact"

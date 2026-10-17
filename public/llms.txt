@@ -75,7 +75,6 @@ Zoenex Studios is founder-led, operating with direct engineer-to-client collabor
   * LinkedIn: https://www.linkedin.com/in/moreshmishra
 * Co-Founder & Systems Engineer: Rohit Maurya (Systems Architecture, Cloud Infrastructure, Backend & API Pipelines)
   * LinkedIn: https://www.linkedin.com/in/rohit-maurya-labs
-  * GitHub: https://github.com/Rohit-labs
   * Profile: https://zoenexstudios.in/team
 
 Official team page:

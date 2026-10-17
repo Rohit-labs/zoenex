@@ -172,8 +172,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     "url": "https://zoenexstudios.in/team",
                     "image": "https://zoenexstudios.in/team/rohit-maurya.jpg",
                     "sameAs": [
-                      "https://www.linkedin.com/in/rohit-maurya-labs",
-                      "https://github.com/Rohit-labs"
+                      "https://www.linkedin.com/in/rohit-maurya-labs"
                     ]
                   }
                 ],

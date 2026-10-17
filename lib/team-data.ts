@@ -30,7 +30,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: "/team/moresh-mishra.jpg",
     location: "Mumbai, India",
     linkedin: "https://www.linkedin.com/in/moreshmishra",
-    github: "https://github.com/Moresh-Mishra",
     email: "zoenexstudios@gmail.com",
     specialties: [
       "Full-Stack Web Architecture",
@@ -56,7 +55,6 @@ export const TEAM_MEMBERS: TeamMember[] = [
     image: "/team/rohit-maurya.jpg",
     location: "Mumbai, India",
     linkedin: "https://www.linkedin.com/in/rohit-maurya-labs",
-    github: "https://github.com/Rohit-labs",
     email: "zoenexstudios@gmail.com",
     specialties: [
       "Backend & Systems Architecture",
