@@ -154,8 +154,33 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   "addressRegion": "Maharashtra",
                   "addressCountry": "IN"
                 },
+                "founders": [
+                  {
+                    "@type": "Person",
+                    "name": "Moresh Mishra",
+                    "jobTitle": "Founder & Technical Lead",
+                    "url": "https://zoenexstudios.in/team",
+                    "image": "https://zoenexstudios.in/team/moresh-mishra.jpg",
+                    "sameAs": [
+                      "https://www.linkedin.com/in/moreshmishra"
+                    ]
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Rohit Maurya",
+                    "jobTitle": "Co-Founder & Systems Engineer",
+                    "url": "https://zoenexstudios.in/team",
+                    "image": "https://zoenexstudios.in/team/rohit-maurya.jpg",
+                    "sameAs": [
+                      "https://www.linkedin.com/in/rohit-maurya-labs",
+                      "https://github.com/Rohit-labs"
+                    ]
+                  }
+                ],
                 "sameAs": [
-                  "https://www.instagram.com/madebyzoenex"
+                  "https://www.instagram.com/madebyzoenex",
+                  "https://www.linkedin.com/in/moreshmishra",
+                  "https://www.linkedin.com/in/rohit-maurya-labs"
                 ]
               },
               {

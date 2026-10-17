@@ -68,6 +68,19 @@ Technical articles covering Next.js 15 performance, Core Web Vitals, self-hosted
 Official blog:
 [https://zoenexstudios.in/blog](https://zoenexstudios.in/blog)
 
+## Team & Leadership
+
+Zoenex Studios is founder-led, operating with direct engineer-to-client collaboration and bespoke technical execution.
+* Founder & Technical Lead: Moresh Mishra (Full-Stack Architecture, AI Automation, Next.js)
+  * LinkedIn: https://www.linkedin.com/in/moreshmishra
+* Co-Founder & Systems Engineer: Rohit Maurya (Systems Architecture, Cloud Infrastructure, Backend & API Pipelines)
+  * LinkedIn: https://www.linkedin.com/in/rohit-maurya-labs
+  * GitHub: https://github.com/Rohit-labs
+  * Profile: https://zoenexstudios.in/team
+
+Official team page:
+[https://zoenexstudios.in/team](https://zoenexstudios.in/team)
+
 ## Book an Audit
 
 Businesses and individuals can request a practical review of their website, conversion experience, and automation opportunities through the official audit request page.

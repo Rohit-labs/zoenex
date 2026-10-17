@@ -29,6 +29,9 @@ export default function Footer() {
                 <Link href="/">Home</Link>
               </li>
               <li>
+                <Link href="/team">Team</Link>
+              </li>
+              <li>
                 <Link href="/blog">Blog</Link>
               </li>
               <li>

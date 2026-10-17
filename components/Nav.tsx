@@ -12,6 +12,7 @@ const LINKS = [
   { href: "/", label: "Home" },
   { href: "/services/websites", label: "Websites" },
   { href: "/services/ai-automation", label: "AI Automation" },
+  { href: "/team", label: "Team" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];

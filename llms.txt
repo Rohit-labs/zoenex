@@ -68,6 +68,19 @@ Businesses and individuals can request a practical review of their website, conv
 Official audit page:
 [https://zoenexstudios.in/audit](https://zoenexstudios.in/audit)
 
+## Team & Leadership
+
+Zoenex Studios is founder-led, operating with direct engineer-to-client collaboration and bespoke technical execution.
+* Founder & Technical Lead: Moresh Mishra (Full-Stack Architecture, AI Automation, Next.js)
+  * LinkedIn: https://www.linkedin.com/in/moreshmishra
+* Co-Founder & Systems Engineer: Rohit Maurya (Systems Architecture, Cloud Infrastructure, Backend & API Pipelines)
+  * LinkedIn: https://www.linkedin.com/in/rohit-maurya-labs
+  * GitHub: https://github.com/Rohit-labs
+  * Profile: https://zoenexstudios.in/team
+
+Official team page:
+[https://zoenexstudios.in/team](https://zoenexstudios.in/team)
+
 ## Contact & Project Inquiries
 
 Businesses interested in discussing custom engineering, web applications, or sending a project brief can submit an inquiry through the official contact page.
